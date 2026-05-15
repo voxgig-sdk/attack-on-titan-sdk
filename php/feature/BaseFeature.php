@@ -1,0 +1,37 @@
+<?php
+declare(strict_types=1);
+
+// AttackOnTitan SDK base feature
+
+class AttackOnTitanBaseFeature
+{
+    public string $version;
+    public string $name;
+    public bool $active;
+
+    public function __construct()
+    {
+        $this->version = '0.0.1';
+        $this->name = 'base';
+        $this->active = true;
+    }
+
+    public function get_version(): string { return $this->version; }
+    public function get_name(): string { return $this->name; }
+    public function get_active(): bool { return $this->active; }
+
+    public function init(AttackOnTitanContext $ctx, array $options): void {}
+    public function PostConstruct(AttackOnTitanContext $ctx): void {}
+    public function PostConstructEntity(AttackOnTitanContext $ctx): void {}
+    public function SetData(AttackOnTitanContext $ctx): void {}
+    public function GetData(AttackOnTitanContext $ctx): void {}
+    public function GetMatch(AttackOnTitanContext $ctx): void {}
+    public function SetMatch(AttackOnTitanContext $ctx): void {}
+    public function PrePoint(AttackOnTitanContext $ctx): void {}
+    public function PreSpec(AttackOnTitanContext $ctx): void {}
+    public function PreRequest(AttackOnTitanContext $ctx): void {}
+    public function PreResponse(AttackOnTitanContext $ctx): void {}
+    public function PreResult(AttackOnTitanContext $ctx): void {}
+    public function PreDone(AttackOnTitanContext $ctx): void {}
+    public function PreUnexpected(AttackOnTitanContext $ctx): void {}
+}

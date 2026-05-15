@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "episode": {
+      "EPISODE00": {
+        "air_date": "s3c",
+        "description": "s3d",
+        "episode_number": "s3e",
+        "id": "EPISODE00",
+        "season": "s40",
+        "title": "s41"
+      },
+      "EPISODE01": {
+        "air_date": "s78",
+        "description": "s79",
+        "episode_number": "s7a",
+        "id": "EPISODE01",
+        "season": "s7c",
+        "title": "s7d"
+      },
+      "EPISODE02": {
+        "air_date": "sb4",
+        "description": "sb5",
+        "episode_number": "sb6",
+        "id": "EPISODE02",
+        "season": "sb8",
+        "title": "sb9"
+      }
+    }
+  },
+  "new": {
+    "episode": {
+      "episode_ref01": {
+        "air_date": "sf0",
+        "description": "sf1",
+        "episode_number": "sf2",
+        "season": "sf4",
+        "title": "sf5"
+      }
+    }
+  }
+}

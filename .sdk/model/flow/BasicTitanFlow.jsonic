@@ -1,0 +1,44 @@
+# BasicTitanFlow
+
+main: kit: flow: BasicTitanFlow:
+{
+  entity: "titan",
+  kind: "basic",
+  name: "BasicTitanFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "titan_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "titan_ref01",
+        srcdatavar: "titan_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "titan01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-titan_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTitanFlow"
+}

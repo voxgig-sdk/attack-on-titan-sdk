@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "organization": {
+      "ORGANIZATION00": {
+        "allegiance": "s3c",
+        "description": "s3d",
+        "id": "ORGANIZATION00",
+        "leader": "s3f",
+        "name": "s40",
+        "type": "s41"
+      },
+      "ORGANIZATION01": {
+        "allegiance": "s78",
+        "description": "s79",
+        "id": "ORGANIZATION01",
+        "leader": "s7b",
+        "name": "s7c",
+        "type": "s7d"
+      },
+      "ORGANIZATION02": {
+        "allegiance": "sb4",
+        "description": "sb5",
+        "id": "ORGANIZATION02",
+        "leader": "sb7",
+        "name": "sb8",
+        "type": "sb9"
+      }
+    }
+  },
+  "new": {
+    "organization": {
+      "organization_ref01": {
+        "allegiance": "sf0",
+        "description": "sf1",
+        "leader": "sf3",
+        "name": "sf4",
+        "type": "sf5"
+      }
+    }
+  }
+}

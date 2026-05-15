@@ -1,0 +1,105 @@
+# Entity: titan
+
+main: kit: entity: titan: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "ability"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "allegiance"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "current_inheritor"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "former_inheritor"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "height"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "titan"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/titans"
+          parts: [
+            "titans"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/titans/{id}"
+          parts: [
+            "titans"
+            "{id}"
+          ]
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

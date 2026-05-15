@@ -1,0 +1,444 @@
+# AttackOnTitan Lua SDK Reference
+
+Complete API reference for the AttackOnTitan Lua SDK.
+
+
+## AttackOnTitanSDK
+
+### Constructor
+
+```lua
+local sdk = require("attack-on-titan_sdk")
+local client = sdk.new(options)
+```
+
+Create a new SDK client instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `options` | `table` | SDK configuration options. |
+| `options.apikey` | `string` | API key for authentication. |
+| `options.base` | `string` | Base URL for API requests. |
+| `options.prefix` | `string` | URL prefix appended after base. |
+| `options.suffix` | `string` | URL suffix appended after path. |
+| `options.headers` | `table` | Custom headers for all requests. |
+| `options.feature` | `table` | Feature configuration. |
+| `options.system` | `table` | System overrides (e.g. custom fetch). |
+
+
+### Static Methods
+
+#### `sdk.test(testopts, sdkopts)`
+
+Create a test client with mock features active. Both arguments may be `nil`.
+
+```lua
+local client = sdk.test(nil, nil)
+```
+
+
+### Instance Methods
+
+#### `Character(data)`
+
+Create a new `Character` entity instance. Pass `nil` for no initial data.
+
+#### `Episode(data)`
+
+Create a new `Episode` entity instance. Pass `nil` for no initial data.
+
+#### `Location(data)`
+
+Create a new `Location` entity instance. Pass `nil` for no initial data.
+
+#### `Organization(data)`
+
+Create a new `Organization` entity instance. Pass `nil` for no initial data.
+
+#### `Titan(data)`
+
+Create a new `Titan` entity instance. Pass `nil` for no initial data.
+
+#### `options_map() -> table`
+
+Return a deep copy of the current SDK options.
+
+#### `get_utility() -> Utility`
+
+Return a copy of the SDK utility object.
+
+#### `direct(fetchargs) -> table, err`
+
+Make a direct HTTP request to any API endpoint.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `fetchargs.path` | `string` | URL path with optional `{param}` placeholders. |
+| `fetchargs.method` | `string` | HTTP method (default: `"GET"`). |
+| `fetchargs.params` | `table` | Path parameter values for `{param}` substitution. |
+| `fetchargs.query` | `table` | Query string parameters. |
+| `fetchargs.headers` | `table` | Request headers (merged with defaults). |
+| `fetchargs.body` | `any` | Request body (tables are JSON-serialized). |
+| `fetchargs.ctrl` | `table` | Control options (e.g. `{ explain = true }`). |
+
+**Returns:** `table, err`
+
+#### `prepare(fetchargs) -> table, err`
+
+Prepare a fetch definition without sending the request. Accepts the
+same parameters as `direct()`.
+
+**Returns:** `table, err`
+
+
+---
+
+## CharacterEntity
+
+```lua
+local character = client:Character(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `affiliation` | ``$STRING`` | No |  |
+| `age` | ``$INTEGER`` | No |  |
+| `gender` | ``$STRING`` | No |  |
+| `height` | ``$STRING`` | No |  |
+| `id` | ``$STRING`` | No |  |
+| `name` | ``$STRING`` | No |  |
+| `occupation` | ``$STRING`` | No |  |
+| `species` | ``$STRING`` | No |  |
+| `status` | ``$STRING`` | No |  |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:Character(nil):list(nil, nil)
+```
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Character(nil):load({ id = "character_id" }, nil)
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `CharacterEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## EpisodeEntity
+
+```lua
+local episode = client:Episode(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `air_date` | ``$STRING`` | No |  |
+| `description` | ``$STRING`` | No |  |
+| `episode_number` | ``$INTEGER`` | No |  |
+| `id` | ``$STRING`` | No |  |
+| `season` | ``$INTEGER`` | No |  |
+| `title` | ``$STRING`` | No |  |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:Episode(nil):list(nil, nil)
+```
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Episode(nil):load({ id = "episode_id" }, nil)
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `EpisodeEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## LocationEntity
+
+```lua
+local location = client:Location(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `description` | ``$STRING`` | No |  |
+| `id` | ``$STRING`` | No |  |
+| `name` | ``$STRING`` | No |  |
+| `region` | ``$STRING`` | No |  |
+| `significance` | ``$STRING`` | No |  |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:Location(nil):list(nil, nil)
+```
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Location(nil):load({ id = "location_id" }, nil)
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `LocationEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OrganizationEntity
+
+```lua
+local organization = client:Organization(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `allegiance` | ``$STRING`` | No |  |
+| `description` | ``$STRING`` | No |  |
+| `id` | ``$STRING`` | No |  |
+| `leader` | ``$STRING`` | No |  |
+| `name` | ``$STRING`` | No |  |
+| `type` | ``$STRING`` | No |  |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:Organization(nil):list(nil, nil)
+```
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Organization(nil):load({ id = "organization_id" }, nil)
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OrganizationEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## TitanEntity
+
+```lua
+local titan = client:Titan(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `ability` | ``$ARRAY`` | No |  |
+| `allegiance` | ``$STRING`` | No |  |
+| `current_inheritor` | ``$STRING`` | No |  |
+| `former_inheritor` | ``$ARRAY`` | No |  |
+| `height` | ``$STRING`` | No |  |
+| `id` | ``$STRING`` | No |  |
+| `name` | ``$STRING`` | No |  |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:Titan(nil):list(nil, nil)
+```
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Titan(nil):load({ id = "titan_id" }, nil)
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `TitanEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## Features
+
+| Feature | Version | Description |
+| --- | --- | --- |
+| `test` | 0.0.1 | In-memory mock transport for testing without a live server |
+
+
+Features are activated via the `feature` option:
+
+```lua
+local client = sdk.new({
+  feature = {
+    test = { active = true },
+  },
+})
+```
+

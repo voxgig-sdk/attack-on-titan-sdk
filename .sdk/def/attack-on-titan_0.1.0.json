@@ -1,0 +1,523 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Attack on Titan API",
+    "description": "A RESTful API that provides access to a wide range of data related to the popular anime and manga series 'Attack on Titan'. Users can retrieve information about characters, episodes, locations, organizations, and titans, making it a valuable resource for fans and developers alike.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Attack on Titan API",
+      "url": "https://www.attackontitanapi.com/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.attackontitanapi.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/characters": {
+      "get": {
+        "summary": "Get all characters",
+        "description": "Retrieve a list of all characters from Attack on Titan",
+        "operationId": "getCharacters",
+        "tags": [
+          "Characters"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of characters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Character"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters/{id}": {
+      "get": {
+        "summary": "Get character by ID",
+        "description": "Retrieve detailed information about a specific character",
+        "operationId": "getCharacterById",
+        "tags": [
+          "Characters"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the character to retrieve",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Character details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Character"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Character not found"
+          }
+        }
+      }
+    },
+    "/episodes": {
+      "get": {
+        "summary": "Get all episodes",
+        "description": "Retrieve a list of all episodes from Attack on Titan",
+        "operationId": "getEpisodes",
+        "tags": [
+          "Episodes"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of episodes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Episode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/episodes/{id}": {
+      "get": {
+        "summary": "Get episode by ID",
+        "description": "Retrieve detailed information about a specific episode",
+        "operationId": "getEpisodeById",
+        "tags": [
+          "Episodes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the episode to retrieve",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Episode details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Episode"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Episode not found"
+          }
+        }
+      }
+    },
+    "/locations": {
+      "get": {
+        "summary": "Get all locations",
+        "description": "Retrieve a list of all locations from Attack on Titan",
+        "operationId": "getLocations",
+        "tags": [
+          "Locations"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of locations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Location"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/locations/{id}": {
+      "get": {
+        "summary": "Get location by ID",
+        "description": "Retrieve detailed information about a specific location",
+        "operationId": "getLocationById",
+        "tags": [
+          "Locations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the location to retrieve",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Location details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Location not found"
+          }
+        }
+      }
+    },
+    "/organizations": {
+      "get": {
+        "summary": "Get all organizations",
+        "description": "Retrieve a list of all organizations from Attack on Titan",
+        "operationId": "getOrganizations",
+        "tags": [
+          "Organizations"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of organizations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Organization"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{id}": {
+      "get": {
+        "summary": "Get organization by ID",
+        "description": "Retrieve detailed information about a specific organization",
+        "operationId": "getOrganizationById",
+        "tags": [
+          "Organizations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the organization to retrieve",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization not found"
+          }
+        }
+      }
+    },
+    "/titans": {
+      "get": {
+        "summary": "Get all titans",
+        "description": "Retrieve a list of all titans from Attack on Titan",
+        "operationId": "getTitans",
+        "tags": [
+          "Titans"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of titans",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Titan"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/titans/{id}": {
+      "get": {
+        "summary": "Get titan by ID",
+        "description": "Retrieve detailed information about a specific titan",
+        "operationId": "getTitanById",
+        "tags": [
+          "Titans"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the titan to retrieve",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Titan details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Titan"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Titan not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Character": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the character"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the character"
+          },
+          "species": {
+            "type": "string",
+            "description": "Species of the character"
+          },
+          "gender": {
+            "type": "string",
+            "description": "Gender of the character"
+          },
+          "age": {
+            "type": "integer",
+            "description": "Age of the character"
+          },
+          "height": {
+            "type": "string",
+            "description": "Height of the character"
+          },
+          "affiliation": {
+            "type": "string",
+            "description": "Character's affiliation or allegiance"
+          },
+          "occupation": {
+            "type": "string",
+            "description": "Character's occupation"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current status of the character"
+          }
+        }
+      },
+      "Episode": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the episode"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the episode"
+          },
+          "season": {
+            "type": "integer",
+            "description": "Season number"
+          },
+          "episodeNumber": {
+            "type": "integer",
+            "description": "Episode number within the season"
+          },
+          "airDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Air date of the episode"
+          },
+          "description": {
+            "type": "string",
+            "description": "Synopsis or description of the episode"
+          }
+        }
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the location"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the location"
+          },
+          "region": {
+            "type": "string",
+            "description": "Region where the location is situated"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the location"
+          },
+          "significance": {
+            "type": "string",
+            "description": "Significance of the location in the series"
+          }
+        }
+      },
+      "Organization": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the organization"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the organization"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type or classification of the organization"
+          },
+          "allegiance": {
+            "type": "string",
+            "description": "Allegiance of the organization"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the organization"
+          },
+          "leader": {
+            "type": "string",
+            "description": "Leader of the organization"
+          }
+        }
+      },
+      "Titan": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the titan"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the titan",
+            "example": "Attack Titan"
+          },
+          "height": {
+            "type": "string",
+            "description": "Height of the titan",
+            "example": "15m"
+          },
+          "currentInheritor": {
+            "type": "string",
+            "description": "Current inheritor of the titan",
+            "example": "Eren Jaeger"
+          },
+          "allegiance": {
+            "type": "string",
+            "description": "Allegiance of the titan or its inheritor",
+            "example": "Eldia"
+          },
+          "abilities": {
+            "type": "array",
+            "description": "List of abilities possessed by the titan",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Future memory inheritance",
+              "Hardening"
+            ]
+          },
+          "formerInheritors": {
+            "type": "array",
+            "description": "List of former inheritors",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Characters",
+      "description": "Operations related to Attack on Titan characters"
+    },
+    {
+      "name": "Episodes",
+      "description": "Operations related to Attack on Titan episodes"
+    },
+    {
+      "name": "Locations",
+      "description": "Operations related to Attack on Titan locations"
+    },
+    {
+      "name": "Organizations",
+      "description": "Operations related to Attack on Titan organizations"
+    },
+    {
+      "name": "Titans",
+      "description": "Operations related to Attack on Titan titans"
+    }
+  ]
+}

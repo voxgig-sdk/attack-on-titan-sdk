@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Attack on Titan API"
+        url: "https://www.attackontitanapi.com/"
+      }
+      description: "A RESTful API that provides access to a wide range of data related to the popular anime and manga series 'Attack on Titan'. Users can retrieve information about characters, episodes, locations, organizations, and titans, making it a valuable resource for fans and developers alike."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://api.attackontitanapi.com"
+        }
+      ]
+      title: "Attack on Titan API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

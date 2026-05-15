@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "character": {
+      "CHARACTER00": {
+        "affiliation": "s5a",
+        "age": "s5b",
+        "gender": "s5c",
+        "height": "s5d",
+        "id": "CHARACTER00",
+        "name": "s5f",
+        "occupation": "s60",
+        "species": "s61",
+        "status": "s62"
+      },
+      "CHARACTER01": {
+        "affiliation": "sb4",
+        "age": "sb5",
+        "gender": "sb6",
+        "height": "sb7",
+        "id": "CHARACTER01",
+        "name": "sb9",
+        "occupation": "sba",
+        "species": "sbb",
+        "status": "sbc"
+      },
+      "CHARACTER02": {
+        "affiliation": "s10e",
+        "age": "s10f",
+        "gender": "s110",
+        "height": "s111",
+        "id": "CHARACTER02",
+        "name": "s113",
+        "occupation": "s114",
+        "species": "s115",
+        "status": "s116"
+      }
+    }
+  },
+  "new": {
+    "character": {
+      "character_ref01": {
+        "affiliation": "s168",
+        "age": "s169",
+        "gender": "s16a",
+        "height": "s16b",
+        "name": "s16d",
+        "occupation": "s16e",
+        "species": "s16f",
+        "status": "s170"
+      }
+    }
+  }
+}

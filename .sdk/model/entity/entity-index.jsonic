@@ -1,0 +1,7 @@
+# Entity Models
+
+@"character.jsonic"
+@"episode.jsonic"
+@"location.jsonic"
+@"organization.jsonic"
+@"titan.jsonic"
