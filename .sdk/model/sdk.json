@@ -1083,15 +1083,6 @@
     },
     "def": {
       "desc": ""
-    },
-    "api": {
-      "guide": {},
-      "entity": {}
     }
-  },
-  "name__orig": "attack-on-titan",
-  "Name": "AttackOnTitan",
-  "name_": "attack_on_titan",
-  "name-": "attack-on-titan",
-  "NAME": "ATTACK-ON-TITAN"
+  }
 }
