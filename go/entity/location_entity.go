@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/attack-on-titan-sdk/core"
+	"github.com/voxgig-sdk/attack-on-titan-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/attack-on-titan-sdk/go/utility/struct"
 )
 
 type LocationEntity struct {

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/attack-on-titan-sdk"
-	"github.com/voxgig-sdk/attack-on-titan-sdk/core"
+	sdk "github.com/voxgig-sdk/attack-on-titan-sdk/go"
+	"github.com/voxgig-sdk/attack-on-titan-sdk/go/core"
 )
 
 func TestTitanDirect(t *testing.T) {

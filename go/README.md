@@ -5,14 +5,14 @@ The Golang SDK for the AttackOnTitan API. Provides an entity-oriented interface 
 
 ## Install
 ```bash
-go get github.com/voxgig-sdk/attack-on-titan-sdk
+go get github.com/voxgig-sdk/attack-on-titan-sdk/go
 ```
 
 If the module is not yet published to a registry, use a `replace` directive
 in your `go.mod` to point to a local checkout:
 
 ```bash
-go mod edit -replace github.com/voxgig-sdk/attack-on-titan-sdk=../path/to/github.com/voxgig-sdk/attack-on-titan-sdk
+go mod edit -replace github.com/voxgig-sdk/attack-on-titan-sdk/go=../path/to/github.com/voxgig-sdk/attack-on-titan-sdk/go
 ```
 
 
@@ -30,8 +30,8 @@ import (
     "fmt"
     "os"
 
-    sdk "github.com/voxgig-sdk/attack-on-titan-sdk"
-    "github.com/voxgig-sdk/attack-on-titan-sdk/core"
+    sdk "github.com/voxgig-sdk/attack-on-titan-sdk/go"
+    "github.com/voxgig-sdk/attack-on-titan-sdk/go/core"
 )
 
 func main() {
@@ -552,7 +552,7 @@ Use `core.ToMapAny()` to safely cast results and nested data.
 ### Package structure
 
 ```
-github.com/voxgig-sdk/attack-on-titan-sdk/
+github.com/voxgig-sdk/attack-on-titan-sdk/go/
 ├── attack-on-titan.go        # Root package — type aliases and constructors
 ├── core/               # SDK core — client, types, pipeline
 ├── entity/             # Entity implementations
@@ -561,7 +561,7 @@ github.com/voxgig-sdk/attack-on-titan-sdk/
 └── test/               # Test suites
 ```
 
-The root package (`github.com/voxgig-sdk/attack-on-titan-sdk`) re-exports everything needed
+The root package (`github.com/voxgig-sdk/attack-on-titan-sdk/go`) re-exports everything needed
 for normal use. Import sub-packages only when you need specific types
 like `core.ToMapAny`.
 
