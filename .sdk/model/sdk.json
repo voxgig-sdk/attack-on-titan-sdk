@@ -937,10 +937,20 @@
           "module": {
             "name": "attack-on-titan"
           },
-          "entity": false,
-          "feature": false,
-          "readme": false,
-          "test": false,
+          "phase": {
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
           "deps": {},
           "name": "go-cli",
           "active": true

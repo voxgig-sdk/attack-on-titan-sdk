@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/aql-lang/aql/eng"
-	sdk "github.com/voxgig-sdk/attack-on-titan-sdk/go"
+	sdk "GOMODULE"
 )
 
 // registerSDKWords installs three native AQL words bound to the SDK:
@@ -19,7 +19,7 @@ import (
 //
 // The entity slot is /q-quoted so a bareword `book` parses as the
 // Atom "book" rather than dispatching as an undefined word.
-func registerSDKWords(r *eng.Registry, client *sdk.AttackOnTitanSDK) {
+func registerSDKWords(r *eng.Registry, client *sdk.ProjectNameSDK) {
 	for _, op := range []string{"list", "load", "update"} {
 		op := op
 		single := eng.NativeSig{
@@ -47,7 +47,7 @@ func registerSDKWords(r *eng.Registry, client *sdk.AttackOnTitanSDK) {
 	}
 }
 
-func runOp(client *sdk.AttackOnTitanSDK, op string, query *eng.Value, entityAtom eng.Value) ([]eng.Value, error) {
+func runOp(client *sdk.ProjectNameSDK, op string, query *eng.Value, entityAtom eng.Value) ([]eng.Value, error) {
 	entityName, err := eng.AsAtom(entityAtom)
 	if err != nil {
 		return nil, fmt.Errorf("%s: entity argument is not an atom: %w", op, err)
@@ -84,19 +84,9 @@ func runOp(client *sdk.AttackOnTitanSDK, op string, query *eng.Value, entityAtom
 
 // entityFor dispatches on the lowercase entity name. The generator
 // emits one `case "<name>":` per entity defined in the SDK model.
-func entityFor(client *sdk.AttackOnTitanSDK, name string) (sdk.AttackOnTitanEntity, error) {
+func entityFor(client *sdk.ProjectNameSDK, name string) (sdk.ProjectNameEntity, error) {
 	switch strings.ToLower(name) {
-	case "character":
-		return client.Character(nil), nil
-	case "episode":
-		return client.Episode(nil), nil
-	case "location":
-		return client.Location(nil), nil
-	case "organization":
-		return client.Organization(nil), nil
-	case "titan":
-		return client.Titan(nil), nil
-
+	// <[SLOT:entityCases]>
 	}
 	return nil, fmt.Errorf("unknown entity %q", name)
 }
