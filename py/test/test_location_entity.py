@@ -102,7 +102,6 @@ def _location_basic_setup(extra):
         "ATTACKONTITAN_TEST_LOCATION_ENTID": idmap,
         "ATTACKONTITAN_TEST_LIVE": "FALSE",
         "ATTACKONTITAN_TEST_EXPLAIN": "FALSE",
-        "ATTACKONTITAN_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -113,7 +112,6 @@ def _location_basic_setup(extra):
     if env.get("ATTACKONTITAN_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("ATTACKONTITAN_APIKEY"),
             },
             extra or {},
         ])

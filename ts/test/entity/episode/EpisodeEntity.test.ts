@@ -120,7 +120,6 @@ function basicSetup(extra?: any) {
     'ATTACK_ON_TITAN_TEST_EPISODE_ENTID': idmap,
     'ATTACK_ON_TITAN_TEST_LIVE': 'FALSE',
     'ATTACK_ON_TITAN_TEST_EXPLAIN': 'FALSE',
-    'ATTACK_ON_TITAN_APIKEY': 'NONE',
   })
 
   idmap = env['ATTACK_ON_TITAN_TEST_EPISODE_ENTID']
@@ -130,7 +129,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new AttackOnTitanSDK(merge([
       {
-        apikey: env.ATTACK_ON_TITAN_APIKEY,
       },
       extra
     ]))

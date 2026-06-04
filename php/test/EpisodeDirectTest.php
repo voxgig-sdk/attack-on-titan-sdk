@@ -123,14 +123,12 @@ function episode_direct_setup($mockres)
     $env = Runner::env_override([
         "ATTACKONTITAN_TEST_EPISODE_ENTID" => [],
         "ATTACKONTITAN_TEST_LIVE" => "FALSE",
-        "ATTACKONTITAN_APIKEY" => "NONE",
     ]);
 
     $live = $env["ATTACKONTITAN_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["ATTACKONTITAN_APIKEY"],
         ];
         $client = new AttackOnTitanSDK($merged_opts);
         return [

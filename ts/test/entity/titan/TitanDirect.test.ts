@@ -136,14 +136,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'ATTACKONTITAN_TEST_TITAN_ENTID': {},
     'ATTACKONTITAN_TEST_LIVE': 'FALSE',
-    'ATTACKONTITAN_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.ATTACKONTITAN_TEST_LIVE
 
   if (live) {
     const client = new AttackOnTitanSDK({
-      apikey: env.ATTACKONTITAN_APIKEY,
     })
 
     let idmap: any = env['ATTACKONTITAN_TEST_TITAN_ENTID']
