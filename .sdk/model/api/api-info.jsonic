@@ -17,29 +17,7 @@ main: {
       ]
       title: "Attack on Titan API"
       version: "1.0.0"
-      tagline: "Browse characters, episodes, locations, organizations, and titans from the Attack on Titan anime and manga"
-      homepage: "https://www.attackontitanapi.com/"
-      docs_url: "https://www.attackontitanapi.com/"
-      about_md: `The Attack on Titan API is a free REST API providing data about the manga and anime series *Attack on Titan*. It is maintained by [Zach McMullen](https://www.attackontitanapi.com/) and served from \`https://api.attackontitanapi.com\`.
-
-What you get from the API:
-
-- \`GET /characters\` — characters from the series
-- \`GET /episodes\` — anime episode listings
-- \`GET /locations\` — places in the *Attack on Titan* world
-- \`GET /organizations\` — factions and groups
-- \`GET /titans\` — titans, including fields like name, height (metres), current inheritor, allegiance, and abilities
-- \`GET /\` — index of available routes
-
-The API requires no authentication. Authentication, rate limits, and licence terms are not documented on the project homepage, so treat usage as best-effort and check the project page before relying on it in production.`
-      entity_desc: {
-        character: "A character from the *Attack on Titan* series, served from `GET /characters`."
-        episode: "An anime episode entry, served from `GET /episodes`."
-        location: "A place within the *Attack on Titan* world, served from `GET /locations`."
-        organization: "A faction or group from the series, served from `GET /organizations`."
-        titan: "A titan with fields such as name, height (metres), current inheritor, allegiance, and abilities, served from `GET /titans`."
-      }
-      auth: false
     }
   }
 }
+

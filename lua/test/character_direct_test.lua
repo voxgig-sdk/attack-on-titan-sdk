@@ -117,12 +117,14 @@ function character_direct_setup(mockres)
   local env = runner.env_override({
     ["ATTACKONTITAN_TEST_CHARACTER_ENTID"] = {},
     ["ATTACKONTITAN_TEST_LIVE"] = "FALSE",
+    ["ATTACKONTITAN_APIKEY"] = "NONE",
   })
 
   local live = env["ATTACKONTITAN_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["ATTACKONTITAN_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

@@ -96,6 +96,7 @@ function character_basic_setup($extra)
         "ATTACKONTITAN_TEST_CHARACTER_ENTID" => $idmap,
         "ATTACKONTITAN_TEST_LIVE" => "FALSE",
         "ATTACKONTITAN_TEST_EXPLAIN" => "FALSE",
+        "ATTACKONTITAN_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -107,6 +108,7 @@ function character_basic_setup($extra)
     if ($env["ATTACKONTITAN_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["ATTACKONTITAN_APIKEY"],
             ],
             $extra ?? [],
         ]);

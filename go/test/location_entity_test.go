@@ -135,6 +135,7 @@ func locationBasicSetup(extra map[string]any) *entityTestSetup {
 		"ATTACKONTITAN_TEST_LOCATION_ENTID": idmap,
 		"ATTACKONTITAN_TEST_LIVE":      "FALSE",
 		"ATTACKONTITAN_TEST_EXPLAIN":   "FALSE",
+		"ATTACKONTITAN_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["ATTACKONTITAN_TEST_LOCATION_ENTID"])
@@ -145,6 +146,7 @@ func locationBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["ATTACKONTITAN_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["ATTACKONTITAN_APIKEY"],
 			},
 			extra,
 		})

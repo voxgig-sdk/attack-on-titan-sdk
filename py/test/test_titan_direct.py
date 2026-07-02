@@ -109,12 +109,14 @@ def _titan_direct_setup(mockres):
     env = runner.env_override({
         "ATTACKONTITAN_TEST_TITAN_ENTID": {},
         "ATTACKONTITAN_TEST_LIVE": "FALSE",
+        "ATTACKONTITAN_APIKEY": "NONE",
     })
 
     live = env.get("ATTACKONTITAN_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("ATTACKONTITAN_APIKEY"),
         }
         client = AttackOnTitanSDK(merged_opts)
         return {
