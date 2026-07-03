@@ -10,7 +10,7 @@ The Python SDK for the AttackOnTitan API — an entity-oriented client following
 
 ## Install
 ```bash
-pip install attack-on-titan-sdk
+pip install voxgig-sdk-attack-on-titan
 ```
 
 Or install from source:

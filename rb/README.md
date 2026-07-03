@@ -10,13 +10,13 @@ The Ruby SDK for the AttackOnTitan API — an entity-oriented client using idiom
 
 ## Install
 ```bash
-gem install attack-on-titan-sdk
+gem install voxgig-sdk-attack-on-titan
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "attack-on-titan-sdk"
+gem "voxgig-sdk-attack-on-titan"
 ```
 
 Then run:

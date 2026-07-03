@@ -10,7 +10,7 @@ The TypeScript SDK for the AttackOnTitan API — a type-safe, entity-oriented cl
 
 ## Install
 ```bash
-npm install attack-on-titan
+npm install @voxgig-sdk/attack-on-titan
 ```
 ## Tutorial: your first API call
 

@@ -10,7 +10,7 @@ The PHP SDK for the AttackOnTitan API — an entity-oriented client using PHP co
 
 ## Install
 ```bash
-composer require voxgig/attack-on-titan-sdk
+composer require voxgig-sdk/attack-on-titan
 ```
 
 

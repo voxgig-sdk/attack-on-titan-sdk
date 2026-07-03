@@ -10,7 +10,7 @@ The Lua SDK for the AttackOnTitan API — an entity-oriented client using Lua co
 
 ## Install
 ```bash
-luarocks install attack-on-titan-sdk
+luarocks install voxgig-sdk-attack-on-titan
 ```
 
 If the module is not yet published, add the source directory to

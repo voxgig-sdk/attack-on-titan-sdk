@@ -8,12 +8,14 @@ source = {
   dir = "attack-on-titan-sdk/lua"
 }
 description = {
-  summary = "AttackOnTitan SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Attack on Titan public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/attack-on-titan-sdk",
+  issues_url = "https://github.com/voxgig-sdk/attack-on-titan-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "attack-on-titan" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {
