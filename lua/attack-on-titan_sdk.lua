@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:character():list() / client:character():load({ id = ... })
-function AttackOnTitanSDK:character(data)
+-- Idiomatic facade: client:Character():list() / client:Character():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function AttackOnTitanSDK:Character(data)
   local EntityMod = require("entity.character_entity")
   if data == nil then
     if self._character == nil then
@@ -256,15 +257,10 @@ function AttackOnTitanSDK:character(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:character() instead.
-function AttackOnTitanSDK:Character(data)
-  local EntityMod = require("entity.character_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:episode():list() / client:episode():load({ id = ... })
-function AttackOnTitanSDK:episode(data)
+-- Idiomatic facade: client:Episode():list() / client:Episode():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function AttackOnTitanSDK:Episode(data)
   local EntityMod = require("entity.episode_entity")
   if data == nil then
     if self._episode == nil then
@@ -275,15 +271,10 @@ function AttackOnTitanSDK:episode(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:episode() instead.
-function AttackOnTitanSDK:Episode(data)
-  local EntityMod = require("entity.episode_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:location():list() / client:location():load({ id = ... })
-function AttackOnTitanSDK:location(data)
+-- Idiomatic facade: client:Location():list() / client:Location():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function AttackOnTitanSDK:Location(data)
   local EntityMod = require("entity.location_entity")
   if data == nil then
     if self._location == nil then
@@ -294,15 +285,10 @@ function AttackOnTitanSDK:location(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:location() instead.
-function AttackOnTitanSDK:Location(data)
-  local EntityMod = require("entity.location_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:organization():list() / client:organization():load({ id = ... })
-function AttackOnTitanSDK:organization(data)
+-- Idiomatic facade: client:Organization():list() / client:Organization():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function AttackOnTitanSDK:Organization(data)
   local EntityMod = require("entity.organization_entity")
   if data == nil then
     if self._organization == nil then
@@ -313,15 +299,10 @@ function AttackOnTitanSDK:organization(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:organization() instead.
-function AttackOnTitanSDK:Organization(data)
-  local EntityMod = require("entity.organization_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:titan():list() / client:titan():load({ id = ... })
-function AttackOnTitanSDK:titan(data)
+-- Idiomatic facade: client:Titan():list() / client:Titan():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function AttackOnTitanSDK:Titan(data)
   local EntityMod = require("entity.titan_entity")
   if data == nil then
     if self._titan == nil then
@@ -329,12 +310,6 @@ function AttackOnTitanSDK:titan(data)
     end
     return self._titan
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:titan() instead.
-function AttackOnTitanSDK:Titan(data)
-  local EntityMod = require("entity.titan_entity")
   return EntityMod.new(self, data)
 end
 

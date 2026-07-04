@@ -233,10 +233,10 @@ class AttackOnTitanSDK
 
     private $_character = null;
 
-    // Idiomatic facade: $client->character()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Character() (PHP method
-    // names are case-insensitive).
-    public function character($data = null)
+    // Canonical facade: $client->Character()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->character()
+    // resolves here too.
+    public function Character($data = null)
     {
         require_once __DIR__ . '/entity/character_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class AttackOnTitanSDK
 
     private $_episode = null;
 
-    // Idiomatic facade: $client->episode()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Episode() (PHP method
-    // names are case-insensitive).
-    public function episode($data = null)
+    // Canonical facade: $client->Episode()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->episode()
+    // resolves here too.
+    public function Episode($data = null)
     {
         require_once __DIR__ . '/entity/episode_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class AttackOnTitanSDK
 
     private $_location = null;
 
-    // Idiomatic facade: $client->location()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Location() (PHP method
-    // names are case-insensitive).
-    public function location($data = null)
+    // Canonical facade: $client->Location()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->location()
+    // resolves here too.
+    public function Location($data = null)
     {
         require_once __DIR__ . '/entity/location_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class AttackOnTitanSDK
 
     private $_organization = null;
 
-    // Idiomatic facade: $client->organization()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Organization() (PHP method
-    // names are case-insensitive).
-    public function organization($data = null)
+    // Canonical facade: $client->Organization()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->organization()
+    // resolves here too.
+    public function Organization($data = null)
     {
         require_once __DIR__ . '/entity/organization_entity.php';
         if ($data === null) {
@@ -305,10 +305,10 @@ class AttackOnTitanSDK
 
     private $_titan = null;
 
-    // Idiomatic facade: $client->titan()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Titan() (PHP method
-    // names are case-insensitive).
-    public function titan($data = null)
+    // Canonical facade: $client->Titan()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->titan()
+    // resolves here too.
+    public function Titan($data = null)
     {
         require_once __DIR__ . '/entity/titan_entity.php';
         if ($data === null) {

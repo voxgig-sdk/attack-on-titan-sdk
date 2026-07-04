@@ -208,65 +208,35 @@ class AttackOnTitanSDK
   end
 
 
-  # Idiomatic facade: client.character.list / client.character.load({ "id" => ... })
-  def character
-    require_relative 'entity/character_entity'
-    @character ||= CharacterEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.character instead.
+  # Canonical facade: client.Character.list / client.Character.load({ "id" => ... })
   def Character(data = nil)
     require_relative 'entity/character_entity'
     CharacterEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.episode.list / client.episode.load({ "id" => ... })
-  def episode
-    require_relative 'entity/episode_entity'
-    @episode ||= EpisodeEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.episode instead.
+  # Canonical facade: client.Episode.list / client.Episode.load({ "id" => ... })
   def Episode(data = nil)
     require_relative 'entity/episode_entity'
     EpisodeEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.location.list / client.location.load({ "id" => ... })
-  def location
-    require_relative 'entity/location_entity'
-    @location ||= LocationEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.location instead.
+  # Canonical facade: client.Location.list / client.Location.load({ "id" => ... })
   def Location(data = nil)
     require_relative 'entity/location_entity'
     LocationEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.organization.list / client.organization.load({ "id" => ... })
-  def organization
-    require_relative 'entity/organization_entity'
-    @organization ||= OrganizationEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.organization instead.
+  # Canonical facade: client.Organization.list / client.Organization.load({ "id" => ... })
   def Organization(data = nil)
     require_relative 'entity/organization_entity'
     OrganizationEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.titan.list / client.titan.load({ "id" => ... })
-  def titan
-    require_relative 'entity/titan_entity'
-    @titan ||= TitanEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.titan instead.
+  # Canonical facade: client.Titan.list / client.Titan.load({ "id" => ... })
   def Titan(data = nil)
     require_relative 'entity/titan_entity'
     TitanEntity.new(self, data)

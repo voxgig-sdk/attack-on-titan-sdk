@@ -157,7 +157,7 @@ Alias for `AttackOnTitanSDK.test()`.
 ## CharacterEntity
 
 ```ts
-const character = client.character
+const character = client.Character()
 ```
 
 ### Fields
@@ -181,7 +181,7 @@ const character = client.character
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.character.list()
+const results = await client.Character().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -189,7 +189,7 @@ const results = await client.character.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.character.load({ id: 'character_id' })
+const result = await client.Character().load({ id: 'character_id' })
 ```
 
 ### Common Methods
@@ -223,7 +223,7 @@ Return a copy of the entity options.
 ## EpisodeEntity
 
 ```ts
-const episode = client.episode
+const episode = client.Episode()
 ```
 
 ### Fields
@@ -244,7 +244,7 @@ const episode = client.episode
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.episode.list()
+const results = await client.Episode().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -252,7 +252,7 @@ const results = await client.episode.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.episode.load({ id: 'episode_id' })
+const result = await client.Episode().load({ id: 'episode_id' })
 ```
 
 ### Common Methods
@@ -286,7 +286,7 @@ Return a copy of the entity options.
 ## LocationEntity
 
 ```ts
-const location = client.location
+const location = client.Location()
 ```
 
 ### Fields
@@ -306,7 +306,7 @@ const location = client.location
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.location.list()
+const results = await client.Location().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -314,7 +314,7 @@ const results = await client.location.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.location.load({ id: 'location_id' })
+const result = await client.Location().load({ id: 'location_id' })
 ```
 
 ### Common Methods
@@ -348,7 +348,7 @@ Return a copy of the entity options.
 ## OrganizationEntity
 
 ```ts
-const organization = client.organization
+const organization = client.Organization()
 ```
 
 ### Fields
@@ -369,7 +369,7 @@ const organization = client.organization
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.organization.list()
+const results = await client.Organization().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -377,7 +377,7 @@ const results = await client.organization.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.organization.load({ id: 'organization_id' })
+const result = await client.Organization().load({ id: 'organization_id' })
 ```
 
 ### Common Methods
@@ -411,7 +411,7 @@ Return a copy of the entity options.
 ## TitanEntity
 
 ```ts
-const titan = client.titan
+const titan = client.Titan()
 ```
 
 ### Fields
@@ -433,7 +433,7 @@ const titan = client.titan
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.titan.list()
+const results = await client.Titan().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -441,7 +441,7 @@ const results = await client.titan.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.titan.load({ id: 'titan_id' })
+const result = await client.Titan().load({ id: 'titan_id' })
 ```
 
 ### Common Methods
