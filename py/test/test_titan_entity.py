@@ -50,16 +50,14 @@ class TestTitanEntity:
         titan_ref01_ent = client.Titan(None)
         titan_ref01_match = {}
 
-        titan_ref01_list_result, err = titan_ref01_ent.list(titan_ref01_match, None)
-        assert err is None
+        titan_ref01_list_result = titan_ref01_ent.list(titan_ref01_match, None)
         assert isinstance(titan_ref01_list_result, list)
 
         # LOAD
         titan_ref01_match_dt0 = {
             "id": titan_ref01_data["id"],
         }
-        titan_ref01_data_dt0_loaded, err = titan_ref01_ent.load(titan_ref01_match_dt0, None)
-        assert err is None
+        titan_ref01_data_dt0_loaded = titan_ref01_ent.load(titan_ref01_match_dt0, None)
         titan_ref01_data_dt0_load_result = helpers.to_map(titan_ref01_data_dt0_loaded)
         assert titan_ref01_data_dt0_load_result is not None
         assert titan_ref01_data_dt0_load_result["id"] == titan_ref01_data["id"]
@@ -102,7 +100,6 @@ def _titan_basic_setup(extra):
         "ATTACKONTITAN_TEST_TITAN_ENTID": idmap,
         "ATTACKONTITAN_TEST_LIVE": "FALSE",
         "ATTACKONTITAN_TEST_EXPLAIN": "FALSE",
-        "ATTACKONTITAN_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -113,7 +110,6 @@ def _titan_basic_setup(extra):
     if env.get("ATTACKONTITAN_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("ATTACKONTITAN_APIKEY"),
             },
             extra or {},
         ])

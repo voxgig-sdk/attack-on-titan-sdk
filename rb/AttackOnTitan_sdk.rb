@@ -13,6 +13,9 @@ require_relative 'config'
 require_relative 'feature/base_feature'
 require_relative 'features'
 
+# Load typed models (Struct value objects).
+require_relative 'AttackOnTitan_types'
+
 
 class AttackOnTitanSDK
   attr_accessor :mode, :features, :options
@@ -131,7 +134,7 @@ class AttackOnTitanSDK
     end
 
     _, err = utility.prepare_auth.call(ctx)
-    return nil, err if err
+    raise err if err
 
     utility.make_fetch_def.call(ctx)
   end
@@ -139,8 +142,14 @@ class AttackOnTitanSDK
   def direct(fetchargs = {})
     utility = @_utility
 
-    fetchdef, err = prepare(fetchargs)
-    return { "ok" => false, "err" => err }, nil if err
+    # direct() is the raw-HTTP escape hatch: it always returns a result hash
+    # ({ "ok" => ..., ... }) and never raises. prepare() raises on error, so
+    # trap that and surface it in the hash.
+    begin
+      fetchdef = prepare(fetchargs)
+    rescue AttackOnTitanError => err
+      return { "ok" => false, "err" => err }
+    end
 
     fetchargs ||= {}
     ctrl = AttackOnTitanHelpers.to_map(VoxgigStruct.getprop(fetchargs, "ctrl")) || {}
@@ -153,13 +162,13 @@ class AttackOnTitanSDK
     url = fetchdef["url"] || ""
     fetched, fetch_err = utility.fetcher.call(ctx, url, fetchdef)
 
-    return { "ok" => false, "err" => fetch_err }, nil if fetch_err
+    return { "ok" => false, "err" => fetch_err } if fetch_err
 
     if fetched.nil?
       return {
         "ok" => false,
         "err" => ctx.make_error("direct_no_response", "response: undefined"),
-      }, nil
+      }
     end
 
     if fetched.is_a?(Hash)
@@ -189,40 +198,75 @@ class AttackOnTitanSDK
         "status" => status,
         "headers" => headers,
         "data" => json_data,
-      }, nil
+      }
     end
 
     return {
       "ok" => false,
       "err" => ctx.make_error("direct_invalid", "invalid response type"),
-    }, nil
+    }
   end
 
 
+  # Idiomatic facade: client.character.list / client.character.load({ "id" => ... })
+  def character
+    require_relative 'entity/character_entity'
+    @character ||= CharacterEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.character instead.
   def Character(data = nil)
     require_relative 'entity/character_entity'
     CharacterEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.episode.list / client.episode.load({ "id" => ... })
+  def episode
+    require_relative 'entity/episode_entity'
+    @episode ||= EpisodeEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.episode instead.
   def Episode(data = nil)
     require_relative 'entity/episode_entity'
     EpisodeEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.location.list / client.location.load({ "id" => ... })
+  def location
+    require_relative 'entity/location_entity'
+    @location ||= LocationEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.location instead.
   def Location(data = nil)
     require_relative 'entity/location_entity'
     LocationEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.organization.list / client.organization.load({ "id" => ... })
+  def organization
+    require_relative 'entity/organization_entity'
+    @organization ||= OrganizationEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.organization instead.
   def Organization(data = nil)
     require_relative 'entity/organization_entity'
     OrganizationEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.titan.list / client.titan.load({ "id" => ... })
+  def titan
+    require_relative 'entity/titan_entity'
+    @titan ||= TitanEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.titan instead.
   def Titan(data = nil)
     require_relative 'entity/titan_entity'
     TitanEntity.new(self, data)

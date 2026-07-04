@@ -6,6 +6,8 @@ import { LocationEntity } from './entity/LocationEntity'
 import { OrganizationEntity } from './entity/OrganizationEntity'
 import { TitanEntity } from './entity/TitanEntity'
 
+export type * from './AttackOnTitanTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -206,30 +208,70 @@ class AttackOnTitanSDK {
 
 
 
+  _character?: CharacterEntity
+
+  // Idiomatic facade: `client.character.list()` / `client.character.load({ id })`.
+  get character(): CharacterEntity {
+    return (this._character ??= new CharacterEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.character` instead. */
   Character(data?: any) {
     const self = this
     return new CharacterEntity(self,data)
   }
 
 
+  _episode?: EpisodeEntity
+
+  // Idiomatic facade: `client.episode.list()` / `client.episode.load({ id })`.
+  get episode(): EpisodeEntity {
+    return (this._episode ??= new EpisodeEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.episode` instead. */
   Episode(data?: any) {
     const self = this
     return new EpisodeEntity(self,data)
   }
 
 
+  _location?: LocationEntity
+
+  // Idiomatic facade: `client.location.list()` / `client.location.load({ id })`.
+  get location(): LocationEntity {
+    return (this._location ??= new LocationEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.location` instead. */
   Location(data?: any) {
     const self = this
     return new LocationEntity(self,data)
   }
 
 
+  _organization?: OrganizationEntity
+
+  // Idiomatic facade: `client.organization.list()` / `client.organization.load({ id })`.
+  get organization(): OrganizationEntity {
+    return (this._organization ??= new OrganizationEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.organization` instead. */
   Organization(data?: any) {
     const self = this
     return new OrganizationEntity(self,data)
   }
 
 
+  _titan?: TitanEntity
+
+  // Idiomatic facade: `client.titan.list()` / `client.titan.load({ id })`.
+  get titan(): TitanEntity {
+    return (this._titan ??= new TitanEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.titan` instead. */
   Titan(data?: any) {
     const self = this
     return new TitanEntity(self,data)

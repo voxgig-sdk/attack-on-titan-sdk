@@ -103,7 +103,7 @@ class AttackOnTitanSDK
         return $this->_rootctx;
     }
 
-    public function prepare(array $fetchargs = []): array
+    public function prepare(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
         $fetchargs = $fetchargs ?? [];
@@ -149,19 +149,27 @@ class AttackOnTitanSDK
 
         [$_, $err] = ($utility->prepare_auth)($ctx);
         if ($err) {
-            return [null, $err];
+            return ($utility->make_error)($ctx, $err);
         }
 
-        return ($utility->make_fetch_def)($ctx);
+        [$fetchdef, $fd_err] = ($utility->make_fetch_def)($ctx);
+        if ($fd_err) {
+            return ($utility->make_error)($ctx, $fd_err);
+        }
+        return $fetchdef;
     }
 
-    public function direct(array $fetchargs = []): array
+    public function direct(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
 
-        [$fetchdef, $err] = $this->prepare($fetchargs);
-        if ($err) {
-            return [["ok" => false, "err" => $err], null];
+        // direct() is the raw-HTTP escape hatch: it never throws, it returns
+        // an {ok, err, ...} dict. prepare() now raises on error, so catch it
+        // and surface the failure through the dict instead.
+        try {
+            $fetchdef = $this->prepare($fetchargs);
+        } catch (\Throwable $err) {
+            return ["ok" => false, "err" => $err];
         }
 
         $fetchargs = $fetchargs ?? [];
@@ -176,14 +184,14 @@ class AttackOnTitanSDK
         [$fetched, $fetch_err] = ($utility->fetcher)($ctx, $url, $fetchdef);
 
         if ($fetch_err) {
-            return [["ok" => false, "err" => $fetch_err], null];
+            return ["ok" => false, "err" => $fetch_err];
         }
 
         if ($fetched === null) {
-            return [[
+            return [
                 "ok" => false,
                 "err" => $ctx->make_error("direct_no_response", "response: undefined"),
-            ], null];
+            ];
         }
 
         if (is_array($fetched)) {
@@ -208,52 +216,107 @@ class AttackOnTitanSDK
                 }
             }
 
-            return [[
+            return [
                 "ok" => $status >= 200 && $status < 300,
                 "status" => $status,
                 "headers" => Struct::getprop($fetched, "headers"),
                 "data" => $json_data,
-            ], null];
+            ];
         }
 
-        return [[
+        return [
             "ok" => false,
             "err" => $ctx->make_error("direct_invalid", "invalid response type"),
-        ], null];
+        ];
     }
 
 
-    public function Character($data = null)
+    private $_character = null;
+
+    // Idiomatic facade: $client->character()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Character() (PHP method
+    // names are case-insensitive).
+    public function character($data = null)
     {
         require_once __DIR__ . '/entity/character_entity.php';
+        if ($data === null) {
+            if ($this->_character === null) {
+                $this->_character = new CharacterEntity($this, null);
+            }
+            return $this->_character;
+        }
         return new CharacterEntity($this, $data);
     }
 
 
-    public function Episode($data = null)
+    private $_episode = null;
+
+    // Idiomatic facade: $client->episode()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Episode() (PHP method
+    // names are case-insensitive).
+    public function episode($data = null)
     {
         require_once __DIR__ . '/entity/episode_entity.php';
+        if ($data === null) {
+            if ($this->_episode === null) {
+                $this->_episode = new EpisodeEntity($this, null);
+            }
+            return $this->_episode;
+        }
         return new EpisodeEntity($this, $data);
     }
 
 
-    public function Location($data = null)
+    private $_location = null;
+
+    // Idiomatic facade: $client->location()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Location() (PHP method
+    // names are case-insensitive).
+    public function location($data = null)
     {
         require_once __DIR__ . '/entity/location_entity.php';
+        if ($data === null) {
+            if ($this->_location === null) {
+                $this->_location = new LocationEntity($this, null);
+            }
+            return $this->_location;
+        }
         return new LocationEntity($this, $data);
     }
 
 
-    public function Organization($data = null)
+    private $_organization = null;
+
+    // Idiomatic facade: $client->organization()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Organization() (PHP method
+    // names are case-insensitive).
+    public function organization($data = null)
     {
         require_once __DIR__ . '/entity/organization_entity.php';
+        if ($data === null) {
+            if ($this->_organization === null) {
+                $this->_organization = new OrganizationEntity($this, null);
+            }
+            return $this->_organization;
+        }
         return new OrganizationEntity($this, $data);
     }
 
 
-    public function Titan($data = null)
+    private $_titan = null;
+
+    // Idiomatic facade: $client->titan()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Titan() (PHP method
+    // names are case-insensitive).
+    public function titan($data = null)
     {
         require_once __DIR__ . '/entity/titan_entity.php';
+        if ($data === null) {
+            if ($this->_titan === null) {
+                $this->_titan = new TitanEntity($this, null);
+            }
+            return $this->_titan;
+        }
         return new TitanEntity($this, $data);
     }
 

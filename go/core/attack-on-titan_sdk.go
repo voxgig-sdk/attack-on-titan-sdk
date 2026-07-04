@@ -245,26 +245,41 @@ func (sdk *AttackOnTitanSDK) Direct(fetchargs map[string]any) (map[string]any, e
 }
 
 
+// Character returns a Character entity bound to this client.
+// Idiomatic usage: client.Character(nil).List(nil, nil) or
+// client.Character(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *AttackOnTitanSDK) Character(data map[string]any) AttackOnTitanEntity {
 	return NewCharacterEntityFunc(sdk, data)
 }
 
 
+// Episode returns a Episode entity bound to this client.
+// Idiomatic usage: client.Episode(nil).List(nil, nil) or
+// client.Episode(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *AttackOnTitanSDK) Episode(data map[string]any) AttackOnTitanEntity {
 	return NewEpisodeEntityFunc(sdk, data)
 }
 
 
+// Location returns a Location entity bound to this client.
+// Idiomatic usage: client.Location(nil).List(nil, nil) or
+// client.Location(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *AttackOnTitanSDK) Location(data map[string]any) AttackOnTitanEntity {
 	return NewLocationEntityFunc(sdk, data)
 }
 
 
+// Organization returns a Organization entity bound to this client.
+// Idiomatic usage: client.Organization(nil).List(nil, nil) or
+// client.Organization(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *AttackOnTitanSDK) Organization(data map[string]any) AttackOnTitanEntity {
 	return NewOrganizationEntityFunc(sdk, data)
 }
 
 
+// Titan returns a Titan entity bound to this client.
+// Idiomatic usage: client.Titan(nil).List(nil, nil) or
+// client.Titan(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *AttackOnTitanSDK) Titan(data map[string]any) AttackOnTitanEntity {
 	return NewTitanEntityFunc(sdk, data)
 }

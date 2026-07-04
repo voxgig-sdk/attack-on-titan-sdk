@@ -9,9 +9,10 @@ The PHP SDK for the AttackOnTitan API — an entity-oriented client using PHP co
 
 
 ## Install
-```bash
-composer require voxgig-sdk/attack-on-titan
-```
+This package is not yet published to Packagist. Install it from the
+GitHub release tag (`php/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/attack-on-titan-sdk/releases](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases)
 
 
 ## Tutorial: your first API call
@@ -25,31 +26,34 @@ loading a specific record.
 <?php
 require_once 'attackontitan_sdk.php';
 
-$client = new AttackOnTitanSDK([
-    "apikey" => getenv("ATTACK-ON-TITAN_APIKEY"),
-]);
+$client = new AttackOnTitanSDK();
 ```
 
 ### 2. List characters
 
 ```php
-[$result, $err] = $client->Character()->list();
-if ($err) { throw new \Exception($err); }
-
-if (is_array($result)) {
-    foreach ($result as $item) {
-        $d = $item->data_get();
-        echo $d["id"] . " " . $d["name"] . "\n";
+try {
+    $result = $client->character()->list();
+    if (is_array($result)) {
+        foreach ($result as $item) {
+            $d = $item->data_get();
+            echo $d["id"] . " " . $d["name"] . "\n";
+        }
     }
+} catch (\Exception $err) {
+    echo "Error: " . $err->getMessage();
 }
 ```
 
 ### 3. Load a character
 
 ```php
-[$result, $err] = $client->Character()->load(["id" => "example_id"]);
-if ($err) { throw new \Exception($err); }
-print_r($result);
+try {
+    $result = $client->character()->load(["id" => "example_id"]);
+    print_r($result);
+} catch (\Exception $err) {
+    echo "Error: " . $err->getMessage();
+}
 ```
 
 
@@ -60,28 +64,31 @@ print_r($result);
 For endpoints not covered by entity methods:
 
 ```php
-[$result, $err] = $client->direct([
+// direct() is the raw-HTTP escape hatch: it returns a result array
+// (it does not throw). Branch on $result["ok"].
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
+} else {
+    echo "Error: " . $result["err"]->getMessage();
 }
 ```
 
 ### Prepare a request without sending it
 
 ```php
-[$fetchdef, $err] = $client->prepare([
+// prepare() throws on error and returns the fetch definition.
+$fetchdef = $client->prepare([
     "path" => "/api/resource/{id}",
     "method" => "DELETE",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 echo $fetchdef["url"];
 echo $fetchdef["method"];
@@ -95,7 +102,7 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = AttackOnTitanSDK::test();
 
-[$result, $err] = $client->AttackOnTitan()->load(["id" => "test01"]);
+$result = $client->character()->load(["id" => "test01"]);
 // $result contains mock response data
 ```
 
@@ -129,8 +136,7 @@ $client = new AttackOnTitanSDK([
 Create a `.env.local` file at the project root:
 
 ```
-ATTACK-ON-TITAN_TEST_LIVE=TRUE
-ATTACK-ON-TITAN_APIKEY=<your-key>
+ATTACK_ON_TITAN_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -153,7 +159,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -203,8 +208,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `[$result, $err]`. The first value is an
-`array` with these keys:
+Entity operations return the bare result data (an `array` for single-entity
+ops, a `list` for `list`) and throw on error. Wrap calls in
+`try`/`catch` to handle failures.
+
+The `direct()` escape hatch never throws — it returns a result `array`
+you branch on via `$result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -302,7 +311,7 @@ API path: `/titans`
 
 ### Character
 
-Create an instance: `const character = client.Character()`
+Create an instance: `const character = client.character`
 
 #### Operations
 
@@ -328,19 +337,19 @@ Create an instance: `const character = client.Character()`
 #### Example: Load
 
 ```ts
-const character = await client.Character().load({ id: 'character_id' })
+const character = await client.character.load({ id: 'character_id' })
 ```
 
 #### Example: List
 
 ```ts
-const characters = await client.Character().list()
+const characters = await client.character.list()
 ```
 
 
 ### Episode
 
-Create an instance: `const episode = client.Episode()`
+Create an instance: `const episode = client.episode`
 
 #### Operations
 
@@ -363,19 +372,19 @@ Create an instance: `const episode = client.Episode()`
 #### Example: Load
 
 ```ts
-const episode = await client.Episode().load({ id: 'episode_id' })
+const episode = await client.episode.load({ id: 'episode_id' })
 ```
 
 #### Example: List
 
 ```ts
-const episodes = await client.Episode().list()
+const episodes = await client.episode.list()
 ```
 
 
 ### Location
 
-Create an instance: `const location = client.Location()`
+Create an instance: `const location = client.location`
 
 #### Operations
 
@@ -397,19 +406,19 @@ Create an instance: `const location = client.Location()`
 #### Example: Load
 
 ```ts
-const location = await client.Location().load({ id: 'location_id' })
+const location = await client.location.load({ id: 'location_id' })
 ```
 
 #### Example: List
 
 ```ts
-const locations = await client.Location().list()
+const locations = await client.location.list()
 ```
 
 
 ### Organization
 
-Create an instance: `const organization = client.Organization()`
+Create an instance: `const organization = client.organization`
 
 #### Operations
 
@@ -432,19 +441,19 @@ Create an instance: `const organization = client.Organization()`
 #### Example: Load
 
 ```ts
-const organization = await client.Organization().load({ id: 'organization_id' })
+const organization = await client.organization.load({ id: 'organization_id' })
 ```
 
 #### Example: List
 
 ```ts
-const organizations = await client.Organization().list()
+const organizations = await client.organization.list()
 ```
 
 
 ### Titan
 
-Create an instance: `const titan = client.Titan()`
+Create an instance: `const titan = client.titan`
 
 #### Operations
 
@@ -468,13 +477,13 @@ Create an instance: `const titan = client.Titan()`
 #### Example: Load
 
 ```ts
-const titan = await client.Titan().load({ id: 'titan_id' })
+const titan = await client.titan.load({ id: 'titan_id' })
 ```
 
 #### Example: List
 
 ```ts
-const titans = await client.Titan().list()
+const titans = await client.titan.list()
 ```
 
 
@@ -549,11 +558,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$moon = $client->Moon();
-[$result, $err] = $moon->load(["planet_id" => "earth", "id" => "luna"]);
+$character = $client->character();
+$character->load(["id" => "example_id"]);
 
-// $moon->dataGet() now returns the loaded moon data
-// $moon->matchGet() returns the last match criteria
+// $character->dataGet() now returns the loaded character data
+// $character->matchGet() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -194,14 +194,12 @@ func locationDirectSetup(mockres any) *locationDirectSetupResult {
 	env := envOverride(map[string]any{
 		"ATTACKONTITAN_TEST_LOCATION_ENTID": map[string]any{},
 		"ATTACKONTITAN_TEST_LIVE":    "FALSE",
-		"ATTACKONTITAN_APIKEY":       "NONE",
 	})
 
 	live := env["ATTACKONTITAN_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["ATTACKONTITAN_APIKEY"],
 		}
 		client := sdk.NewAttackOnTitanSDK(mergedOpts)
 

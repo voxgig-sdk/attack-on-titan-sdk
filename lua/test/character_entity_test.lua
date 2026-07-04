@@ -102,7 +102,6 @@ function character_basic_setup(extra)
     ["ATTACKONTITAN_TEST_CHARACTER_ENTID"] = idmap,
     ["ATTACKONTITAN_TEST_LIVE"] = "FALSE",
     ["ATTACKONTITAN_TEST_EXPLAIN"] = "FALSE",
-    ["ATTACKONTITAN_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -114,7 +113,6 @@ function character_basic_setup(extra)
   if env["ATTACKONTITAN_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["ATTACKONTITAN_APIKEY"],
       },
       extra or {},
     })

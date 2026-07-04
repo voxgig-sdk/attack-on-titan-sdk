@@ -43,16 +43,14 @@ class TitanEntityTest < Minitest::Test
     titan_ref01_ent = client.Titan(nil)
     titan_ref01_match = {}
 
-    titan_ref01_list_result, err = titan_ref01_ent.list(titan_ref01_match, nil)
-    assert_nil err
+    titan_ref01_list_result = titan_ref01_ent.list(titan_ref01_match, nil)
     assert titan_ref01_list_result.is_a?(Array)
 
     # LOAD
     titan_ref01_match_dt0 = {
       "id" => titan_ref01_data["id"],
     }
-    titan_ref01_data_dt0_loaded, err = titan_ref01_ent.load(titan_ref01_match_dt0, nil)
-    assert_nil err
+    titan_ref01_data_dt0_loaded = titan_ref01_ent.load(titan_ref01_match_dt0, nil)
     titan_ref01_data_dt0_load_result = Helpers.to_map(titan_ref01_data_dt0_loaded)
     assert !titan_ref01_data_dt0_load_result.nil?
     assert_equal titan_ref01_data_dt0_load_result["id"], titan_ref01_data["id"]
@@ -93,7 +91,6 @@ def titan_basic_setup(extra)
     "ATTACKONTITAN_TEST_TITAN_ENTID" => idmap,
     "ATTACKONTITAN_TEST_LIVE" => "FALSE",
     "ATTACKONTITAN_TEST_EXPLAIN" => "FALSE",
-    "ATTACKONTITAN_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -105,7 +102,6 @@ def titan_basic_setup(extra)
   if env["ATTACKONTITAN_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["ATTACKONTITAN_APIKEY"],
       },
       extra || {},
     ])

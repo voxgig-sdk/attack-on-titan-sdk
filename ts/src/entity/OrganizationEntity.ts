@@ -14,9 +14,14 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Organization,
+  OrganizationLoadMatch,
+  OrganizationListMatch,
+} from '../AttackOnTitanTypes'
 
 // TODO: needs Entity superclass
-class OrganizationEntity extends AttackOnTitanEntityBase {
+class OrganizationEntity extends AttackOnTitanEntityBase<Organization> {
 
   constructor(client: AttackOnTitanSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +37,7 @@ class OrganizationEntity extends AttackOnTitanEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: OrganizationLoadMatch, ctrl?: Control): Promise<Organization> {
 
     const utility = this._utility
 
@@ -136,14 +141,16 @@ class OrganizationEntity extends AttackOnTitanEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Organization> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: OrganizationListMatch, ctrl?: Control): Promise<Organization[]> {
 
     const utility = this._utility
 
@@ -243,7 +250,9 @@ class OrganizationEntity extends AttackOnTitanEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Organization[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

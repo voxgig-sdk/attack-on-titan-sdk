@@ -50,16 +50,14 @@ class OrganizationEntityTest extends TestCase
         $organization_ref01_ent = $client->Organization(null);
         $organization_ref01_match = [];
 
-        [$organization_ref01_list_result, $err] = $organization_ref01_ent->list($organization_ref01_match, null);
-        $this->assertNull($err);
+        $organization_ref01_list_result = $organization_ref01_ent->list($organization_ref01_match, null);
         $this->assertIsArray($organization_ref01_list_result);
 
         // LOAD
         $organization_ref01_match_dt0 = [
             "id" => $organization_ref01_data["id"],
         ];
-        [$organization_ref01_data_dt0_loaded, $err] = $organization_ref01_ent->load($organization_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $organization_ref01_data_dt0_loaded = $organization_ref01_ent->load($organization_ref01_match_dt0, null);
         $organization_ref01_data_dt0_load_result = Helpers::to_map($organization_ref01_data_dt0_loaded);
         $this->assertNotNull($organization_ref01_data_dt0_load_result);
         $this->assertEquals($organization_ref01_data_dt0_load_result["id"], $organization_ref01_data["id"]);
@@ -96,7 +94,6 @@ function organization_basic_setup($extra)
         "ATTACKONTITAN_TEST_ORGANIZATION_ENTID" => $idmap,
         "ATTACKONTITAN_TEST_LIVE" => "FALSE",
         "ATTACKONTITAN_TEST_EXPLAIN" => "FALSE",
-        "ATTACKONTITAN_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -108,7 +105,6 @@ function organization_basic_setup($extra)
     if ($env["ATTACKONTITAN_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["ATTACKONTITAN_APIKEY"],
             ],
             $extra ?? [],
         ]);

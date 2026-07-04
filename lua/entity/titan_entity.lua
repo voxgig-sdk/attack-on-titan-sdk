@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch TitanLoadMatch
+---@param ctrl? table
+---@return Titan
+---@return string? err
 function TitanEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch TitanListMatch
+---@param ctrl? table
+---@return Titan[]
+---@return string? err
 function TitanEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
