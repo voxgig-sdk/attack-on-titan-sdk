@@ -221,31 +221,31 @@ class AttackOnTitanSDK:
 
 
     def Character(self, data=None) -> "CharacterEntity":
-        """Entity factory: client.Character().list({}) / client.Character().load({"id": ...})."""
+        """Entity factory: client.Character().list() / client.Character().load({"id": ...})."""
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
     def Episode(self, data=None) -> "EpisodeEntity":
-        """Entity factory: client.Episode().list({}) / client.Episode().load({"id": ...})."""
+        """Entity factory: client.Episode().list() / client.Episode().load({"id": ...})."""
         from entity.episode_entity import EpisodeEntity
         return EpisodeEntity(self, data)
 
 
     def Location(self, data=None) -> "LocationEntity":
-        """Entity factory: client.Location().list({}) / client.Location().load({"id": ...})."""
+        """Entity factory: client.Location().list() / client.Location().load({"id": ...})."""
         from entity.location_entity import LocationEntity
         return LocationEntity(self, data)
 
 
     def Organization(self, data=None) -> "OrganizationEntity":
-        """Entity factory: client.Organization().list({}) / client.Organization().load({"id": ...})."""
+        """Entity factory: client.Organization().list() / client.Organization().load({"id": ...})."""
         from entity.organization_entity import OrganizationEntity
         return OrganizationEntity(self, data)
 
 
     def Titan(self, data=None) -> "TitanEntity":
-        """Entity factory: client.Titan().list({}) / client.Titan().load({"id": ...})."""
+        """Entity factory: client.Titan().list() / client.Titan().load({"id": ...})."""
         from entity.titan_entity import TitanEntity
         return TitanEntity(self, data)
 

@@ -106,15 +106,15 @@ local character = client:Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affiliation` | ``$STRING`` | No |  |
-| `age` | ``$INTEGER`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `height` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `occupation` | ``$STRING`` | No |  |
-| `species` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `affiliation` | `string` | No |  |
+| `age` | `number` | No |  |
+| `gender` | `string` | No |  |
+| `height` | `string` | No |  |
+| `id` | `string` | No |  |
+| `name` | `string` | No |  |
+| `occupation` | `string` | No |  |
+| `species` | `string` | No |  |
+| `status` | `string` | No |  |
 
 ### Operations
 
@@ -174,12 +174,12 @@ local episode = client:Episode(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `season` | ``$INTEGER`` | No |  |
-| `title` | ``$STRING`` | No |  |
+| `air_date` | `string` | No |  |
+| `description` | `string` | No |  |
+| `episode_number` | `number` | No |  |
+| `id` | `string` | No |  |
+| `season` | `number` | No |  |
+| `title` | `string` | No |  |
 
 ### Operations
 
@@ -239,11 +239,11 @@ local location = client:Location(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `region` | ``$STRING`` | No |  |
-| `significance` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `id` | `string` | No |  |
+| `name` | `string` | No |  |
+| `region` | `string` | No |  |
+| `significance` | `string` | No |  |
 
 ### Operations
 
@@ -303,12 +303,12 @@ local organization = client:Organization(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allegiance` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `leader` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `allegiance` | `string` | No |  |
+| `description` | `string` | No |  |
+| `id` | `string` | No |  |
+| `leader` | `string` | No |  |
+| `name` | `string` | No |  |
+| `type` | `string` | No |  |
 
 ### Operations
 
@@ -368,13 +368,13 @@ local titan = client:Titan(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | ``$ARRAY`` | No |  |
-| `allegiance` | ``$STRING`` | No |  |
-| `current_inheritor` | ``$STRING`` | No |  |
-| `former_inheritor` | ``$ARRAY`` | No |  |
-| `height` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
+| `ability` | `table` | No |  |
+| `allegiance` | `string` | No |  |
+| `current_inheritor` | `string` | No |  |
+| `former_inheritor` | `table` | No |  |
+| `height` | `string` | No |  |
+| `id` | `string` | No |  |
+| `name` | `string` | No |  |
 
 ### Operations
 

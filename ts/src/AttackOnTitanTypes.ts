@@ -21,7 +21,17 @@ export interface CharacterLoadMatch {
   id: string
 }
 
-export type CharacterListMatch = Partial<Character>
+export interface CharacterListMatch {
+  affiliation?: string
+  age?: number
+  gender?: string
+  height?: string
+  id?: string
+  name?: string
+  occupation?: string
+  species?: string
+  status?: string
+}
 
 export interface Episode {
   air_date?: string
@@ -36,7 +46,14 @@ export interface EpisodeLoadMatch {
   id: string
 }
 
-export type EpisodeListMatch = Partial<Episode>
+export interface EpisodeListMatch {
+  air_date?: string
+  description?: string
+  episode_number?: number
+  id?: string
+  season?: number
+  title?: string
+}
 
 export interface Location {
   description?: string
@@ -50,7 +67,13 @@ export interface LocationLoadMatch {
   id: string
 }
 
-export type LocationListMatch = Partial<Location>
+export interface LocationListMatch {
+  description?: string
+  id?: string
+  name?: string
+  region?: string
+  significance?: string
+}
 
 export interface Organization {
   allegiance?: string
@@ -65,7 +88,14 @@ export interface OrganizationLoadMatch {
   id: string
 }
 
-export type OrganizationListMatch = Partial<Organization>
+export interface OrganizationListMatch {
+  allegiance?: string
+  description?: string
+  id?: string
+  leader?: string
+  name?: string
+  type?: string
+}
 
 export interface Titan {
   ability?: any[]
@@ -81,5 +111,13 @@ export interface TitanLoadMatch {
   id: string
 }
 
-export type TitanListMatch = Partial<Titan>
+export interface TitanListMatch {
+  ability?: any[]
+  allegiance?: string
+  current_inheritor?: string
+  former_inheritor?: any[]
+  height?: string
+  id?: string
+  name?: string
+}
 

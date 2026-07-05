@@ -8,7 +8,7 @@ Complete API reference for the AttackOnTitan Python SDK.
 ### Constructor
 
 ```python
-from attack-on-titan_sdk import AttackOnTitanSDK
+from attackontitan_sdk import AttackOnTitanSDK
 
 client = AttackOnTitanSDK(options)
 ```
@@ -103,24 +103,24 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affiliation` | ``$STRING`` | No |  |
-| `age` | ``$INTEGER`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `height` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `occupation` | ``$STRING`` | No |  |
-| `species` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `affiliation` | `str` | No |  |
+| `age` | `int` | No |  |
+| `gender` | `str` | No |  |
+| `height` | `str` | No |  |
+| `id` | `str` | No |  |
+| `name` | `str` | No |  |
+| `occupation` | `str` | No |  |
+| `species` | `str` | No |  |
+| `status` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Character().list({})
+results = client.Character().list()
 for character in results:
     print(character)
 ```
@@ -172,21 +172,21 @@ episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `season` | ``$INTEGER`` | No |  |
-| `title` | ``$STRING`` | No |  |
+| `air_date` | `str` | No |  |
+| `description` | `str` | No |  |
+| `episode_number` | `int` | No |  |
+| `id` | `str` | No |  |
+| `season` | `int` | No |  |
+| `title` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Episode().list({})
+results = client.Episode().list()
 for episode in results:
     print(episode)
 ```
@@ -238,20 +238,20 @@ location = client.Location()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `region` | ``$STRING`` | No |  |
-| `significance` | ``$STRING`` | No |  |
+| `description` | `str` | No |  |
+| `id` | `str` | No |  |
+| `name` | `str` | No |  |
+| `region` | `str` | No |  |
+| `significance` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Location().list({})
+results = client.Location().list()
 for location in results:
     print(location)
 ```
@@ -303,21 +303,21 @@ organization = client.Organization()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allegiance` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `leader` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `allegiance` | `str` | No |  |
+| `description` | `str` | No |  |
+| `id` | `str` | No |  |
+| `leader` | `str` | No |  |
+| `name` | `str` | No |  |
+| `type` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Organization().list({})
+results = client.Organization().list()
 for organization in results:
     print(organization)
 ```
@@ -369,22 +369,22 @@ titan = client.Titan()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | ``$ARRAY`` | No |  |
-| `allegiance` | ``$STRING`` | No |  |
-| `current_inheritor` | ``$STRING`` | No |  |
-| `former_inheritor` | ``$ARRAY`` | No |  |
-| `height` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
+| `ability` | `list` | No |  |
+| `allegiance` | `str` | No |  |
+| `current_inheritor` | `str` | No |  |
+| `former_inheritor` | `list` | No |  |
+| `height` | `str` | No |  |
+| `id` | `str` | No |  |
+| `name` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Titan().list({})
+results = client.Titan().list()
 for titan in results:
     print(titan)
 ```

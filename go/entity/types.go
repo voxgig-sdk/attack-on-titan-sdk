@@ -26,8 +26,7 @@ type CharacterLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// CharacterListMatch mirrors the character fields as an all-optional match
-// filter (Go analog of Partial<Character>).
+// CharacterListMatch is the typed request payload for Character.ListTyped.
 type CharacterListMatch struct {
 	Affiliation *string `json:"affiliation,omitempty"`
 	Age *int `json:"age,omitempty"`
@@ -55,8 +54,7 @@ type EpisodeLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// EpisodeListMatch mirrors the episode fields as an all-optional match
-// filter (Go analog of Partial<Episode>).
+// EpisodeListMatch is the typed request payload for Episode.ListTyped.
 type EpisodeListMatch struct {
 	AirDate *string `json:"air_date,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -80,8 +78,7 @@ type LocationLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// LocationListMatch mirrors the location fields as an all-optional match
-// filter (Go analog of Partial<Location>).
+// LocationListMatch is the typed request payload for Location.ListTyped.
 type LocationListMatch struct {
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -105,8 +102,7 @@ type OrganizationLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// OrganizationListMatch mirrors the organization fields as an all-optional match
-// filter (Go analog of Partial<Organization>).
+// OrganizationListMatch is the typed request payload for Organization.ListTyped.
 type OrganizationListMatch struct {
 	Allegiance *string `json:"allegiance,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -132,8 +128,7 @@ type TitanLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// TitanListMatch mirrors the titan fields as an all-optional match
-// filter (Go analog of Partial<Titan>).
+// TitanListMatch is the typed request payload for Titan.ListTyped.
 type TitanListMatch struct {
 	Ability *[]any `json:"ability,omitempty"`
 	Allegiance *string `json:"allegiance,omitempty"`
