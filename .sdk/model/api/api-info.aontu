@@ -16,9 +16,9 @@ main: {
           url: "https://api.attackontitanapi.com"
         }
       ]
+      summary: "A RESTful API that provides access to a wide range of data related to the popular anime and manga series 'Attack on Titan'."
       title: "Attack on Titan API"
       version: "1.0.0"
+      website: "https://attackontitanapi.com"
     }
   }
-}
-

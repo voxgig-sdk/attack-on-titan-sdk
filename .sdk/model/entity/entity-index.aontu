@@ -1,0 +1,7 @@
+# Entity Models
+
+@"character.aontu"
+@"episode.aontu"
+@"location.aontu"
+@"organization.aontu"
+@"titan.aontu"
