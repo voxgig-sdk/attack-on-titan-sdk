@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- AttackOnTitan SDK exists test
 
 local sdk = require("attack-on-titan_sdk")
 
