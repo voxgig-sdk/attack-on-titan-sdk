@@ -6,7 +6,7 @@ main: kit: entity: titan: {
 
   fields: [
     {
-      name: "ability"
+      name: "abilities"
       req: false
       type: "`$ARRAY`"
     }
@@ -16,12 +16,12 @@ main: kit: entity: titan: {
       type: "`$STRING`"
     }
     {
-      name: "current_inheritor"
+      name: "currentInheritor"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "former_inheritor"
+      name: "formerInheritors"
       req: false
       type: "`$ARRAY`"
     }

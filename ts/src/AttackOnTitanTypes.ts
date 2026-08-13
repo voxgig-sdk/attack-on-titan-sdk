@@ -34,9 +34,9 @@ export interface CharacterListMatch {
 }
 
 export interface Episode {
-  air_date?: string
+  airDate?: string
   description?: string
-  episode_number?: number
+  episodeNumber?: number
   id?: string
   season?: number
   title?: string
@@ -47,9 +47,9 @@ export interface EpisodeLoadMatch {
 }
 
 export interface EpisodeListMatch {
-  air_date?: string
+  airDate?: string
   description?: string
-  episode_number?: number
+  episodeNumber?: number
   id?: string
   season?: number
   title?: string
@@ -98,10 +98,10 @@ export interface OrganizationListMatch {
 }
 
 export interface Titan {
-  ability?: any[]
+  abilities?: any[]
   allegiance?: string
-  current_inheritor?: string
-  former_inheritor?: any[]
+  currentInheritor?: string
+  formerInheritors?: any[]
   height?: string
   id?: string
   name?: string
@@ -112,10 +112,10 @@ export interface TitanLoadMatch {
 }
 
 export interface TitanListMatch {
-  ability?: any[]
+  abilities?: any[]
   allegiance?: string
-  current_inheritor?: string
-  former_inheritor?: any[]
+  currentInheritor?: string
+  formerInheritors?: any[]
   height?: string
   id?: string
   name?: string

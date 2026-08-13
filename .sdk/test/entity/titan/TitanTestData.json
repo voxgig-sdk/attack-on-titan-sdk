@@ -2,28 +2,28 @@
   "existing": {
     "titan": {
       "TITAN00": {
-        "ability": [],
+        "abilities": [],
         "allegiance": "s47",
-        "current_inheritor": "s48",
-        "former_inheritor": [],
+        "currentInheritor": "s48",
+        "formerInheritors": [],
         "height": "s4a",
         "id": "TITAN00",
         "name": "s4c"
       },
       "TITAN01": {
-        "ability": [],
+        "abilities": [],
         "allegiance": "s8d",
-        "current_inheritor": "s8e",
-        "former_inheritor": [],
+        "currentInheritor": "s8e",
+        "formerInheritors": [],
         "height": "s90",
         "id": "TITAN01",
         "name": "s92"
       },
       "TITAN02": {
-        "ability": [],
+        "abilities": [],
         "allegiance": "sd3",
-        "current_inheritor": "sd4",
-        "former_inheritor": [],
+        "currentInheritor": "sd4",
+        "formerInheritors": [],
         "height": "sd6",
         "id": "TITAN02",
         "name": "sd8"
@@ -33,10 +33,10 @@
   "new": {
     "titan": {
       "titan_ref01": {
-        "ability": [],
+        "abilities": [],
         "allegiance": "s119",
-        "current_inheritor": "s11a",
-        "former_inheritor": [],
+        "currentInheritor": "s11a",
+        "formerInheritors": [],
         "height": "s11c",
         "name": "s11e"
       }

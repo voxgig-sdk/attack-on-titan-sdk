@@ -101,13 +101,13 @@ CharacterListMatch = Struct.new(
 
 # Episode entity data model.
 #
-# @!attribute [rw] air_date
+# @!attribute [rw] airDate
 #   @return [String, nil]
 #
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] episode_number
+# @!attribute [rw] episodeNumber
 #   @return [Integer, nil]
 #
 # @!attribute [rw] id
@@ -119,9 +119,9 @@ CharacterListMatch = Struct.new(
 # @!attribute [rw] title
 #   @return [String, nil]
 Episode = Struct.new(
-  :air_date,
+  :airDate,
   :description,
-  :episode_number,
+  :episodeNumber,
   :id,
   :season,
   :title,
@@ -139,13 +139,13 @@ EpisodeLoadMatch = Struct.new(
 
 # Request payload for Episode#list.
 #
-# @!attribute [rw] air_date
+# @!attribute [rw] airDate
 #   @return [String, nil]
 #
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] episode_number
+# @!attribute [rw] episodeNumber
 #   @return [Integer, nil]
 #
 # @!attribute [rw] id
@@ -157,9 +157,9 @@ EpisodeLoadMatch = Struct.new(
 # @!attribute [rw] title
 #   @return [String, nil]
 EpisodeListMatch = Struct.new(
-  :air_date,
+  :airDate,
   :description,
-  :episode_number,
+  :episodeNumber,
   :id,
   :season,
   :title,
@@ -294,16 +294,16 @@ OrganizationListMatch = Struct.new(
 
 # Titan entity data model.
 #
-# @!attribute [rw] ability
+# @!attribute [rw] abilities
 #   @return [Array, nil]
 #
 # @!attribute [rw] allegiance
 #   @return [String, nil]
 #
-# @!attribute [rw] current_inheritor
+# @!attribute [rw] currentInheritor
 #   @return [String, nil]
 #
-# @!attribute [rw] former_inheritor
+# @!attribute [rw] formerInheritors
 #   @return [Array, nil]
 #
 # @!attribute [rw] height
@@ -315,10 +315,10 @@ OrganizationListMatch = Struct.new(
 # @!attribute [rw] name
 #   @return [String, nil]
 Titan = Struct.new(
-  :ability,
+  :abilities,
   :allegiance,
-  :current_inheritor,
-  :former_inheritor,
+  :currentInheritor,
+  :formerInheritors,
   :height,
   :id,
   :name,
@@ -336,16 +336,16 @@ TitanLoadMatch = Struct.new(
 
 # Request payload for Titan#list.
 #
-# @!attribute [rw] ability
+# @!attribute [rw] abilities
 #   @return [Array, nil]
 #
 # @!attribute [rw] allegiance
 #   @return [String, nil]
 #
-# @!attribute [rw] current_inheritor
+# @!attribute [rw] currentInheritor
 #   @return [String, nil]
 #
-# @!attribute [rw] former_inheritor
+# @!attribute [rw] formerInheritors
 #   @return [Array, nil]
 #
 # @!attribute [rw] height
@@ -357,10 +357,10 @@ TitanLoadMatch = Struct.new(
 # @!attribute [rw] name
 #   @return [String, nil]
 TitanListMatch = Struct.new(
-  :ability,
+  :abilities,
   :allegiance,
-  :current_inheritor,
-  :former_inheritor,
+  :currentInheritor,
+  :formerInheritors,
   :height,
   :id,
   :name,

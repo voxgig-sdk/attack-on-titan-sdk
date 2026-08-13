@@ -26,8 +26,8 @@ import {
 describe('TitanEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when ATTACKONTITAN_TEST_LIVE=TRUE.
-  afterEach(liveDelay('ATTACKONTITAN_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when ATTACK_ON_TITAN_TEST_LIVE=TRUE.
+  afterEach(liveDelay('ATTACK_ON_TITAN_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = AttackOnTitanSDK.test()
@@ -63,13 +63,13 @@ describe('TitanEntity', async () => {
     const titan_ref01_ent = client.Titan()
     const titan_ref01_match: any = {}
 
-    const titan_ref01_list = await titan_ref01_ent.list(titan_ref01_match)
+    const titan_ref01_list = (await titan_ref01_ent.list(titan_ref01_match)).map((e: any) => e.data())
 
 
     // LOAD
     const titan_ref01_match_dt0: any = {}
     titan_ref01_match_dt0.id = titan_ref01_data.id
-    const titan_ref01_data_dt0 = await titan_ref01_ent.load(titan_ref01_match_dt0)
+    const titan_ref01_data_dt0 = (await titan_ref01_ent.load(titan_ref01_match_dt0)).data()
     assert(titan_ref01_data_dt0.id === titan_ref01_data.id)
 
 

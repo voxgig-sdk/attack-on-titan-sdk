@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = AttackOnTitanSDK.test()
-const characters = await client.Character().list()
-// characters is an array of bare Character records populated with mock data
-console.log(characters)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = AttackOnTitanSDK.test({
+  entity: {
+    episode: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const episodes = await client.Episode().list()
+// episodes is an array of Episode entities, populated with mock data
+// — call episodes[0].data() for the record itself
+console.log(episodes)
 ```
 
 ### Python
 
 ```python
 client = AttackOnTitanSDK.test()
-characters = client.Character().list()
-print(characters)
+episodes = client.Episode().list()
+print(episodes)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(characters)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = AttackOnTitanSDK::test([
-    "entity" => ["character" => ["test01" => ["id" => "test01"]]],
+    "entity" => ["episode" => ["test01" => ["id" => "test01"]]],
 ]);
-$characters = $client->Character()->list();
+$episodes = $client->Episode()->list();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.Character(nil).List(
+result, err := client.Episode(nil).List(
     nil, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.Character(nil).List(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = AttackOnTitanSDK.test({
-  "entity" => { "character" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "episode" => { "test01" => { "id" => "test01" } } },
 })
-characters = client.Character.list()
+episodes = client.Episode.list()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local results, err = client:Character():list()
+local results, err = client:Episode():list()
 ```
 
 ## Packages
@@ -110,7 +119,7 @@ import { AttackOnTitanSDK } from '@voxgig-sdk/attack-on-titan'
 
 const client = new AttackOnTitanSDK()
 
-// List all characters (returns Character[])
+// List all characters (returns CharacterEntity[] — .data() for the record)
 const characters = await client.Character().list()
 for (const character of characters) {
   console.log(character)
@@ -195,7 +204,7 @@ $client = new AttackOnTitanSDK();
 $characters = $client->Character()->list();
 print_r($characters);
 
-// Load a specific character (returns the bare record; throws on error)
+// Load a specific character (returns the ENTITY; call data_get() for the record; throws on error)
 $character = $client->Character()->load(["id" => "example_id"]);
 print_r($character);
 ```
@@ -226,7 +235,7 @@ client = AttackOnTitanSDK.new
 characters = client.Character.list
 puts characters
 
-# Load a specific character (returns the bare record; raises on error)
+# Load a specific character (returns the ENTITY; call data_get for the record)
 character = client.Character.load({ "id" => "example_id" })
 puts character
 ```
@@ -363,6 +372,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.attackontitanapi.com/](https://www.attackontitanapi.com/)
 

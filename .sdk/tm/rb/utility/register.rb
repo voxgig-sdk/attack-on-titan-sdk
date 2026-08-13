@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ AttackOnTitanUtility.registrar = ->(u) {
   u.prepare_params = AttackOnTitanUtilities::PrepareParams
   u.prepare_path = AttackOnTitanUtilities::PreparePath
   u.prepare_query = AttackOnTitanUtilities::PrepareQuery
+  u.graphql_body = AttackOnTitanUtilities::GraphqlBody
+  u.graphql_errors = AttackOnTitanUtilities::GraphqlErrors
   u.result_basic = AttackOnTitanUtilities::ResultBasic
   u.result_body = AttackOnTitanUtilities::ResultBody
   u.result_headers = AttackOnTitanUtilities::ResultHeaders

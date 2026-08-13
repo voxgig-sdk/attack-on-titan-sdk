@@ -49,7 +49,7 @@ try {
 
 ```php
 try {
-    // load() returns the bare Character record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Character record (throws on error).
     $character = $client->Character()->load(["id" => "example_id"]);
     print_r($character);
 } catch (\Throwable $err) {
@@ -65,7 +65,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $characters = $client->Character()->list();
+    $episodes = $client->Episode()->list();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -137,12 +137,13 @@ data via the `entity` option so offline calls resolve without a live server:
 
 ```php
 $client = AttackOnTitanSDK::test([
-    "entity" => ["character" => ["test01" => ["id" => "test01"]]],
+    "entity" => ["episode" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
-$character = $client->Character()->list();
-print_r($character);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$episode = $client->Episode()->list();
+print_r($episode);
 ```
 
 ### Use a custom fetch function
@@ -244,7 +245,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -284,9 +285,9 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `air_date` |  |
+| `airDate` |  |
 | `description` |  |
-| `episode_number` |  |
+| `episodeNumber` |  |
 | `id` |  |
 | `season` |  |
 | `title` |  |
@@ -328,10 +329,10 @@ API path: `/organizations`
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `allegiance` |  |
-| `current_inheritor` |  |
-| `former_inheritor` |  |
+| `currentInheritor` |  |
+| `formerInheritors` |  |
 | `height` |  |
 | `id` |  |
 | `name` |  |
@@ -373,7 +374,7 @@ Create an instance: `$character = $client->Character();`
 #### Example: Load
 
 ```php
-// load() returns the bare Character record (throws on error).
+// load() returns the ENTITY — call data_get() for the Character record (throws on error).
 $character = $client->Character()->load(["id" => "character_id"]);
 ```
 
@@ -400,9 +401,9 @@ Create an instance: `$episode = $client->Episode();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `string` |  |
+| `airDate` | `string` |  |
 | `description` | `string` |  |
-| `episode_number` | `int` |  |
+| `episodeNumber` | `int` |  |
 | `id` | `string` |  |
 | `season` | `int` |  |
 | `title` | `string` |  |
@@ -410,7 +411,7 @@ Create an instance: `$episode = $client->Episode();`
 #### Example: Load
 
 ```php
-// load() returns the bare Episode record (throws on error).
+// load() returns the ENTITY — call data_get() for the Episode record (throws on error).
 $episode = $client->Episode()->load(["id" => "episode_id"]);
 ```
 
@@ -446,7 +447,7 @@ Create an instance: `$location = $client->Location();`
 #### Example: Load
 
 ```php
-// load() returns the bare Location record (throws on error).
+// load() returns the ENTITY — call data_get() for the Location record (throws on error).
 $location = $client->Location()->load(["id" => "location_id"]);
 ```
 
@@ -483,7 +484,7 @@ Create an instance: `$organization = $client->Organization();`
 #### Example: Load
 
 ```php
-// load() returns the bare Organization record (throws on error).
+// load() returns the ENTITY — call data_get() for the Organization record (throws on error).
 $organization = $client->Organization()->load(["id" => "organization_id"]);
 ```
 
@@ -510,10 +511,10 @@ Create an instance: `$titan = $client->Titan();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `array` |  |
+| `abilities` | `array` |  |
 | `allegiance` | `string` |  |
-| `current_inheritor` | `string` |  |
-| `former_inheritor` | `array` |  |
+| `currentInheritor` | `string` |  |
+| `formerInheritors` | `array` |  |
 | `height` | `string` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
@@ -521,7 +522,7 @@ Create an instance: `$titan = $client->Titan();`
 #### Example: Load
 
 ```php
-// load() returns the bare Titan record (throws on error).
+// load() returns the ENTITY — call data_get() for the Titan record (throws on error).
 $titan = $client->Titan()->load(["id" => "titan_id"]);
 ```
 
@@ -609,11 +610,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$character = $client->Character();
-$character->list();
+$episode = $client->Episode();
+$episode->list();
 
-// $character->data_get() now returns the character data from the last list
-// $character->match_get() returns the last match criteria
+// $episode->data_get() now returns the episode data from the last list
+// $episode->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

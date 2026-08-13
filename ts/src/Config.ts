@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'AttackOnTitan',
   }
 
 
@@ -139,6 +139,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/characters",
               "parts": [
@@ -173,6 +174,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters/{id}",
               "parts": [
@@ -202,7 +204,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "air_date",
+          "name": "airDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
@@ -216,7 +218,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "episode_number",
+          "name": "episodeNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
@@ -252,6 +254,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/episodes",
               "parts": [
@@ -286,6 +289,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/episodes/{id}",
               "parts": [
@@ -358,6 +362,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/locations",
               "parts": [
@@ -392,6 +397,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/locations/{id}",
               "parts": [
@@ -471,6 +477,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/organizations",
               "parts": [
@@ -505,6 +512,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/organizations/{id}",
               "parts": [
@@ -534,7 +542,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "ability",
+          "name": "abilities",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 0
@@ -548,14 +556,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "current_inheritor",
+          "name": "currentInheritor",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "former_inheritor",
+          "name": "formerInheritors",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 3
@@ -591,6 +599,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/titans",
               "parts": [
@@ -625,6 +634,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/titans/{id}",
               "parts": [

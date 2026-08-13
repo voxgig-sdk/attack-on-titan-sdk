@@ -107,6 +107,7 @@ class AttackOnTitanConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters',
                   'parts' => [
@@ -141,6 +142,7 @@ class AttackOnTitanConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters/{id}',
                   'parts' => [
@@ -170,7 +172,7 @@ class AttackOnTitanConfig
           'fields' => [
             [
               'active' => true,
-              'name' => 'air_date',
+              'name' => 'airDate',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 0,
@@ -184,7 +186,7 @@ class AttackOnTitanConfig
             ],
             [
               'active' => true,
-              'name' => 'episode_number',
+              'name' => 'episodeNumber',
               'req' => false,
               'type' => '`$INTEGER`',
               'index$' => 2,
@@ -220,6 +222,7 @@ class AttackOnTitanConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/episodes',
                   'parts' => [
@@ -254,6 +257,7 @@ class AttackOnTitanConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/episodes/{id}',
                   'parts' => [
@@ -326,6 +330,7 @@ class AttackOnTitanConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/locations',
                   'parts' => [
@@ -360,6 +365,7 @@ class AttackOnTitanConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/locations/{id}',
                   'parts' => [
@@ -439,6 +445,7 @@ class AttackOnTitanConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/organizations',
                   'parts' => [
@@ -473,6 +480,7 @@ class AttackOnTitanConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/organizations/{id}',
                   'parts' => [
@@ -502,7 +510,7 @@ class AttackOnTitanConfig
           'fields' => [
             [
               'active' => true,
-              'name' => 'ability',
+              'name' => 'abilities',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 0,
@@ -516,14 +524,14 @@ class AttackOnTitanConfig
             ],
             [
               'active' => true,
-              'name' => 'current_inheritor',
+              'name' => 'currentInheritor',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 2,
             ],
             [
               'active' => true,
-              'name' => 'former_inheritor',
+              'name' => 'formerInheritors',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 3,
@@ -559,6 +567,7 @@ class AttackOnTitanConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/titans',
                   'parts' => [
@@ -593,6 +602,7 @@ class AttackOnTitanConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/titans/{id}',
                   'parts' => [

@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import AttackOnTitanSDK
-from core.error import AttackOnTitanError
-from core.result import AttackOnTitanResult
-from core.response import AttackOnTitanResponse
-from core.spec import AttackOnTitanSpec
-from feature.base_feature import AttackOnTitanBaseFeature
+from projectname_sdk.core.error import AttackOnTitanError
+from projectname_sdk.core.result import AttackOnTitanResult
+from projectname_sdk.core.response import AttackOnTitanResponse
+from projectname_sdk.core.spec import AttackOnTitanSpec
+from projectname_sdk.feature.base_feature import AttackOnTitanBaseFeature
 
 
 def _client():

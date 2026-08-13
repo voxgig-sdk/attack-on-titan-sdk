@@ -177,9 +177,9 @@ episode = client.Episode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | `String` | No |  |
+| `airDate` | `String` | No |  |
 | `description` | `String` | No |  |
-| `episode_number` | `Integer` | No |  |
+| `episodeNumber` | `Integer` | No |  |
 | `id` | `String` | No |  |
 | `season` | `Integer` | No |  |
 | `title` | `String` | No |  |
@@ -371,10 +371,10 @@ titan = client.Titan
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `Array` | No |  |
+| `abilities` | `Array` | No |  |
 | `allegiance` | `String` | No |  |
-| `current_inheritor` | `String` | No |  |
-| `former_inheritor` | `Array` | No |  |
+| `currentInheritor` | `String` | No |  |
+| `formerInheritors` | `Array` | No |  |
 | `height` | `String` | No |  |
 | `id` | `String` | No |  |
 | `name` | `String` | No |  |

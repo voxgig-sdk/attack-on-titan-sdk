@@ -101,6 +101,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/characters",
                 ["parts"] = {
@@ -135,6 +136,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/characters/{id}",
                 ["parts"] = {
@@ -164,7 +166,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "air_date",
+            ["name"] = "airDate",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
@@ -178,7 +180,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "episode_number",
+            ["name"] = "episodeNumber",
             ["req"] = false,
             ["type"] = "`$INTEGER`",
             ["index$"] = 2,
@@ -214,6 +216,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episodes",
                 ["parts"] = {
@@ -248,6 +251,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episodes/{id}",
                 ["parts"] = {
@@ -320,6 +324,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/locations",
                 ["parts"] = {
@@ -354,6 +359,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/locations/{id}",
                 ["parts"] = {
@@ -433,6 +439,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/organizations",
                 ["parts"] = {
@@ -467,6 +474,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/organizations/{id}",
                 ["parts"] = {
@@ -496,7 +504,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "ability",
+            ["name"] = "abilities",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 0,
@@ -510,14 +518,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "current_inheritor",
+            ["name"] = "currentInheritor",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "former_inheritor",
+            ["name"] = "formerInheritors",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 3,
@@ -553,6 +561,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/titans",
                 ["parts"] = {
@@ -587,6 +596,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/titans/{id}",
                 ["parts"] = {

@@ -23,8 +23,8 @@ module AttackOnTitanTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("ATTACKONTITAN_TEST_LIVE")
-    override = getenv("ATTACKONTITAN_TEST_OVERRIDE")
+    live = getenv("ATTACK_ON_TITAN_TEST_LIVE")
+    override = getenv("ATTACK_ON_TITAN_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module AttackOnTitanTestRunner
       end
     end
 
-    explain = getenv("ATTACKONTITAN_TEST_EXPLAIN")
-    m["ATTACKONTITAN_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("ATTACK_ON_TITAN_TEST_EXPLAIN")
+    m["ATTACK_ON_TITAN_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

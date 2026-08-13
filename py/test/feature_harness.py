@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import AttackOnTitanControl
-from core.error import AttackOnTitanError
-from core.result import AttackOnTitanResult
-from core.spec import AttackOnTitanSpec
+from attackontitan_sdk.config import make_config
+from attackontitan_sdk.features import _make_feature
+from attackontitan_sdk.core.control import AttackOnTitanControl
+from attackontitan_sdk.core.error import AttackOnTitanError
+from attackontitan_sdk.core.result import AttackOnTitanResult
+from attackontitan_sdk.core.spec import AttackOnTitanSpec
 
 
 # True when this SDK was generated with the named feature.

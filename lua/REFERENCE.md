@@ -174,9 +174,9 @@ local episode = client:Episode(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | `string` | No |  |
+| `airDate` | `string` | No |  |
 | `description` | `string` | No |  |
-| `episode_number` | `number` | No |  |
+| `episodeNumber` | `number` | No |  |
 | `id` | `string` | No |  |
 | `season` | `number` | No |  |
 | `title` | `string` | No |  |
@@ -368,10 +368,10 @@ local titan = client:Titan(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `table` | No |  |
+| `abilities` | `table` | No |  |
 | `allegiance` | `string` | No |  |
-| `current_inheritor` | `string` | No |  |
-| `former_inheritor` | `table` | No |  |
+| `currentInheritor` | `string` | No |  |
+| `formerInheritors` | `table` | No |  |
 | `height` | `string` | No |  |
 | `id` | `string` | No |  |
 | `name` | `string` | No |  |

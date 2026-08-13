@@ -115,11 +115,11 @@ function episode_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["ATTACKONTITAN_TEST_EPISODE_ENTID"] = {},
-    ["ATTACKONTITAN_TEST_LIVE"] = "FALSE",
+    ["ATTACK_ON_TITAN_TEST_EPISODE_ENTID"] = {},
+    ["ATTACK_ON_TITAN_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["ATTACKONTITAN_TEST_LIVE"] == "TRUE"
+  local live = env["ATTACK_ON_TITAN_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

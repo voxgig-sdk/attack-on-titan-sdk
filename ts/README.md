@@ -35,7 +35,9 @@ const client = new AttackOnTitanSDK()
 
 ### 2. List character records
 
-`list()` resolves to an array of Character objects — iterate it directly:
+`list()` resolves to an array of Character ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const characters = await client.Character().list()
@@ -65,8 +67,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const characters = await client.Character().list()
-  console.log(characters)
+  const episodes = await client.Episode().list()
+  console.log(episodes)
 } catch (err) {
   console.error('list failed:', err)
 }
@@ -132,9 +134,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = AttackOnTitanSDK.test()
 
-const character = await client.Character().list()
-// character is a bare entity populated with mock response data
-console.log(character)
+const episode = await client.Episode().list()
+// episode is the entity, populated with mock response data
+// — call episode.data() for the record itself
+console.log(episode)
 ```
 
 You can also use the instance method:
@@ -149,7 +152,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Character()
+const entity = client.Episode()
 
 // First call runs the operation and stores its result
 await entity.list()
@@ -321,9 +324,9 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `air_date` |  |
+| `airDate` |  |
 | `description` |  |
-| `episode_number` |  |
+| `episodeNumber` |  |
 | `id` |  |
 | `season` |  |
 | `title` |  |
@@ -365,10 +368,10 @@ API path: `/organizations`
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `allegiance` |  |
-| `current_inheritor` |  |
-| `former_inheritor` |  |
+| `currentInheritor` |  |
+| `formerInheritors` |  |
 | `height` |  |
 | `id` |  |
 | `name` |  |
@@ -435,9 +438,9 @@ Create an instance: `const episode = client.Episode()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `string` |  |
+| `airDate` | `string` |  |
 | `description` | `string` |  |
-| `episode_number` | `number` |  |
+| `episodeNumber` | `number` |  |
 | `id` | `string` |  |
 | `season` | `number` |  |
 | `title` | `string` |  |
@@ -539,10 +542,10 @@ Create an instance: `const titan = client.Titan()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `any[]` |  |
+| `abilities` | `any[]` |  |
 | `allegiance` | `string` |  |
-| `current_inheritor` | `string` |  |
-| `former_inheritor` | `any[]` |  |
+| `currentInheritor` | `string` |  |
+| `formerInheritors` | `any[]` |  |
 | `height` | `string` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
@@ -629,11 +632,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const character = client.Character()
-await character.list()
+const episode = client.Episode()
+await episode.list()
 
-// character.data() now returns the character data from the last `list`
-// character.match() returns the last match criteria
+// episode.data() now returns the episode data from the last `list`
+// episode.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

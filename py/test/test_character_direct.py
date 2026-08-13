@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from attackontitan_sdk.utility.voxgig_struct import voxgig_struct as vs
 from attackontitan_sdk import AttackOnTitanSDK
-from core import helpers
+from attackontitan_sdk.core import helpers
 from test import runner
 
 
@@ -105,11 +105,11 @@ def _character_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "ATTACKONTITAN_TEST_CHARACTER_ENTID": {},
-        "ATTACKONTITAN_TEST_LIVE": "FALSE",
+        "ATTACK_ON_TITAN_TEST_CHARACTER_ENTID": {},
+        "ATTACK_ON_TITAN_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("ATTACKONTITAN_TEST_LIVE") == "TRUE"
+    live = env.get("ATTACK_ON_TITAN_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

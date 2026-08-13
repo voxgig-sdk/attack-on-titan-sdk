@@ -114,11 +114,11 @@ def character_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "ATTACKONTITAN_TEST_CHARACTER_ENTID" => {},
-    "ATTACKONTITAN_TEST_LIVE" => "FALSE",
+    "ATTACK_ON_TITAN_TEST_CHARACTER_ENTID" => {},
+    "ATTACK_ON_TITAN_TEST_LIVE" => "FALSE",
   })
 
-  live = env["ATTACKONTITAN_TEST_LIVE"] == "TRUE"
+  live = env["ATTACK_ON_TITAN_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

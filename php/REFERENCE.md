@@ -176,9 +176,9 @@ $episode = $client->Episode();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | `string` | No |  |
+| `airDate` | `string` | No |  |
 | `description` | `string` | No |  |
-| `episode_number` | `int` | No |  |
+| `episodeNumber` | `int` | No |  |
 | `id` | `string` | No |  |
 | `season` | `int` | No |  |
 | `title` | `string` | No |  |
@@ -370,10 +370,10 @@ $titan = $client->Titan();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `array` | No |  |
+| `abilities` | `array` | No |  |
 | `allegiance` | `string` | No |  |
-| `current_inheritor` | `string` | No |  |
-| `former_inheritor` | `array` | No |  |
+| `currentInheritor` | `string` | No |  |
+| `formerInheritors` | `array` | No |  |
 | `height` | `string` | No |  |
 | `id` | `string` | No |  |
 | `name` | `string` | No |  |

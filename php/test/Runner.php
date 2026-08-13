@@ -43,8 +43,8 @@ class AttackOnTitanTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('ATTACKONTITAN_TEST_LIVE');
-        $override = self::getenv('ATTACKONTITAN_TEST_OVERRIDE');
+        $live = self::getenv('ATTACK_ON_TITAN_TEST_LIVE');
+        $override = self::getenv('ATTACK_ON_TITAN_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class AttackOnTitanTestRunner
             }
         }
 
-        $explain = self::getenv('ATTACKONTITAN_TEST_EXPLAIN');
+        $explain = self::getenv('ATTACK_ON_TITAN_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['ATTACKONTITAN_TEST_EXPLAIN'] = $explain;
+            $m['ATTACK_ON_TITAN_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

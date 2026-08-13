@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# AttackOnTitan SDK exists test
 
 import pytest
 from attackontitan_sdk import AttackOnTitanSDK

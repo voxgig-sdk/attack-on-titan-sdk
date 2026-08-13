@@ -49,9 +49,9 @@ class CharacterListMatch
 /** Episode entity data model. */
 class Episode
 {
-    public ?string $air_date = null;
+    public ?string $airDate = null;
     public ?string $description = null;
-    public ?int $episode_number = null;
+    public ?int $episodeNumber = null;
     public ?string $id = null;
     public ?int $season = null;
     public ?string $title = null;
@@ -66,9 +66,9 @@ class EpisodeLoadMatch
 /** Request payload for Episode#list. */
 class EpisodeListMatch
 {
-    public ?string $air_date = null;
+    public ?string $airDate = null;
     public ?string $description = null;
-    public ?int $episode_number = null;
+    public ?int $episodeNumber = null;
     public ?string $id = null;
     public ?int $season = null;
     public ?string $title = null;
@@ -131,10 +131,10 @@ class OrganizationListMatch
 /** Titan entity data model. */
 class Titan
 {
-    public ?array $ability = null;
+    public ?array $abilities = null;
     public ?string $allegiance = null;
-    public ?string $current_inheritor = null;
-    public ?array $former_inheritor = null;
+    public ?string $currentInheritor = null;
+    public ?array $formerInheritors = null;
     public ?string $height = null;
     public ?string $id = null;
     public ?string $name = null;
@@ -149,10 +149,10 @@ class TitanLoadMatch
 /** Request payload for Titan#list. */
 class TitanListMatch
 {
-    public ?array $ability = null;
+    public ?array $abilities = null;
     public ?string $allegiance = null;
-    public ?string $current_inheritor = null;
-    public ?array $former_inheritor = null;
+    public ?string $currentInheritor = null;
+    public ?array $formerInheritors = null;
     public ?string $height = null;
     public ?string $id = null;
     public ?string $name = null;

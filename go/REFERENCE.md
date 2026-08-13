@@ -185,9 +185,9 @@ fmt.Println(episode.GetName()) // "episode"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | `string` | No |  |
+| `airDate` | `string` | No |  |
 | `description` | `string` | No |  |
-| `episode_number` | `int` | No |  |
+| `episodeNumber` | `int` | No |  |
 | `id` | `string` | No |  |
 | `season` | `int` | No |  |
 | `title` | `string` | No |  |
@@ -388,10 +388,10 @@ fmt.Println(titan.GetName()) // "titan"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `[]any` | No |  |
+| `abilities` | `[]any` | No |  |
 | `allegiance` | `string` | No |  |
-| `current_inheritor` | `string` | No |  |
-| `former_inheritor` | `[]any` | No |  |
+| `currentInheritor` | `string` | No |  |
+| `formerInheritors` | `[]any` | No |  |
 | `height` | `string` | No |  |
 | `id` | `string` | No |  |
 | `name` | `string` | No |  |

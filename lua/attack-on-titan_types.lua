@@ -32,9 +32,9 @@
 ---@field status? string
 
 ---@class Episode
----@field air_date? string
+---@field airDate? string
 ---@field description? string
----@field episode_number? number
+---@field episodeNumber? number
 ---@field id? string
 ---@field season? number
 ---@field title? string
@@ -43,9 +43,9 @@
 ---@field id string
 
 ---@class EpisodeListMatch
----@field air_date? string
+---@field airDate? string
 ---@field description? string
----@field episode_number? number
+---@field episodeNumber? number
 ---@field id? string
 ---@field season? number
 ---@field title? string
@@ -87,10 +87,10 @@
 ---@field type? string
 
 ---@class Titan
----@field ability? table
+---@field abilities? table
 ---@field allegiance? string
----@field current_inheritor? string
----@field former_inheritor? table
+---@field currentInheritor? string
+---@field formerInheritors? table
 ---@field height? string
 ---@field id? string
 ---@field name? string
@@ -99,10 +99,10 @@
 ---@field id string
 
 ---@class TitanListMatch
----@field ability? table
+---@field abilities? table
 ---@field allegiance? string
----@field current_inheritor? string
----@field former_inheritor? table
+---@field currentInheritor? string
+---@field formerInheritors? table
 ---@field height? string
 ---@field id? string
 ---@field name? string

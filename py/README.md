@@ -52,7 +52,7 @@ except Exception as err:
 
 ### 3. Load a character
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -69,8 +69,8 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    characters = client.Character().list()
-    print(characters)
+    episodes = client.Episode().list()
+    print(episodes)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -136,9 +136,10 @@ Create a mock client for unit testing — no server required:
 ```python
 client = AttackOnTitanSDK.test()
 
-# Entity ops return the bare record and raise on error.
-character = client.Character().list()
-# character contains the mock response record
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
+episode = client.Episode().list()
+# episode contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -237,7 +238,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -277,9 +278,9 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `air_date` |  |
+| `airDate` |  |
 | `description` |  |
-| `episode_number` |  |
+| `episodeNumber` |  |
 | `id` |  |
 | `season` |  |
 | `title` |  |
@@ -321,10 +322,10 @@ API path: `/organizations`
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `allegiance` |  |
-| `current_inheritor` |  |
-| `former_inheritor` |  |
+| `currentInheritor` |  |
+| `formerInheritors` |  |
 | `height` |  |
 | `id` |  |
 | `name` |  |
@@ -391,9 +392,9 @@ Create an instance: `episode = client.Episode()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `str` |  |
+| `airDate` | `str` |  |
 | `description` | `str` |  |
-| `episode_number` | `int` |  |
+| `episodeNumber` | `int` |  |
 | `id` | `str` |  |
 | `season` | `int` |  |
 | `title` | `str` |  |
@@ -495,10 +496,10 @@ Create an instance: `titan = client.Titan()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `list` |  |
+| `abilities` | `list` |  |
 | `allegiance` | `str` |  |
-| `current_inheritor` | `str` |  |
-| `former_inheritor` | `list` |  |
+| `currentInheritor` | `str` |  |
+| `formerInheritors` | `list` |  |
 | `height` | `str` |  |
 | `id` | `str` |  |
 | `name` | `str` |  |
@@ -591,11 +592,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-character = client.Character()
-character.list()
+episode = client.Episode()
+episode.list()
 
-# character.data_get() now returns the character data from the last list
-# character.match_get() returns the last match criteria
+# episode.data_get() now returns the episode data from the last list
+# episode.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

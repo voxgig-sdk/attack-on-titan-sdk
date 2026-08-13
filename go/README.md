@@ -75,12 +75,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-characters, err := client.Character(nil).List(nil, nil)
+episodes, err := client.Episode(nil).List(nil, nil)
 if err != nil {
     // handle err
     return
 }
-_ = characters
+_ = episodes
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -144,13 +144,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-character, err := client.Character(nil).List(
+episode, err := client.Episode(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(character) // the returned mock data
+fmt.Println(episode) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -291,9 +291,9 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `"air_date"` |  |
+| `"airDate"` |  |
 | `"description"` |  |
-| `"episode_number"` |  |
+| `"episodeNumber"` |  |
 | `"id"` |  |
 | `"season"` |  |
 | `"title"` |  |
@@ -335,10 +335,10 @@ API path: `/organizations`
 
 | Field | Description |
 | --- | --- |
-| `"ability"` |  |
+| `"abilities"` |  |
 | `"allegiance"` |  |
-| `"current_inheritor"` |  |
-| `"former_inheritor"` |  |
+| `"currentInheritor"` |  |
+| `"formerInheritors"` |  |
 | `"height"` |  |
 | `"id"` |  |
 | `"name"` |  |
@@ -413,9 +413,9 @@ Create an instance: `episode := client.Episode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `string` |  |
+| `airDate` | `string` |  |
 | `description` | `string` |  |
-| `episode_number` | `int` |  |
+| `episodeNumber` | `int` |  |
 | `id` | `string` |  |
 | `season` | `int` |  |
 | `title` | `string` |  |
@@ -541,10 +541,10 @@ Create an instance: `titan := client.Titan(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `[]any` |  |
+| `abilities` | `[]any` |  |
 | `allegiance` | `string` |  |
-| `current_inheritor` | `string` |  |
-| `former_inheritor` | `[]any` |  |
+| `currentInheritor` | `string` |  |
+| `formerInheritors` | `[]any` |  |
 | `height` | `string` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
@@ -643,11 +643,11 @@ Entity instances are stateful. After a successful `List`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-character := client.Character(nil)
-character.List(nil, nil)
+episode := client.Episode(nil)
+episode.List(nil, nil)
 
-// character.Data() now returns the character data from the last list
-// character.Match() returns the last match criteria
+// episode.Data() now returns the episode data from the last list
+// episode.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

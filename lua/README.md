@@ -62,7 +62,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local characters, err = client:Character():list()
+local episodes, err = client:Episode():list()
 if err then error(err) end
 ```
 
@@ -120,7 +120,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Character():list()
+local result, err = client:Episode():list()
 -- result is the returned data; err is set on failure
 ```
 
@@ -263,9 +263,9 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `air_date` |  |
+| `airDate` |  |
 | `description` |  |
-| `episode_number` |  |
+| `episodeNumber` |  |
 | `id` |  |
 | `season` |  |
 | `title` |  |
@@ -307,10 +307,10 @@ API path: `/organizations`
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `allegiance` |  |
-| `current_inheritor` |  |
-| `former_inheritor` |  |
+| `currentInheritor` |  |
+| `formerInheritors` |  |
 | `height` |  |
 | `id` |  |
 | `name` |  |
@@ -377,9 +377,9 @@ Create an instance: `local episode = client:Episode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `string` |  |
+| `airDate` | `string` |  |
 | `description` | `string` |  |
-| `episode_number` | `number` |  |
+| `episodeNumber` | `number` |  |
 | `id` | `string` |  |
 | `season` | `number` |  |
 | `title` | `string` |  |
@@ -481,10 +481,10 @@ Create an instance: `local titan = client:Titan(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `table` |  |
+| `abilities` | `table` |  |
 | `allegiance` | `string` |  |
-| `current_inheritor` | `string` |  |
-| `former_inheritor` | `table` |  |
+| `currentInheritor` | `string` |  |
+| `formerInheritors` | `table` |  |
 | `height` | `string` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
@@ -578,11 +578,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local character = client:Character()
-character:list()
+local episode = client:Episode()
+episode:list()
 
--- character:data_get() now returns the character data from the last list
--- character:match_get() returns the last match criteria
+-- episode:data_get() now returns the episode data from the last list
+-- episode:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -230,9 +230,9 @@ const episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | `string` | No |  |
+| `airDate` | `string` | No |  |
 | `description` | `string` | No |  |
-| `episode_number` | `number` | No |  |
+| `episodeNumber` | `number` | No |  |
 | `id` | `string` | No |  |
 | `season` | `number` | No |  |
 | `title` | `string` | No |  |
@@ -418,10 +418,10 @@ const titan = client.Titan()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `any[]` | No |  |
+| `abilities` | `any[]` | No |  |
 | `allegiance` | `string` | No |  |
-| `current_inheritor` | `string` | No |  |
-| `former_inheritor` | `any[]` | No |  |
+| `currentInheritor` | `string` | No |  |
+| `formerInheritors` | `any[]` | No |  |
 | `height` | `string` | No |  |
 | `id` | `string` | No |  |
 | `name` | `string` | No |  |
