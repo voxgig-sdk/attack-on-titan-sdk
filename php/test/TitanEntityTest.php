@@ -40,7 +40,7 @@ class TitanEntityTest extends TestCase
         $this->assertCount(3, $seen);
 
         // Inbound: streaming active -> yields each item from the feature.
-        $cfg = AttackOnTitanConfig::make_config();
+        $cfg = AttackOnTitanConfig::shared_config();
         if (isset($cfg["feature"]) && is_array($cfg["feature"]) && isset($cfg["feature"]["streaming"])) {
             $sdk = AttackOnTitanSDK::test($seed, ["feature" => ["streaming" => ["active" => true]]]);
             $got = [];

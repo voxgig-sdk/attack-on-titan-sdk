@@ -28,7 +28,7 @@ class AttackOnTitanSDK
     utility = AttackOnTitanUtility.new
     @_utility = utility
 
-    config = AttackOnTitanConfig.make_config
+    config = AttackOnTitanConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

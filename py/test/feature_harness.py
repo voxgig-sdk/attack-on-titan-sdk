@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from attackontitan_sdk.config import make_config
+from attackontitan_sdk.config import shared_config
 from attackontitan_sdk.features import _make_feature
 from attackontitan_sdk.core.control import AttackOnTitanControl
 from attackontitan_sdk.core.error import AttackOnTitanError
@@ -24,7 +24,7 @@ from attackontitan_sdk.core.spec import AttackOnTitanSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

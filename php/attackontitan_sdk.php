@@ -40,7 +40,7 @@ class AttackOnTitanSDK
         $utility = new AttackOnTitanUtility();
         $this->_utility = $utility;
 
-        $config = AttackOnTitanConfig::make_config();
+        $config = AttackOnTitanConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

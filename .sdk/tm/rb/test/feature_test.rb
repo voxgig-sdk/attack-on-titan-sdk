@@ -15,7 +15,7 @@ require_relative "../AttackOnTitan_sdk"
 module AttackOnTitanFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = AttackOnTitanConfig.make_config["feature"]
+    f = AttackOnTitanConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 
