@@ -260,15 +260,15 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `affiliation` |  |
-| `age` |  |
-| `gender` |  |
-| `height` |  |
-| `id` |  |
-| `name` |  |
-| `occupation` |  |
-| `species` |  |
-| `status` |  |
+| `affiliation` | Character's affiliation or allegiance |
+| `age` | Age of the character |
+| `gender` | Gender of the character |
+| `height` | Height of the character |
+| `id` | Unique identifier for the character |
+| `name` | Name of the character |
+| `occupation` | Character's occupation |
+| `species` | Species of the character |
+| `status` | Current status of the character |
 
 Operations: List, Load.
 
@@ -278,12 +278,12 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `airDate` |  |
-| `description` |  |
-| `episodeNumber` |  |
-| `id` |  |
-| `season` |  |
-| `title` |  |
+| `airDate` | Air date of the episode |
+| `description` | Synopsis or description of the episode |
+| `episodeNumber` | Episode number within the season |
+| `id` | Unique identifier for the episode |
+| `season` | Season number |
+| `title` | Title of the episode |
 
 Operations: List, Load.
 
@@ -293,11 +293,11 @@ API path: `/episodes`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `name` |  |
-| `region` |  |
-| `significance` |  |
+| `description` | Description of the location |
+| `id` | Unique identifier for the location |
+| `name` | Name of the location |
+| `region` | Region where the location is situated |
+| `significance` | Significance of the location in the series |
 
 Operations: List, Load.
 
@@ -307,12 +307,12 @@ API path: `/locations`
 
 | Field | Description |
 | --- | --- |
-| `allegiance` |  |
-| `description` |  |
-| `id` |  |
-| `leader` |  |
-| `name` |  |
-| `type` |  |
+| `allegiance` | Allegiance of the organization |
+| `description` | Description of the organization |
+| `id` | Unique identifier for the organization |
+| `leader` | Leader of the organization |
+| `name` | Name of the organization |
+| `type` | Type or classification of the organization |
 
 Operations: List, Load.
 
@@ -322,13 +322,13 @@ API path: `/organizations`
 
 | Field | Description |
 | --- | --- |
-| `abilities` |  |
-| `allegiance` |  |
-| `currentInheritor` |  |
-| `formerInheritors` |  |
-| `height` |  |
-| `id` |  |
-| `name` |  |
+| `abilities` | List of abilities possessed by the titan |
+| `allegiance` | Allegiance of the titan or its inheritor |
+| `currentInheritor` | Current inheritor of the titan |
+| `formerInheritors` | List of former inheritors |
+| `height` | Height of the titan |
+| `id` | Unique identifier for the titan |
+| `name` | Name of the titan |
 
 Operations: List, Load.
 
@@ -354,15 +354,15 @@ Create an instance: `character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `affiliation` | `str` |  |
-| `age` | `int` |  |
-| `gender` | `str` |  |
-| `height` | `str` |  |
-| `id` | `str` |  |
-| `name` | `str` |  |
-| `occupation` | `str` |  |
-| `species` | `str` |  |
-| `status` | `str` |  |
+| `affiliation` | `str` | Character's affiliation or allegiance |
+| `age` | `int` | Age of the character |
+| `gender` | `str` | Gender of the character |
+| `height` | `str` | Height of the character |
+| `id` | `str` | Unique identifier for the character |
+| `name` | `str` | Name of the character |
+| `occupation` | `str` | Character's occupation |
+| `species` | `str` | Species of the character |
+| `status` | `str` | Current status of the character |
 
 #### Example: Load
 
@@ -392,12 +392,12 @@ Create an instance: `episode = client.Episode()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `airDate` | `str` |  |
-| `description` | `str` |  |
-| `episodeNumber` | `int` |  |
-| `id` | `str` |  |
-| `season` | `int` |  |
-| `title` | `str` |  |
+| `airDate` | `str` | Air date of the episode |
+| `description` | `str` | Synopsis or description of the episode |
+| `episodeNumber` | `int` | Episode number within the season |
+| `id` | `str` | Unique identifier for the episode |
+| `season` | `int` | Season number |
+| `title` | `str` | Title of the episode |
 
 #### Example: Load
 
@@ -427,11 +427,11 @@ Create an instance: `location = client.Location()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `name` | `str` |  |
-| `region` | `str` |  |
-| `significance` | `str` |  |
+| `description` | `str` | Description of the location |
+| `id` | `str` | Unique identifier for the location |
+| `name` | `str` | Name of the location |
+| `region` | `str` | Region where the location is situated |
+| `significance` | `str` | Significance of the location in the series |
 
 #### Example: Load
 
@@ -461,12 +461,12 @@ Create an instance: `organization = client.Organization()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allegiance` | `str` |  |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `leader` | `str` |  |
-| `name` | `str` |  |
-| `type` | `str` |  |
+| `allegiance` | `str` | Allegiance of the organization |
+| `description` | `str` | Description of the organization |
+| `id` | `str` | Unique identifier for the organization |
+| `leader` | `str` | Leader of the organization |
+| `name` | `str` | Name of the organization |
+| `type` | `str` | Type or classification of the organization |
 
 #### Example: Load
 
@@ -496,13 +496,13 @@ Create an instance: `titan = client.Titan()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `list` |  |
-| `allegiance` | `str` |  |
-| `currentInheritor` | `str` |  |
-| `formerInheritors` | `list` |  |
-| `height` | `str` |  |
-| `id` | `str` |  |
-| `name` | `str` |  |
+| `abilities` | `list` | List of abilities possessed by the titan |
+| `allegiance` | `str` | Allegiance of the titan or its inheritor |
+| `currentInheritor` | `str` | Current inheritor of the titan |
+| `formerInheritors` | `list` | List of former inheritors |
+| `height` | `str` | Height of the titan |
+| `id` | `str` | Unique identifier for the titan |
+| `name` | `str` | Name of the titan |
 
 #### Example: Load
 

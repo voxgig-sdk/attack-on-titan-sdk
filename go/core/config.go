@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "AttackOnTitan",
+			"slug": "attack-on-titan",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -37,38 +40,47 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "affiliation",
+						"short": "Character's affiliation or allegiance",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "age",
+						"short": "Age of the character",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "gender",
+						"short": "Gender of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "height",
+						"short": "Height of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "occupation",
+						"short": "Character's occupation",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "species",
+						"short": "Species of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Current status of the character",
 						"type": "`$STRING`",
 					},
 				},
@@ -138,26 +150,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "airDate",
+						"short": "Air date of the episode",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Synopsis or description of the episode",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "episodeNumber",
+						"short": "Episode number within the season",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the episode",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "season",
+						"short": "Season number",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Title of the episode",
 						"type": "`$STRING`",
 					},
 				},
@@ -227,22 +245,27 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
+						"short": "Description of the location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "region",
+						"short": "Region where the location is situated",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "significance",
+						"short": "Significance of the location in the series",
 						"type": "`$STRING`",
 					},
 				},
@@ -312,26 +335,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "allegiance",
+						"short": "Allegiance of the organization",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Description of the organization",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the organization",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "leader",
+						"short": "Leader of the organization",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the organization",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "type",
+						"short": "Type or classification of the organization",
 						"type": "`$STRING`",
 					},
 				},
@@ -401,30 +430,37 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "abilities",
+						"short": "List of abilities possessed by the titan",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "allegiance",
+						"short": "Allegiance of the titan or its inheritor",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "currentInheritor",
+						"short": "Current inheritor of the titan",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "formerInheritors",
+						"short": "List of former inheritors",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "height",
+						"short": "Height of the titan",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the titan",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the titan",
 						"type": "`$STRING`",
 					},
 				},

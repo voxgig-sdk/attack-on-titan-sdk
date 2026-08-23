@@ -1,0 +1,106 @@
+# Entity: organization
+
+main: kit: entity: organization: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "allegiance"
+      req: false
+      short: "Allegiance of the organization"
+      type: "`$STRING`"
+    }
+    {
+      name: "description"
+      req: false
+      short: "Description of the organization"
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: false
+      short: "Unique identifier for the organization"
+      type: "`$STRING`"
+    }
+    {
+      name: "leader"
+      req: false
+      short: "Leader of the organization"
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      short: "Name of the organization"
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: false
+      short: "Type or classification of the organization"
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "organization"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/organizations"
+          parts: [
+            "organizations"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/organizations/{id}"
+          parts: [
+            "organizations"
+            "{id}"
+          ]
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

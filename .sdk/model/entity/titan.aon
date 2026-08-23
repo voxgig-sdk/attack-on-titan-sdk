@@ -1,0 +1,112 @@
+# Entity: titan
+
+main: kit: entity: titan: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "abilities"
+      req: false
+      short: "List of abilities possessed by the titan"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "allegiance"
+      req: false
+      short: "Allegiance of the titan or its inheritor"
+      type: "`$STRING`"
+    }
+    {
+      name: "currentInheritor"
+      req: false
+      short: "Current inheritor of the titan"
+      type: "`$STRING`"
+    }
+    {
+      name: "formerInheritors"
+      req: false
+      short: "List of former inheritors"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "height"
+      req: false
+      short: "Height of the titan"
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: false
+      short: "Unique identifier for the titan"
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      short: "Name of the titan"
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "titan"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/titans"
+          parts: [
+            "titans"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/titans/{id}"
+          parts: [
+            "titans"
+            "{id}"
+          ]
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

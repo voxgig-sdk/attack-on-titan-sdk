@@ -1,0 +1,106 @@
+# Entity: episode
+
+main: kit: entity: episode: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "airDate"
+      req: false
+      short: "Air date of the episode"
+      type: "`$STRING`"
+    }
+    {
+      name: "description"
+      req: false
+      short: "Synopsis or description of the episode"
+      type: "`$STRING`"
+    }
+    {
+      name: "episodeNumber"
+      req: false
+      short: "Episode number within the season"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "id"
+      req: false
+      short: "Unique identifier for the episode"
+      type: "`$STRING`"
+    }
+    {
+      name: "season"
+      req: false
+      short: "Season number"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "title"
+      req: false
+      short: "Title of the episode"
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "episode"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/episodes"
+          parts: [
+            "episodes"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/episodes/{id}"
+          parts: [
+            "episodes"
+            "{id}"
+          ]
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

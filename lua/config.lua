@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "AttackOnTitan",
+      slug = "attack-on-titan",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -33,38 +36,47 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "affiliation",
+            ["short"] = "Character's affiliation or allegiance",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "age",
+            ["short"] = "Age of the character",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "gender",
+            ["short"] = "Gender of the character",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "height",
+            ["short"] = "Height of the character",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "id",
+            ["short"] = "Unique identifier for the character",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",
+            ["short"] = "Name of the character",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "occupation",
+            ["short"] = "Character's occupation",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "species",
+            ["short"] = "Species of the character",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
+            ["short"] = "Current status of the character",
             ["type"] = "`$STRING`",
           },
         },
@@ -134,26 +146,32 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "airDate",
+            ["short"] = "Air date of the episode",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "description",
+            ["short"] = "Synopsis or description of the episode",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "episodeNumber",
+            ["short"] = "Episode number within the season",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "id",
+            ["short"] = "Unique identifier for the episode",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "season",
+            ["short"] = "Season number",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "title",
+            ["short"] = "Title of the episode",
             ["type"] = "`$STRING`",
           },
         },
@@ -223,22 +241,27 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "description",
+            ["short"] = "Description of the location",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "id",
+            ["short"] = "Unique identifier for the location",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",
+            ["short"] = "Name of the location",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "region",
+            ["short"] = "Region where the location is situated",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "significance",
+            ["short"] = "Significance of the location in the series",
             ["type"] = "`$STRING`",
           },
         },
@@ -308,26 +331,32 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "allegiance",
+            ["short"] = "Allegiance of the organization",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "description",
+            ["short"] = "Description of the organization",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "id",
+            ["short"] = "Unique identifier for the organization",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "leader",
+            ["short"] = "Leader of the organization",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",
+            ["short"] = "Name of the organization",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "type",
+            ["short"] = "Type or classification of the organization",
             ["type"] = "`$STRING`",
           },
         },
@@ -397,30 +426,37 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "abilities",
+            ["short"] = "List of abilities possessed by the titan",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "allegiance",
+            ["short"] = "Allegiance of the titan or its inheritor",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "currentInheritor",
+            ["short"] = "Current inheritor of the titan",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "formerInheritors",
+            ["short"] = "List of former inheritors",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "height",
+            ["short"] = "Height of the titan",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "id",
+            ["short"] = "Unique identifier for the titan",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",
+            ["short"] = "Name of the titan",
             ["type"] = "`$STRING`",
           },
         },

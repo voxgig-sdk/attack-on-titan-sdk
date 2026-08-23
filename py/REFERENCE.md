@@ -103,15 +103,15 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affiliation` | `str` | No |  |
-| `age` | `int` | No |  |
-| `gender` | `str` | No |  |
-| `height` | `str` | No |  |
-| `id` | `str` | No |  |
-| `name` | `str` | No |  |
-| `occupation` | `str` | No |  |
-| `species` | `str` | No |  |
-| `status` | `str` | No |  |
+| `affiliation` | `str` | No | Character's affiliation or allegiance |
+| `age` | `int` | No | Age of the character |
+| `gender` | `str` | No | Gender of the character |
+| `height` | `str` | No | Height of the character |
+| `id` | `str` | No | Unique identifier for the character |
+| `name` | `str` | No | Name of the character |
+| `occupation` | `str` | No | Character's occupation |
+| `species` | `str` | No | Species of the character |
+| `status` | `str` | No | Current status of the character |
 
 ### Operations
 
@@ -172,12 +172,12 @@ episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `airDate` | `str` | No |  |
-| `description` | `str` | No |  |
-| `episodeNumber` | `int` | No |  |
-| `id` | `str` | No |  |
-| `season` | `int` | No |  |
-| `title` | `str` | No |  |
+| `airDate` | `str` | No | Air date of the episode |
+| `description` | `str` | No | Synopsis or description of the episode |
+| `episodeNumber` | `int` | No | Episode number within the season |
+| `id` | `str` | No | Unique identifier for the episode |
+| `season` | `int` | No | Season number |
+| `title` | `str` | No | Title of the episode |
 
 ### Operations
 
@@ -238,11 +238,11 @@ location = client.Location()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `str` | No |  |
-| `id` | `str` | No |  |
-| `name` | `str` | No |  |
-| `region` | `str` | No |  |
-| `significance` | `str` | No |  |
+| `description` | `str` | No | Description of the location |
+| `id` | `str` | No | Unique identifier for the location |
+| `name` | `str` | No | Name of the location |
+| `region` | `str` | No | Region where the location is situated |
+| `significance` | `str` | No | Significance of the location in the series |
 
 ### Operations
 
@@ -303,12 +303,12 @@ organization = client.Organization()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allegiance` | `str` | No |  |
-| `description` | `str` | No |  |
-| `id` | `str` | No |  |
-| `leader` | `str` | No |  |
-| `name` | `str` | No |  |
-| `type` | `str` | No |  |
+| `allegiance` | `str` | No | Allegiance of the organization |
+| `description` | `str` | No | Description of the organization |
+| `id` | `str` | No | Unique identifier for the organization |
+| `leader` | `str` | No | Leader of the organization |
+| `name` | `str` | No | Name of the organization |
+| `type` | `str` | No | Type or classification of the organization |
 
 ### Operations
 
@@ -369,13 +369,13 @@ titan = client.Titan()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `abilities` | `list` | No |  |
-| `allegiance` | `str` | No |  |
-| `currentInheritor` | `str` | No |  |
-| `formerInheritors` | `list` | No |  |
-| `height` | `str` | No |  |
-| `id` | `str` | No |  |
-| `name` | `str` | No |  |
+| `abilities` | `list` | No | List of abilities possessed by the titan |
+| `allegiance` | `str` | No | Allegiance of the titan or its inheritor |
+| `currentInheritor` | `str` | No | Current inheritor of the titan |
+| `formerInheritors` | `list` | No | List of former inheritors |
+| `height` | `str` | No | Height of the titan |
+| `id` | `str` | No | Unique identifier for the titan |
+| `name` | `str` | No | Name of the titan |
 
 ### Operations
 

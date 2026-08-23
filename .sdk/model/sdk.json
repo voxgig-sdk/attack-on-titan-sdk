@@ -36,54 +36,63 @@
               "active": true,
               "name": "affiliation",
               "req": false,
+              "short": "Character's affiliation or allegiance",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "age",
               "req": false,
+              "short": "Age of the character",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "gender",
               "req": false,
+              "short": "Gender of the character",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "height",
               "req": false,
+              "short": "Height of the character",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the character",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the character",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "occupation",
               "req": false,
+              "short": "Character's occupation",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "species",
               "req": false,
+              "short": "Species of the character",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": false,
+              "short": "Current status of the character",
               "type": "`$STRING`"
             }
           ],
@@ -166,36 +175,42 @@
               "active": true,
               "name": "airDate",
               "req": false,
+              "short": "Air date of the episode",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Synopsis or description of the episode",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "episodeNumber",
               "req": false,
+              "short": "Episode number within the season",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the episode",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "season",
               "req": false,
+              "short": "Season number",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Title of the episode",
               "type": "`$STRING`"
             }
           ],
@@ -278,30 +293,35 @@
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Description of the location",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the location",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the location",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "region",
               "req": false,
+              "short": "Region where the location is situated",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "significance",
               "req": false,
+              "short": "Significance of the location in the series",
               "type": "`$STRING`"
             }
           ],
@@ -384,36 +404,42 @@
               "active": true,
               "name": "allegiance",
               "req": false,
+              "short": "Allegiance of the organization",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Description of the organization",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the organization",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "leader",
               "req": false,
+              "short": "Leader of the organization",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the organization",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": false,
+              "short": "Type or classification of the organization",
               "type": "`$STRING`"
             }
           ],
@@ -496,42 +522,49 @@
               "active": true,
               "name": "abilities",
               "req": false,
+              "short": "List of abilities possessed by the titan",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "allegiance",
               "req": false,
+              "short": "Allegiance of the titan or its inheritor",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "currentInheritor",
               "req": false,
+              "short": "Current inheritor of the titan",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "formerInheritors",
               "req": false,
+              "short": "List of former inheritors",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "height",
               "req": false,
+              "short": "Height of the titan",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the titan",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the titan",
               "type": "`$STRING`"
             }
           ],

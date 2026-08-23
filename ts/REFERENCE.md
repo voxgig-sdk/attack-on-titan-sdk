@@ -164,15 +164,15 @@ const character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affiliation` | `string` | No |  |
-| `age` | `number` | No |  |
-| `gender` | `string` | No |  |
-| `height` | `string` | No |  |
-| `id` | `string` | No |  |
-| `name` | `string` | No |  |
-| `occupation` | `string` | No |  |
-| `species` | `string` | No |  |
-| `status` | `string` | No |  |
+| `affiliation` | `string` | No | Character's affiliation or allegiance |
+| `age` | `number` | No | Age of the character |
+| `gender` | `string` | No | Gender of the character |
+| `height` | `string` | No | Height of the character |
+| `id` | `string` | No | Unique identifier for the character |
+| `name` | `string` | No | Name of the character |
+| `occupation` | `string` | No | Character's occupation |
+| `species` | `string` | No | Species of the character |
+| `status` | `string` | No | Current status of the character |
 
 ### Operations
 
@@ -230,12 +230,12 @@ const episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `airDate` | `string` | No |  |
-| `description` | `string` | No |  |
-| `episodeNumber` | `number` | No |  |
-| `id` | `string` | No |  |
-| `season` | `number` | No |  |
-| `title` | `string` | No |  |
+| `airDate` | `string` | No | Air date of the episode |
+| `description` | `string` | No | Synopsis or description of the episode |
+| `episodeNumber` | `number` | No | Episode number within the season |
+| `id` | `string` | No | Unique identifier for the episode |
+| `season` | `number` | No | Season number |
+| `title` | `string` | No | Title of the episode |
 
 ### Operations
 
@@ -293,11 +293,11 @@ const location = client.Location()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `name` | `string` | No |  |
-| `region` | `string` | No |  |
-| `significance` | `string` | No |  |
+| `description` | `string` | No | Description of the location |
+| `id` | `string` | No | Unique identifier for the location |
+| `name` | `string` | No | Name of the location |
+| `region` | `string` | No | Region where the location is situated |
+| `significance` | `string` | No | Significance of the location in the series |
 
 ### Operations
 
@@ -355,12 +355,12 @@ const organization = client.Organization()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allegiance` | `string` | No |  |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `leader` | `string` | No |  |
-| `name` | `string` | No |  |
-| `type` | `string` | No |  |
+| `allegiance` | `string` | No | Allegiance of the organization |
+| `description` | `string` | No | Description of the organization |
+| `id` | `string` | No | Unique identifier for the organization |
+| `leader` | `string` | No | Leader of the organization |
+| `name` | `string` | No | Name of the organization |
+| `type` | `string` | No | Type or classification of the organization |
 
 ### Operations
 
@@ -418,13 +418,13 @@ const titan = client.Titan()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `abilities` | `any[]` | No |  |
-| `allegiance` | `string` | No |  |
-| `currentInheritor` | `string` | No |  |
-| `formerInheritors` | `any[]` | No |  |
-| `height` | `string` | No |  |
-| `id` | `string` | No |  |
-| `name` | `string` | No |  |
+| `abilities` | `any[]` | No | List of abilities possessed by the titan |
+| `allegiance` | `string` | No | Allegiance of the titan or its inheritor |
+| `currentInheritor` | `string` | No | Current inheritor of the titan |
+| `formerInheritors` | `any[]` | No | List of former inheritors |
+| `height` | `string` | No | Height of the titan |
+| `id` | `string` | No | Unique identifier for the titan |
+| `name` | `string` | No | Name of the titan |
 
 ### Operations
 

@@ -109,15 +109,15 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affiliation` | `String` | No |  |
-| `age` | `Integer` | No |  |
-| `gender` | `String` | No |  |
-| `height` | `String` | No |  |
-| `id` | `String` | No |  |
-| `name` | `String` | No |  |
-| `occupation` | `String` | No |  |
-| `species` | `String` | No |  |
-| `status` | `String` | No |  |
+| `affiliation` | `String` | No | Character's affiliation or allegiance |
+| `age` | `Integer` | No | Age of the character |
+| `gender` | `String` | No | Gender of the character |
+| `height` | `String` | No | Height of the character |
+| `id` | `String` | No | Unique identifier for the character |
+| `name` | `String` | No | Name of the character |
+| `occupation` | `String` | No | Character's occupation |
+| `species` | `String` | No | Species of the character |
+| `status` | `String` | No | Current status of the character |
 
 ### Operations
 
@@ -177,12 +177,12 @@ episode = client.Episode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `airDate` | `String` | No |  |
-| `description` | `String` | No |  |
-| `episodeNumber` | `Integer` | No |  |
-| `id` | `String` | No |  |
-| `season` | `Integer` | No |  |
-| `title` | `String` | No |  |
+| `airDate` | `String` | No | Air date of the episode |
+| `description` | `String` | No | Synopsis or description of the episode |
+| `episodeNumber` | `Integer` | No | Episode number within the season |
+| `id` | `String` | No | Unique identifier for the episode |
+| `season` | `Integer` | No | Season number |
+| `title` | `String` | No | Title of the episode |
 
 ### Operations
 
@@ -242,11 +242,11 @@ location = client.Location
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `String` | No |  |
-| `id` | `String` | No |  |
-| `name` | `String` | No |  |
-| `region` | `String` | No |  |
-| `significance` | `String` | No |  |
+| `description` | `String` | No | Description of the location |
+| `id` | `String` | No | Unique identifier for the location |
+| `name` | `String` | No | Name of the location |
+| `region` | `String` | No | Region where the location is situated |
+| `significance` | `String` | No | Significance of the location in the series |
 
 ### Operations
 
@@ -306,12 +306,12 @@ organization = client.Organization
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allegiance` | `String` | No |  |
-| `description` | `String` | No |  |
-| `id` | `String` | No |  |
-| `leader` | `String` | No |  |
-| `name` | `String` | No |  |
-| `type` | `String` | No |  |
+| `allegiance` | `String` | No | Allegiance of the organization |
+| `description` | `String` | No | Description of the organization |
+| `id` | `String` | No | Unique identifier for the organization |
+| `leader` | `String` | No | Leader of the organization |
+| `name` | `String` | No | Name of the organization |
+| `type` | `String` | No | Type or classification of the organization |
 
 ### Operations
 
@@ -371,13 +371,13 @@ titan = client.Titan
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `abilities` | `Array` | No |  |
-| `allegiance` | `String` | No |  |
-| `currentInheritor` | `String` | No |  |
-| `formerInheritors` | `Array` | No |  |
-| `height` | `String` | No |  |
-| `id` | `String` | No |  |
-| `name` | `String` | No |  |
+| `abilities` | `Array` | No | List of abilities possessed by the titan |
+| `allegiance` | `String` | No | Allegiance of the titan or its inheritor |
+| `currentInheritor` | `String` | No | Current inheritor of the titan |
+| `formerInheritors` | `Array` | No | List of former inheritors |
+| `height` | `String` | No | Height of the titan |
+| `id` | `String` | No | Unique identifier for the titan |
+| `name` | `String` | No | Name of the titan |
 
 ### Operations
 

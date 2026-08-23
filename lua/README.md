@@ -245,15 +245,15 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `affiliation` |  |
-| `age` |  |
-| `gender` |  |
-| `height` |  |
-| `id` |  |
-| `name` |  |
-| `occupation` |  |
-| `species` |  |
-| `status` |  |
+| `affiliation` | Character's affiliation or allegiance |
+| `age` | Age of the character |
+| `gender` | Gender of the character |
+| `height` | Height of the character |
+| `id` | Unique identifier for the character |
+| `name` | Name of the character |
+| `occupation` | Character's occupation |
+| `species` | Species of the character |
+| `status` | Current status of the character |
 
 Operations: List, Load.
 
@@ -263,12 +263,12 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `airDate` |  |
-| `description` |  |
-| `episodeNumber` |  |
-| `id` |  |
-| `season` |  |
-| `title` |  |
+| `airDate` | Air date of the episode |
+| `description` | Synopsis or description of the episode |
+| `episodeNumber` | Episode number within the season |
+| `id` | Unique identifier for the episode |
+| `season` | Season number |
+| `title` | Title of the episode |
 
 Operations: List, Load.
 
@@ -278,11 +278,11 @@ API path: `/episodes`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `name` |  |
-| `region` |  |
-| `significance` |  |
+| `description` | Description of the location |
+| `id` | Unique identifier for the location |
+| `name` | Name of the location |
+| `region` | Region where the location is situated |
+| `significance` | Significance of the location in the series |
 
 Operations: List, Load.
 
@@ -292,12 +292,12 @@ API path: `/locations`
 
 | Field | Description |
 | --- | --- |
-| `allegiance` |  |
-| `description` |  |
-| `id` |  |
-| `leader` |  |
-| `name` |  |
-| `type` |  |
+| `allegiance` | Allegiance of the organization |
+| `description` | Description of the organization |
+| `id` | Unique identifier for the organization |
+| `leader` | Leader of the organization |
+| `name` | Name of the organization |
+| `type` | Type or classification of the organization |
 
 Operations: List, Load.
 
@@ -307,13 +307,13 @@ API path: `/organizations`
 
 | Field | Description |
 | --- | --- |
-| `abilities` |  |
-| `allegiance` |  |
-| `currentInheritor` |  |
-| `formerInheritors` |  |
-| `height` |  |
-| `id` |  |
-| `name` |  |
+| `abilities` | List of abilities possessed by the titan |
+| `allegiance` | Allegiance of the titan or its inheritor |
+| `currentInheritor` | Current inheritor of the titan |
+| `formerInheritors` | List of former inheritors |
+| `height` | Height of the titan |
+| `id` | Unique identifier for the titan |
+| `name` | Name of the titan |
 
 Operations: List, Load.
 
@@ -339,15 +339,15 @@ Create an instance: `local character = client:Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `affiliation` | `string` |  |
-| `age` | `number` |  |
-| `gender` | `string` |  |
-| `height` | `string` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
-| `occupation` | `string` |  |
-| `species` | `string` |  |
-| `status` | `string` |  |
+| `affiliation` | `string` | Character's affiliation or allegiance |
+| `age` | `number` | Age of the character |
+| `gender` | `string` | Gender of the character |
+| `height` | `string` | Height of the character |
+| `id` | `string` | Unique identifier for the character |
+| `name` | `string` | Name of the character |
+| `occupation` | `string` | Character's occupation |
+| `species` | `string` | Species of the character |
+| `status` | `string` | Current status of the character |
 
 #### Example: Load
 
@@ -377,12 +377,12 @@ Create an instance: `local episode = client:Episode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `airDate` | `string` |  |
-| `description` | `string` |  |
-| `episodeNumber` | `number` |  |
-| `id` | `string` |  |
-| `season` | `number` |  |
-| `title` | `string` |  |
+| `airDate` | `string` | Air date of the episode |
+| `description` | `string` | Synopsis or description of the episode |
+| `episodeNumber` | `number` | Episode number within the season |
+| `id` | `string` | Unique identifier for the episode |
+| `season` | `number` | Season number |
+| `title` | `string` | Title of the episode |
 
 #### Example: Load
 
@@ -412,11 +412,11 @@ Create an instance: `local location = client:Location(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
-| `region` | `string` |  |
-| `significance` | `string` |  |
+| `description` | `string` | Description of the location |
+| `id` | `string` | Unique identifier for the location |
+| `name` | `string` | Name of the location |
+| `region` | `string` | Region where the location is situated |
+| `significance` | `string` | Significance of the location in the series |
 
 #### Example: Load
 
@@ -446,12 +446,12 @@ Create an instance: `local organization = client:Organization(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allegiance` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `leader` | `string` |  |
-| `name` | `string` |  |
-| `type` | `string` |  |
+| `allegiance` | `string` | Allegiance of the organization |
+| `description` | `string` | Description of the organization |
+| `id` | `string` | Unique identifier for the organization |
+| `leader` | `string` | Leader of the organization |
+| `name` | `string` | Name of the organization |
+| `type` | `string` | Type or classification of the organization |
 
 #### Example: Load
 
@@ -481,13 +481,13 @@ Create an instance: `local titan = client:Titan(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `table` |  |
-| `allegiance` | `string` |  |
-| `currentInheritor` | `string` |  |
-| `formerInheritors` | `table` |  |
-| `height` | `string` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
+| `abilities` | `table` | List of abilities possessed by the titan |
+| `allegiance` | `string` | Allegiance of the titan or its inheritor |
+| `currentInheritor` | `string` | Current inheritor of the titan |
+| `formerInheritors` | `table` | List of former inheritors |
+| `height` | `string` | Height of the titan |
+| `id` | `string` | Unique identifier for the titan |
+| `name` | `string` | Name of the titan |
 
 #### Example: Load
 
