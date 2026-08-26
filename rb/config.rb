@@ -28,6 +28,7 @@ module AttackOnTitanConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
