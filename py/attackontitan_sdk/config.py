@@ -1,6 +1,14 @@
 # AttackOnTitan SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -102,6 +110,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "character",
         "op": {
           "list": {
@@ -113,14 +125,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/characters",
-                "parts": [
-                  "characters",
+                "segments": [
+                  {
+                    "lit": "characters",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "characters",
+                ],
               },
             ],
           },
@@ -143,9 +160,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/characters/{id}",
-                "parts": [
-                  "characters",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "characters",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -156,6 +177,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "characters",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -167,6 +192,7 @@ def make_config():
       "episode": {
         "fields": [
           {
+            "format": "date",
             "name": "airDate",
             "short": "Air date of the episode",
             "type": "`$STRING`",
@@ -197,6 +223,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "episode",
         "op": {
           "list": {
@@ -208,14 +238,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/episodes",
-                "parts": [
-                  "episodes",
+                "segments": [
+                  {
+                    "lit": "episodes",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "episodes",
+                ],
               },
             ],
           },
@@ -238,9 +273,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/episodes/{id}",
-                "parts": [
-                  "episodes",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "episodes",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -251,6 +290,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "episodes",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -287,6 +330,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "location",
         "op": {
           "list": {
@@ -298,14 +345,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/locations",
-                "parts": [
-                  "locations",
+                "segments": [
+                  {
+                    "lit": "locations",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "locations",
+                ],
               },
             ],
           },
@@ -328,9 +380,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/locations/{id}",
-                "parts": [
-                  "locations",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "locations",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -341,6 +397,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "locations",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -382,6 +442,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "organization",
         "op": {
           "list": {
@@ -393,14 +457,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/organizations",
-                "parts": [
-                  "organizations",
+                "segments": [
+                  {
+                    "lit": "organizations",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "organizations",
+                ],
               },
             ],
           },
@@ -423,9 +492,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/organizations/{id}",
-                "parts": [
-                  "organizations",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "organizations",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -436,6 +509,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "organizations",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -482,6 +559,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "titan",
         "op": {
           "list": {
@@ -493,14 +574,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/titans",
-                "parts": [
-                  "titans",
+                "segments": [
+                  {
+                    "lit": "titans",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "titans",
+                ],
               },
             ],
           },
@@ -523,9 +609,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/titans/{id}",
-                "parts": [
-                  "titans",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "titans",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -536,6 +626,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "titans",
+                  "{id}",
+                ],
               },
             ],
           },

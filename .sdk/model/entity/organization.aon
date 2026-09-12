@@ -56,8 +56,10 @@ main: kit: entity: organization: {
         {
           method: "GET"
           orig: "/organizations"
-          parts: [
-            "organizations"
+          segments: [
+            {
+              lit: "organizations"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -83,9 +85,13 @@ main: kit: entity: organization: {
           }
           method: "GET"
           orig: "/organizations/{id}"
-          parts: [
-            "organizations"
-            "{id}"
+          segments: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [

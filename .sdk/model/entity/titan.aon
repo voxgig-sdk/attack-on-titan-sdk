@@ -62,8 +62,10 @@ main: kit: entity: titan: {
         {
           method: "GET"
           orig: "/titans"
-          parts: [
-            "titans"
+          segments: [
+            {
+              lit: "titans"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -89,9 +91,13 @@ main: kit: entity: titan: {
           }
           method: "GET"
           orig: "/titans/{id}"
-          parts: [
-            "titans"
-            "{id}"
+          segments: [
+            {
+              lit: "titans"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [

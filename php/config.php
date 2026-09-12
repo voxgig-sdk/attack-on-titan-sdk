@@ -107,6 +107,10 @@ class AttackOnTitanConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'character',
           'op' => [
             'list' => [
@@ -118,13 +122,18 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters',
-                  'parts' => [
-                    'characters',
+                  'segments' => [
+                    [
+                      'lit' => 'characters',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'characters',
                   ],
                 ],
               ],
@@ -148,9 +157,13 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters/{id}',
-                  'parts' => [
-                    'characters',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'characters',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -160,6 +173,10 @@ class AttackOnTitanConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'characters',
+                    '{id}',
                   ],
                 ],
               ],
@@ -172,6 +189,7 @@ class AttackOnTitanConfig
         'episode' => [
           'fields' => [
             [
+              'format' => 'date',
               'name' => 'airDate',
               'short' => 'Air date of the episode',
               'type' => '`$STRING`',
@@ -202,6 +220,10 @@ class AttackOnTitanConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'episode',
           'op' => [
             'list' => [
@@ -213,13 +235,18 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/episodes',
-                  'parts' => [
-                    'episodes',
+                  'segments' => [
+                    [
+                      'lit' => 'episodes',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'episodes',
                   ],
                 ],
               ],
@@ -243,9 +270,13 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/episodes/{id}',
-                  'parts' => [
-                    'episodes',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'episodes',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -255,6 +286,10 @@ class AttackOnTitanConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'episodes',
+                    '{id}',
                   ],
                 ],
               ],
@@ -292,6 +327,10 @@ class AttackOnTitanConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'location',
           'op' => [
             'list' => [
@@ -303,13 +342,18 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/locations',
-                  'parts' => [
-                    'locations',
+                  'segments' => [
+                    [
+                      'lit' => 'locations',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'locations',
                   ],
                 ],
               ],
@@ -333,9 +377,13 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/locations/{id}',
-                  'parts' => [
-                    'locations',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'locations',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -345,6 +393,10 @@ class AttackOnTitanConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'locations',
+                    '{id}',
                   ],
                 ],
               ],
@@ -387,6 +439,10 @@ class AttackOnTitanConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'organization',
           'op' => [
             'list' => [
@@ -398,13 +454,18 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/organizations',
-                  'parts' => [
-                    'organizations',
+                  'segments' => [
+                    [
+                      'lit' => 'organizations',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'organizations',
                   ],
                 ],
               ],
@@ -428,9 +489,13 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/organizations/{id}',
-                  'parts' => [
-                    'organizations',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'organizations',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -440,6 +505,10 @@ class AttackOnTitanConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'organizations',
+                    '{id}',
                   ],
                 ],
               ],
@@ -487,6 +556,10 @@ class AttackOnTitanConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'titan',
           'op' => [
             'list' => [
@@ -498,13 +571,18 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/titans',
-                  'parts' => [
-                    'titans',
+                  'segments' => [
+                    [
+                      'lit' => 'titans',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'titans',
                   ],
                 ],
               ],
@@ -528,9 +606,13 @@ class AttackOnTitanConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/titans/{id}',
-                  'parts' => [
-                    'titans',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'titans',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -540,6 +622,10 @@ class AttackOnTitanConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'titans',
+                    '{id}',
                   ],
                 ],
               ],
