@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { AttackOnTitanSDK } from '@voxgig-sdk/attack-on-titan'
+import { AttackOnTitanSDK } from '@voxgig-sdk/attack-on-titan-sdk'
 
 const client = new AttackOnTitanSDK()
 ```
@@ -645,7 +645,7 @@ attack-on-titan/
 Import the SDK from the package root:
 
 ```ts
-import { AttackOnTitanSDK } from '@voxgig-sdk/attack-on-titan'
+import { AttackOnTitanSDK } from '@voxgig-sdk/attack-on-titan-sdk'
 ```
 
 ### Entity state

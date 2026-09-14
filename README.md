@@ -105,7 +105,7 @@ local results, err = client:Episode():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases) |
+| TypeScript | `@voxgig-sdk/attack-on-titan-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases) |
 | Python | `voxgig-sdk-attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases) |
 | PHP | `voxgig-sdk/attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/attack-on-titan-sdk/go` | `go get github.com/voxgig-sdk/attack-on-titan-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Episode():list()
 ### TypeScript
 
 ```ts
-import { AttackOnTitanSDK } from '@voxgig-sdk/attack-on-titan'
+import { AttackOnTitanSDK } from '@voxgig-sdk/attack-on-titan-sdk'
 
 const client = new AttackOnTitanSDK()
 
