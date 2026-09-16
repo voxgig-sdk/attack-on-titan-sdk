@@ -72,6 +72,12 @@ main: kit: entity: character: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /characters"
+            json: "{\"operationId\":\"getCharacters\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"affiliation\":{\"description\":\"Character's affiliation or allegiance\",\"type\":\"string\"},\"age\":{\"description\":\"Age of the character\",\"type\":\"integer\"},\"gender\":{\"description\":\"Gender of the character\",\"type\":\"string\"},\"height\":{\"description\":\"Height of the character\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the character\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Character's occupation\",\"type\":\"string\"},\"species\":{\"description\":\"Species of the character\",\"type\":\"string\"},\"status\":{\"description\":\"Current status of the character\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of characters\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/characters"
           segments: [
@@ -100,6 +106,12 @@ main: kit: entity: character: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /characters/{id}"
+            json: "{\"operationId\":\"getCharacterById\",\"parameters\":[{\"description\":\"The ID of the character to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"affiliation\":{\"description\":\"Character's affiliation or allegiance\",\"type\":\"string\"},\"age\":{\"description\":\"Age of the character\",\"type\":\"integer\"},\"gender\":{\"description\":\"Gender of the character\",\"type\":\"string\"},\"height\":{\"description\":\"Height of the character\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the character\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Character's occupation\",\"type\":\"string\"},\"species\":{\"description\":\"Species of the character\",\"type\":\"string\"},\"status\":{\"description\":\"Current status of the character\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Character details\"},\"404\":{\"description\":\"Character not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/characters/{id}"

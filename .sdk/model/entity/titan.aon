@@ -60,6 +60,12 @@ main: kit: entity: titan: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /titans"
+            json: "{\"operationId\":\"getTitans\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"abilities\":{\"description\":\"List of abilities possessed by the titan\",\"example\":[\"Future memory inheritance\",\"Hardening\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"allegiance\":{\"description\":\"Allegiance of the titan or its inheritor\",\"example\":\"Eldia\",\"type\":\"string\"},\"currentInheritor\":{\"description\":\"Current inheritor of the titan\",\"example\":\"Eren Jaeger\",\"type\":\"string\"},\"formerInheritors\":{\"description\":\"List of former inheritors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"height\":{\"description\":\"Height of the titan\",\"example\":\"15m\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the titan\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the titan\",\"example\":\"Attack Titan\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of titans\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/titans"
           segments: [
@@ -88,6 +94,12 @@ main: kit: entity: titan: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /titans/{id}"
+            json: "{\"operationId\":\"getTitanById\",\"parameters\":[{\"description\":\"The ID of the titan to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"abilities\":{\"description\":\"List of abilities possessed by the titan\",\"example\":[\"Future memory inheritance\",\"Hardening\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"allegiance\":{\"description\":\"Allegiance of the titan or its inheritor\",\"example\":\"Eldia\",\"type\":\"string\"},\"currentInheritor\":{\"description\":\"Current inheritor of the titan\",\"example\":\"Eren Jaeger\",\"type\":\"string\"},\"formerInheritors\":{\"description\":\"List of former inheritors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"height\":{\"description\":\"Height of the titan\",\"example\":\"15m\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the titan\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the titan\",\"example\":\"Attack Titan\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Titan details\"},\"404\":{\"description\":\"Titan not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/titans/{id}"

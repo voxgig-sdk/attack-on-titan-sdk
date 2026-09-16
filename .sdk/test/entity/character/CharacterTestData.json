@@ -3,7 +3,7 @@
     "character": {
       "CHARACTER00": {
         "affiliation": "s5a",
-        "age": "s5b",
+        "age": 91,
         "gender": "s5c",
         "height": "s5d",
         "id": "CHARACTER00",
@@ -14,7 +14,7 @@
       },
       "CHARACTER01": {
         "affiliation": "sb4",
-        "age": "sb5",
+        "age": 181,
         "gender": "sb6",
         "height": "sb7",
         "id": "CHARACTER01",
@@ -25,7 +25,7 @@
       },
       "CHARACTER02": {
         "affiliation": "s10e",
-        "age": "s10f",
+        "age": 271,
         "gender": "s110",
         "height": "s111",
         "id": "CHARACTER02",
@@ -40,13 +40,149 @@
     "character": {
       "character_ref01": {
         "affiliation": "s168",
-        "age": "s169",
+        "age": 361,
         "gender": "s16a",
         "height": "s16b",
         "name": "s16d",
         "occupation": "s16e",
         "species": "s16f",
         "status": "s170"
+      }
+    }
+  },
+  "requests": {
+    "GET /characters": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCharacters",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "affiliation": {
+                        "description": "Character's affiliation or allegiance",
+                        "type": "string"
+                      },
+                      "age": {
+                        "description": "Age of the character",
+                        "type": "integer"
+                      },
+                      "gender": {
+                        "description": "Gender of the character",
+                        "type": "string"
+                      },
+                      "height": {
+                        "description": "Height of the character",
+                        "type": "string"
+                      },
+                      "id": {
+                        "description": "Unique identifier for the character",
+                        "type": "string"
+                      },
+                      "name": {
+                        "description": "Name of the character",
+                        "type": "string"
+                      },
+                      "occupation": {
+                        "description": "Character's occupation",
+                        "type": "string"
+                      },
+                      "species": {
+                        "description": "Species of the character",
+                        "type": "string"
+                      },
+                      "status": {
+                        "description": "Current status of the character",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "A list of characters"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /characters/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCharacterById",
+        "parameters": [
+          {
+            "description": "The ID of the character to retrieve",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "affiliation": {
+                      "description": "Character's affiliation or allegiance",
+                      "type": "string"
+                    },
+                    "age": {
+                      "description": "Age of the character",
+                      "type": "integer"
+                    },
+                    "gender": {
+                      "description": "Gender of the character",
+                      "type": "string"
+                    },
+                    "height": {
+                      "description": "Height of the character",
+                      "type": "string"
+                    },
+                    "id": {
+                      "description": "Unique identifier for the character",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the character",
+                      "type": "string"
+                    },
+                    "occupation": {
+                      "description": "Character's occupation",
+                      "type": "string"
+                    },
+                    "species": {
+                      "description": "Species of the character",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Current status of the character",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Character details"
+          },
+          "404": {
+            "description": "Character not found"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

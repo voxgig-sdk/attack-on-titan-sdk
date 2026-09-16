@@ -40,6 +40,8 @@ const node_path_1 = __importDefault(require("node:path"));
 const Fs = __importStar(require("node:fs"));
 const node_test_1 = require("node:test");
 const node_assert_1 = __importDefault(require("node:assert"));
+const live_runner_1 = require("../../live-runner");
+const live_entity_1 = require("../../live-entity");
 const __1 = require("../../..");
 const utility_1 = require("../../utility");
 // AFTER the imports on purpose: TypeScript hoists `import` above any
@@ -59,16 +61,12 @@ const utility_1 = require("../../utility");
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.ATTACK_ON_TITAN_TEST_LIVE;
         for (const op of ['list', 'load']) {
-            if ((0, utility_1.maybeSkipControl)(t, 'entityOp', 'titan.' + op, live))
+            if (!live && (0, utility_1.maybeSkipControl)(t, 'entityOp', 'titan.' + op, live))
                 return;
         }
         const setup = basicSetup();
-        // The basic flow consumes synthetic IDs and field values from the
-        // fixture (entity TestData.json). Those don't exist on the live API.
-        // Skip live runs unless the user provided a real ENTID env override.
-        if (setup.syntheticOnly) {
-            t.skip('live entity test uses synthetic IDs from fixture — set ATTACK_ON_TITAN_TEST_TITAN_ENTID JSON to run live');
-            return;
+        if (setup.live) {
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": [{ "active": true, "name": "abilities", "req": false, "short": "List of abilities possessed by the titan", "type": "`$ARRAY`", "index$": 0 }, { "active": true, "name": "allegiance", "req": false, "short": "Allegiance of the titan or its inheritor", "type": "`$STRING`", "index$": 1 }, { "active": true, "name": "currentInheritor", "req": false, "short": "Current inheritor of the titan", "type": "`$STRING`", "index$": 2 }, { "active": true, "name": "formerInheritors", "req": false, "short": "List of former inheritors", "type": "`$ARRAY`", "index$": 3 }, { "active": true, "name": "height", "req": false, "short": "Height of the titan", "type": "`$STRING`", "index$": 4 }, { "active": true, "name": "id", "req": false, "short": "Unique identifier for the titan", "type": "`$STRING`", "index$": 5 }, { "active": true, "name": "name", "req": false, "short": "Name of the titan", "type": "`$STRING`", "index$": 6 }], "id": { "field": "id", "name": "id" }, "name": "titan", "op": { "list": { "input": "data", "name": "list", "points": [{ "active": true, "args": {}, "contract": { "id": "GET /titans", "json": "{\"operationId\":\"getTitans\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"abilities\":{\"description\":\"List of abilities possessed by the titan\",\"example\":[\"Future memory inheritance\",\"Hardening\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"allegiance\":{\"description\":\"Allegiance of the titan or its inheritor\",\"example\":\"Eldia\",\"type\":\"string\"},\"currentInheritor\":{\"description\":\"Current inheritor of the titan\",\"example\":\"Eren Jaeger\",\"type\":\"string\"},\"formerInheritors\":{\"description\":\"List of former inheritors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"height\":{\"description\":\"Height of the titan\",\"example\":\"15m\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the titan\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the titan\",\"example\":\"Attack Titan\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of titans\"}},\"securitySource\":\"unspecified\"}", "source": "openapi3", "version": 1 }, "kind": "http", "method": "GET", "orig": "/titans", "segments": [{ "lit": "titans" }], "select": {}, "transform": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "list" }, "load": { "input": "data", "name": "load", "points": [{ "active": true, "args": { "params": [{ "active": true, "kind": "param", "name": "id", "orig": "id", "reqd": true, "type": "`$STRING`", "index$": 0 }] }, "contract": { "id": "GET /titans/{id}", "json": "{\"operationId\":\"getTitanById\",\"parameters\":[{\"description\":\"The ID of the titan to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"abilities\":{\"description\":\"List of abilities possessed by the titan\",\"example\":[\"Future memory inheritance\",\"Hardening\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"allegiance\":{\"description\":\"Allegiance of the titan or its inheritor\",\"example\":\"Eldia\",\"type\":\"string\"},\"currentInheritor\":{\"description\":\"Current inheritor of the titan\",\"example\":\"Eren Jaeger\",\"type\":\"string\"},\"formerInheritors\":{\"description\":\"List of former inheritors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"height\":{\"description\":\"Height of the titan\",\"example\":\"15m\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the titan\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the titan\",\"example\":\"Attack Titan\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Titan details\"},\"404\":{\"description\":\"Titan not found\"}},\"securitySource\":\"unspecified\"}", "source": "openapi3", "version": 1 }, "kind": "http", "method": "GET", "orig": "/titans/{id}", "segments": [{ "lit": "titans" }, { "var": "id" }], "select": { "exist": ["id"] }, "transform": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "titan", "name__orig": "titan", "Name": "Titan", "name_": "titan", "name-": "titan", "NAME": "TITAN", "index$": 4 }, { "active": true, "entity": "titan", "key$": "BasicTitanFlow", "kind": "basic", "name": "BasicTitanFlow", "param": {}, "step": [{ "active": true, "data": {}, "input": {}, "match": {}, "op": "list", "spec": [], "valid": [{ "apply": "ItemExists", "def": { "ref": "titan_ref01" } }], "index$": 0 }, { "active": true, "data": {}, "input": { "ref": "titan_ref01", "srcdatavar": "titan_ref01_data", "suffix": "_dt0" }, "match": { "id": "titan01" }, "op": "load", "spec": [], "valid": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-titan_ref01" } }], "index$": 1 }] }, 'Titan');
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -106,12 +104,6 @@ function basicSetup(extra) {
                 '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
             }]
     });
-    // Detect whether the user provided a real ENTID JSON via env var. The
-    // basic flow consumes synthetic IDs from the fixture file; without an
-    // override those synthetic IDs reach the live API and 4xx. Surface this
-    // to the test so it can skip rather than fail.
-    const idmapEnvVal = process.env['ATTACK_ON_TITAN_TEST_TITAN_ENTID'];
-    const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{');
     const env = (0, utility_1.envOverride)({
         'ATTACK_ON_TITAN_TEST_TITAN_ENTID': idmap,
         'ATTACK_ON_TITAN_TEST_LIVE': 'FALSE',
@@ -119,7 +111,13 @@ function basicSetup(extra) {
     });
     idmap = env['ATTACK_ON_TITAN_TEST_TITAN_ENTID'];
     const live = 'TRUE' === env.ATTACK_ON_TITAN_TEST_LIVE;
+    const transport = (0, live_runner_1.createLiveTransport)();
     if (live) {
+        const rawIds = process.env['ATTACK_ON_TITAN_TEST_TITAN_ENTID'];
+        idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {};
+        if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+            throw new Error('Live ENTID must be a JSON object');
+        }
         client = new __1.AttackOnTitanSDK(merge([
             // FIRST, so the generated fields below win: sdk-test-control.json's
             // test.client.options adds to the live client, it does not redirect it.
@@ -130,7 +128,8 @@ function basicSetup(extra) {
             // argument at all - so a bare 'extra' silently discarded the apikey
             // and server values above and handed the SDK undefined. Harmless
             // while there was nothing in that object; not harmless now.
-            extra || {}
+            extra || {},
+            { system: { fetch: transport.fetch } }
         ]));
     }
     const setup = {
@@ -142,7 +141,7 @@ function basicSetup(extra) {
         data: entityData,
         explain: 'TRUE' === env.ATTACK_ON_TITAN_TEST_EXPLAIN,
         live,
-        syntheticOnly: live && !idmapOverridden,
+        transport,
         now: Date.now(),
     };
     return setup;

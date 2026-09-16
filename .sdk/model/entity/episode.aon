@@ -55,6 +55,12 @@ main: kit: entity: episode: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /episodes"
+            json: "{\"operationId\":\"getEpisodes\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"airDate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"description\":{\"description\":\"Synopsis or description of the episode\",\"type\":\"string\"},\"episodeNumber\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique identifier for the episode\",\"type\":\"string\"},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"title\":{\"description\":\"Title of the episode\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of episodes\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/episodes"
           segments: [
@@ -83,6 +89,12 @@ main: kit: entity: episode: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /episodes/{id}"
+            json: "{\"operationId\":\"getEpisodeById\",\"parameters\":[{\"description\":\"The ID of the episode to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"airDate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"description\":{\"description\":\"Synopsis or description of the episode\",\"type\":\"string\"},\"episodeNumber\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique identifier for the episode\",\"type\":\"string\"},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"title\":{\"description\":\"Title of the episode\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Episode details\"},\"404\":{\"description\":\"Episode not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/episodes/{id}"

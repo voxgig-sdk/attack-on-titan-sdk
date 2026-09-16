@@ -1,12 +1,18 @@
 # AttackOnTitan SDK feature factory
 
 from attackontitan_sdk.feature.base_feature import AttackOnTitanBaseFeature
+from attackontitan_sdk.feature.ratelimit_feature import AttackOnTitanRatelimitFeature
+from attackontitan_sdk.feature.retry_feature import AttackOnTitanRetryFeature
 from attackontitan_sdk.feature.test_feature import AttackOnTitanTestFeature
+from attackontitan_sdk.feature.timeout_feature import AttackOnTitanTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: AttackOnTitanBaseFeature(),
+    "ratelimit": lambda: AttackOnTitanRatelimitFeature(),
+    "retry": lambda: AttackOnTitanRetryFeature(),
     "test": lambda: AttackOnTitanTestFeature(),
+    "timeout": lambda: AttackOnTitanTimeoutFeature(),
 }
 
 

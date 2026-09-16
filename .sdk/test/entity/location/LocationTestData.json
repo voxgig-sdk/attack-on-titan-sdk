@@ -33,5 +33,109 @@
         "significance": "scc"
       }
     }
+  },
+  "requests": {
+    "GET /locations": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getLocations",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "description": {
+                        "description": "Description of the location",
+                        "type": "string"
+                      },
+                      "id": {
+                        "description": "Unique identifier for the location",
+                        "type": "string"
+                      },
+                      "name": {
+                        "description": "Name of the location",
+                        "type": "string"
+                      },
+                      "region": {
+                        "description": "Region where the location is situated",
+                        "type": "string"
+                      },
+                      "significance": {
+                        "description": "Significance of the location in the series",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "A list of locations"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /locations/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getLocationById",
+        "parameters": [
+          {
+            "description": "The ID of the location to retrieve",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "description": {
+                      "description": "Description of the location",
+                      "type": "string"
+                    },
+                    "id": {
+                      "description": "Unique identifier for the location",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the location",
+                      "type": "string"
+                    },
+                    "region": {
+                      "description": "Region where the location is situated",
+                      "type": "string"
+                    },
+                    "significance": {
+                      "description": "Significance of the location in the series",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Location details"
+          },
+          "404": {
+            "description": "Location not found"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

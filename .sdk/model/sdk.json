@@ -24,7 +24,71 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "character": {
           "active": true,
@@ -109,6 +173,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /characters",
+                    "json": "{\"operationId\":\"getCharacters\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"affiliation\":{\"description\":\"Character's affiliation or allegiance\",\"type\":\"string\"},\"age\":{\"description\":\"Age of the character\",\"type\":\"integer\"},\"gender\":{\"description\":\"Gender of the character\",\"type\":\"string\"},\"height\":{\"description\":\"Height of the character\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the character\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Character's occupation\",\"type\":\"string\"},\"species\":{\"description\":\"Species of the character\",\"type\":\"string\"},\"status\":{\"description\":\"Current status of the character\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of characters\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/characters",
@@ -142,6 +212,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /characters/{id}",
+                    "json": "{\"operationId\":\"getCharacterById\",\"parameters\":[{\"description\":\"The ID of the character to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"affiliation\":{\"description\":\"Character's affiliation or allegiance\",\"type\":\"string\"},\"age\":{\"description\":\"Age of the character\",\"type\":\"integer\"},\"gender\":{\"description\":\"Gender of the character\",\"type\":\"string\"},\"height\":{\"description\":\"Height of the character\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the character\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Character's occupation\",\"type\":\"string\"},\"species\":{\"description\":\"Species of the character\",\"type\":\"string\"},\"status\":{\"description\":\"Current status of the character\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Character details\"},\"404\":{\"description\":\"Character not found\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -234,6 +310,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /episodes",
+                    "json": "{\"operationId\":\"getEpisodes\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"airDate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"description\":{\"description\":\"Synopsis or description of the episode\",\"type\":\"string\"},\"episodeNumber\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique identifier for the episode\",\"type\":\"string\"},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"title\":{\"description\":\"Title of the episode\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of episodes\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/episodes",
@@ -267,6 +349,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /episodes/{id}",
+                    "json": "{\"operationId\":\"getEpisodeById\",\"parameters\":[{\"description\":\"The ID of the episode to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"airDate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"description\":{\"description\":\"Synopsis or description of the episode\",\"type\":\"string\"},\"episodeNumber\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique identifier for the episode\",\"type\":\"string\"},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"title\":{\"description\":\"Title of the episode\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Episode details\"},\"404\":{\"description\":\"Episode not found\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -351,6 +439,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /locations",
+                    "json": "{\"operationId\":\"getLocations\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"description\":{\"description\":\"Description of the location\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the location\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the location\",\"type\":\"string\"},\"region\":{\"description\":\"Region where the location is situated\",\"type\":\"string\"},\"significance\":{\"description\":\"Significance of the location in the series\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of locations\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/locations",
@@ -384,6 +478,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /locations/{id}",
+                    "json": "{\"operationId\":\"getLocationById\",\"parameters\":[{\"description\":\"The ID of the location to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"description\":{\"description\":\"Description of the location\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the location\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the location\",\"type\":\"string\"},\"region\":{\"description\":\"Region where the location is situated\",\"type\":\"string\"},\"significance\":{\"description\":\"Significance of the location in the series\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Location details\"},\"404\":{\"description\":\"Location not found\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -475,6 +575,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /organizations",
+                    "json": "{\"operationId\":\"getOrganizations\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"allegiance\":{\"description\":\"Allegiance of the organization\",\"type\":\"string\"},\"description\":{\"description\":\"Description of the organization\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the organization\",\"type\":\"string\"},\"leader\":{\"description\":\"Leader of the organization\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the organization\",\"type\":\"string\"},\"type\":{\"description\":\"Type or classification of the organization\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of organizations\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/organizations",
@@ -508,6 +614,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /organizations/{id}",
+                    "json": "{\"operationId\":\"getOrganizationById\",\"parameters\":[{\"description\":\"The ID of the organization to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"allegiance\":{\"description\":\"Allegiance of the organization\",\"type\":\"string\"},\"description\":{\"description\":\"Description of the organization\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the organization\",\"type\":\"string\"},\"leader\":{\"description\":\"Leader of the organization\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the organization\",\"type\":\"string\"},\"type\":{\"description\":\"Type or classification of the organization\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Organization details\"},\"404\":{\"description\":\"Organization not found\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -606,6 +718,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /titans",
+                    "json": "{\"operationId\":\"getTitans\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"abilities\":{\"description\":\"List of abilities possessed by the titan\",\"example\":[\"Future memory inheritance\",\"Hardening\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"allegiance\":{\"description\":\"Allegiance of the titan or its inheritor\",\"example\":\"Eldia\",\"type\":\"string\"},\"currentInheritor\":{\"description\":\"Current inheritor of the titan\",\"example\":\"Eren Jaeger\",\"type\":\"string\"},\"formerInheritors\":{\"description\":\"List of former inheritors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"height\":{\"description\":\"Height of the titan\",\"example\":\"15m\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the titan\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the titan\",\"example\":\"Attack Titan\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of titans\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/titans",
@@ -640,6 +758,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /titans/{id}",
+                    "json": "{\"operationId\":\"getTitanById\",\"parameters\":[{\"description\":\"The ID of the titan to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"abilities\":{\"description\":\"List of abilities possessed by the titan\",\"example\":[\"Future memory inheritance\",\"Hardening\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"allegiance\":{\"description\":\"Allegiance of the titan or its inheritor\",\"example\":\"Eldia\",\"type\":\"string\"},\"currentInheritor\":{\"description\":\"Current inheritor of the titan\",\"example\":\"Eren Jaeger\",\"type\":\"string\"},\"formerInheritors\":{\"description\":\"List of former inheritors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"height\":{\"description\":\"Height of the titan\",\"example\":\"15m\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the titan\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the titan\",\"example\":\"Attack Titan\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Titan details\"},\"404\":{\"description\":\"Titan not found\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/titans/{id}",
@@ -670,13 +794,223 @@
         }
       },
       "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Client-side rate limiting via a token bucket",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Automatic retry of transient failures with exponential backoff",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
         "test": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -766,6 +1100,102 @@
           },
           "title": "In-memory mock transport for testing without a live server",
           "transport": "base",
+          "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Per-request timeout with transport abort",
+          "transport": "wrap",
           "version": "0.0.1"
         }
       },
@@ -1031,6 +1461,48 @@
         "website": "https://attackontitanapi.com"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -1585,6 +2057,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -1626,7 +2099,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }
