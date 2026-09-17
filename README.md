@@ -105,12 +105,12 @@ local results, err = client:Episode():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/attack-on-titan-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases) |
-| Python | `voxgig-sdk-attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases) |
-| PHP | `voxgig-sdk/attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases) |
+| TypeScript | `@voxgig-sdk/attack-on-titan-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/tags) |
+| Python | `voxgig-sdk-attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/tags) |
+| PHP | `voxgig-sdk/attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/attack-on-titan-sdk/go` | `go get github.com/voxgig-sdk/attack-on-titan-sdk/go@latest` |
-| Ruby | `voxgig-sdk-attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases) |
-| Lua | `voxgig-sdk-attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases) |
+| Ruby | `voxgig-sdk-attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/tags) |
+| Lua | `voxgig-sdk-attack-on-titan` | publish pending — [install from git tag](https://github.com/voxgig-sdk/attack-on-titan-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/attack-on-titan-sdk/go-cli` | `go install github.com/voxgig-sdk/attack-on-titan-sdk/go-cli/cmd/attack-on-titan@latest` |
 | Go MCP server | `github.com/voxgig-sdk/attack-on-titan-sdk/go-mcp` | `go get github.com/voxgig-sdk/attack-on-titan-sdk/go-mcp@latest` |
 
