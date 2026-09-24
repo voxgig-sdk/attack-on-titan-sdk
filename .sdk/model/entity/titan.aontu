@@ -1,0 +1,135 @@
+# Entity: titan
+
+main: kit: entity: titan: {
+
+  alias: field: {}
+
+  fields: {
+    abilities: {
+      h: "Abilities"
+      n: "abilities"
+      r: false
+      sh: "List of abilities possessed by the titan"
+      t: "`$ARRAY`"
+    }
+    allegiance: {
+      h: "Allegiance"
+      n: "allegiance"
+      r: false
+      sh: "Allegiance of the titan or its inheritor"
+      t: "`$STRING`"
+    }
+    currentInheritor: {
+      h: "Current Inheritor"
+      n: "currentInheritor"
+      r: false
+      sh: "Current inheritor of the titan"
+      t: "`$STRING`"
+    }
+    formerInheritors: {
+      h: "Former Inheritors"
+      n: "formerInheritors"
+      r: false
+      sh: "List of former inheritors"
+      t: "`$ARRAY`"
+    }
+    height: {
+      h: "Height"
+      n: "height"
+      r: false
+      sh: "Height of the titan"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the titan"
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name of the titan"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "titan"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /titans"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/titans"
+          s: [
+            {
+              lit: "titans"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /titans/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/titans/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "titans"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -24,77 +24,152 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "character": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "affiliation",
-              "req": false,
-              "short": "Character's affiliation or allegiance",
-              "type": "`$STRING`"
+          "fields": {
+            "affiliation": {
+              "a": true,
+              "h": "Affiliation",
+              "n": "affiliation",
+              "r": false,
+              "sh": "Character's affiliation or allegiance",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "age",
-              "req": false,
-              "short": "Age of the character",
-              "type": "`$INTEGER`"
+            "age": {
+              "a": true,
+              "h": "Age",
+              "n": "age",
+              "r": false,
+              "sh": "Age of the character",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "gender",
-              "req": false,
-              "short": "Gender of the character",
-              "type": "`$STRING`"
+            "gender": {
+              "a": true,
+              "h": "Gender",
+              "n": "gender",
+              "r": false,
+              "sh": "Gender of the character",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "height",
-              "req": false,
-              "short": "Height of the character",
-              "type": "`$STRING`"
+            "height": {
+              "a": true,
+              "h": "Height",
+              "n": "height",
+              "r": false,
+              "sh": "Height of the character",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the character",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the character",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "short": "Name of the character",
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Name of the character",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "occupation",
-              "req": false,
-              "short": "Character's occupation",
-              "type": "`$STRING`"
+            "occupation": {
+              "a": true,
+              "h": "Occupation",
+              "n": "occupation",
+              "r": false,
+              "sh": "Character's occupation",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "species",
-              "req": false,
-              "short": "Species of the character",
-              "type": "`$STRING`"
+            "species": {
+              "a": true,
+              "h": "Species",
+              "n": "species",
+              "r": false,
+              "sh": "Species of the character",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "status",
-              "req": false,
-              "short": "Current status of the character",
-              "type": "`$STRING`"
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": false,
+              "sh": "Current status of the character",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -106,24 +181,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /characters",
-                    "json": "{\"operationId\":\"getCharacters\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"affiliation\":{\"description\":\"Character's affiliation or allegiance\",\"type\":\"string\"},\"age\":{\"description\":\"Age of the character\",\"type\":\"integer\"},\"gender\":{\"description\":\"Gender of the character\",\"type\":\"string\"},\"height\":{\"description\":\"Height of the character\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the character\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Character's occupation\",\"type\":\"string\"},\"species\":{\"description\":\"Species of the character\",\"type\":\"string\"},\"status\":{\"description\":\"Current status of the character\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of characters\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/characters",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/characters",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "characters"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -135,29 +210,34 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /characters/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "id",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /characters/{id}",
-                    "json": "{\"operationId\":\"getCharacterById\",\"parameters\":[{\"description\":\"The ID of the character to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"affiliation\":{\"description\":\"Character's affiliation or allegiance\",\"type\":\"string\"},\"age\":{\"description\":\"Age of the character\",\"type\":\"integer\"},\"gender\":{\"description\":\"Gender of the character\",\"type\":\"string\"},\"height\":{\"description\":\"Height of the character\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the character\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Character's occupation\",\"type\":\"string\"},\"species\":{\"description\":\"Species of the character\",\"type\":\"string\"},\"status\":{\"description\":\"Current status of the character\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Character details\"},\"404\":{\"description\":\"Character not found\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/characters/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/characters/{id}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "characters"
                     },
@@ -165,12 +245,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -187,51 +262,57 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "format": "date",
-              "name": "airDate",
-              "req": false,
-              "short": "Air date of the episode",
-              "type": "`$STRING`"
+          "fields": {
+            "airDate": {
+              "a": true,
+              "fo": "date",
+              "h": "Air Date",
+              "n": "airDate",
+              "r": false,
+              "sh": "Air date of the episode",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Synopsis or description of the episode",
-              "type": "`$STRING`"
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Synopsis or description of the episode",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "episodeNumber",
-              "req": false,
-              "short": "Episode number within the season",
-              "type": "`$INTEGER`"
+            "episodeNumber": {
+              "a": true,
+              "h": "Episode Number",
+              "n": "episodeNumber",
+              "r": false,
+              "sh": "Episode number within the season",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the episode",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the episode",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "season",
-              "req": false,
-              "short": "Season number",
-              "type": "`$INTEGER`"
+            "season": {
+              "a": true,
+              "h": "Season",
+              "n": "season",
+              "r": false,
+              "sh": "Season number",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": false,
-              "short": "Title of the episode",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Title of the episode",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -243,24 +324,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /episodes",
-                    "json": "{\"operationId\":\"getEpisodes\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"airDate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"description\":{\"description\":\"Synopsis or description of the episode\",\"type\":\"string\"},\"episodeNumber\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique identifier for the episode\",\"type\":\"string\"},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"title\":{\"description\":\"Title of the episode\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of episodes\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/episodes",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/episodes",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "episodes"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -272,29 +353,34 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /episodes/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "id",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /episodes/{id}",
-                    "json": "{\"operationId\":\"getEpisodeById\",\"parameters\":[{\"description\":\"The ID of the episode to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"airDate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"description\":{\"description\":\"Synopsis or description of the episode\",\"type\":\"string\"},\"episodeNumber\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique identifier for the episode\",\"type\":\"string\"},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"title\":{\"description\":\"Title of the episode\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Episode details\"},\"404\":{\"description\":\"Episode not found\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/episodes/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/episodes/{id}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "episodes"
                     },
@@ -302,12 +388,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -324,43 +405,48 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Description of the location",
-              "type": "`$STRING`"
+          "fields": {
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Description of the location",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the location",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the location",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "short": "Name of the location",
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Name of the location",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "region",
-              "req": false,
-              "short": "Region where the location is situated",
-              "type": "`$STRING`"
+            "region": {
+              "a": true,
+              "h": "Region",
+              "n": "region",
+              "r": false,
+              "sh": "Region where the location is situated",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "significance",
-              "req": false,
-              "short": "Significance of the location in the series",
-              "type": "`$STRING`"
+            "significance": {
+              "a": true,
+              "h": "Significance",
+              "n": "significance",
+              "r": false,
+              "sh": "Significance of the location in the series",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -372,24 +458,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /locations",
-                    "json": "{\"operationId\":\"getLocations\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"description\":{\"description\":\"Description of the location\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the location\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the location\",\"type\":\"string\"},\"region\":{\"description\":\"Region where the location is situated\",\"type\":\"string\"},\"significance\":{\"description\":\"Significance of the location in the series\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of locations\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/locations",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/locations",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "locations"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -401,29 +487,34 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /locations/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "id",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /locations/{id}",
-                    "json": "{\"operationId\":\"getLocationById\",\"parameters\":[{\"description\":\"The ID of the location to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"description\":{\"description\":\"Description of the location\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the location\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the location\",\"type\":\"string\"},\"region\":{\"description\":\"Region where the location is situated\",\"type\":\"string\"},\"significance\":{\"description\":\"Significance of the location in the series\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Location details\"},\"404\":{\"description\":\"Location not found\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/locations/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/locations/{id}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "locations"
                     },
@@ -431,12 +522,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -453,50 +539,56 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "allegiance",
-              "req": false,
-              "short": "Allegiance of the organization",
-              "type": "`$STRING`"
+          "fields": {
+            "allegiance": {
+              "a": true,
+              "h": "Allegiance",
+              "n": "allegiance",
+              "r": false,
+              "sh": "Allegiance of the organization",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Description of the organization",
-              "type": "`$STRING`"
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Description of the organization",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the organization",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the organization",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "leader",
-              "req": false,
-              "short": "Leader of the organization",
-              "type": "`$STRING`"
+            "leader": {
+              "a": true,
+              "h": "Leader",
+              "n": "leader",
+              "r": false,
+              "sh": "Leader of the organization",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "short": "Name of the organization",
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Name of the organization",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "type",
-              "req": false,
-              "short": "Type or classification of the organization",
-              "type": "`$STRING`"
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": false,
+              "sh": "Type or classification of the organization",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -508,24 +600,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /organizations",
-                    "json": "{\"operationId\":\"getOrganizations\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"allegiance\":{\"description\":\"Allegiance of the organization\",\"type\":\"string\"},\"description\":{\"description\":\"Description of the organization\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the organization\",\"type\":\"string\"},\"leader\":{\"description\":\"Leader of the organization\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the organization\",\"type\":\"string\"},\"type\":{\"description\":\"Type or classification of the organization\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of organizations\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/organizations",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/organizations",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "organizations"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -537,29 +629,34 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /organizations/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "id",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /organizations/{id}",
-                    "json": "{\"operationId\":\"getOrganizationById\",\"parameters\":[{\"description\":\"The ID of the organization to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"allegiance\":{\"description\":\"Allegiance of the organization\",\"type\":\"string\"},\"description\":{\"description\":\"Description of the organization\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the organization\",\"type\":\"string\"},\"leader\":{\"description\":\"Leader of the organization\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the organization\",\"type\":\"string\"},\"type\":{\"description\":\"Type or classification of the organization\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Organization details\"},\"404\":{\"description\":\"Organization not found\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/organizations/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/organizations/{id}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "organizations"
                     },
@@ -567,12 +664,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -589,57 +681,64 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "abilities",
-              "req": false,
-              "short": "List of abilities possessed by the titan",
-              "type": "`$ARRAY`"
+          "fields": {
+            "abilities": {
+              "a": true,
+              "h": "Abilities",
+              "n": "abilities",
+              "r": false,
+              "sh": "List of abilities possessed by the titan",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "allegiance",
-              "req": false,
-              "short": "Allegiance of the titan or its inheritor",
-              "type": "`$STRING`"
+            "allegiance": {
+              "a": true,
+              "h": "Allegiance",
+              "n": "allegiance",
+              "r": false,
+              "sh": "Allegiance of the titan or its inheritor",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "currentInheritor",
-              "req": false,
-              "short": "Current inheritor of the titan",
-              "type": "`$STRING`"
+            "currentInheritor": {
+              "a": true,
+              "h": "Current Inheritor",
+              "n": "currentInheritor",
+              "r": false,
+              "sh": "Current inheritor of the titan",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "formerInheritors",
-              "req": false,
-              "short": "List of former inheritors",
-              "type": "`$ARRAY`"
+            "formerInheritors": {
+              "a": true,
+              "h": "Former Inheritors",
+              "n": "formerInheritors",
+              "r": false,
+              "sh": "List of former inheritors",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "height",
-              "req": false,
-              "short": "Height of the titan",
-              "type": "`$STRING`"
+            "height": {
+              "a": true,
+              "h": "Height",
+              "n": "height",
+              "r": false,
+              "sh": "Height of the titan",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the titan",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the titan",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "short": "Name of the titan",
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Name of the titan",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -651,24 +750,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /titans",
-                    "json": "{\"operationId\":\"getTitans\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"abilities\":{\"description\":\"List of abilities possessed by the titan\",\"example\":[\"Future memory inheritance\",\"Hardening\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"allegiance\":{\"description\":\"Allegiance of the titan or its inheritor\",\"example\":\"Eldia\",\"type\":\"string\"},\"currentInheritor\":{\"description\":\"Current inheritor of the titan\",\"example\":\"Eren Jaeger\",\"type\":\"string\"},\"formerInheritors\":{\"description\":\"List of former inheritors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"height\":{\"description\":\"Height of the titan\",\"example\":\"15m\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the titan\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the titan\",\"example\":\"Attack Titan\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"A list of titans\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/titans",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/titans",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "titans"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -680,29 +779,34 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /titans/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "id",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /titans/{id}",
-                    "json": "{\"operationId\":\"getTitanById\",\"parameters\":[{\"description\":\"The ID of the titan to retrieve\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"abilities\":{\"description\":\"List of abilities possessed by the titan\",\"example\":[\"Future memory inheritance\",\"Hardening\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"allegiance\":{\"description\":\"Allegiance of the titan or its inheritor\",\"example\":\"Eldia\",\"type\":\"string\"},\"currentInheritor\":{\"description\":\"Current inheritor of the titan\",\"example\":\"Eren Jaeger\",\"type\":\"string\"},\"formerInheritors\":{\"description\":\"List of former inheritors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"height\":{\"description\":\"Height of the titan\",\"example\":\"15m\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the titan\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the titan\",\"example\":\"Attack Titan\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Titan details\"},\"404\":{\"description\":\"Titan not found\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/titans/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/titans/{id}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "titans"
                     },
@@ -710,12 +814,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1144,13 +1243,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1160,19 +1259,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "character_ref01",
                 "srcdatavar": "character_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "character01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -1192,13 +1291,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1208,19 +1307,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "episode_ref01",
                 "srcdatavar": "episode_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "episode01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -1240,13 +1339,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1256,19 +1355,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "location_ref01",
                 "srcdatavar": "location_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "location01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -1288,13 +1387,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1304,19 +1403,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "organization_ref01",
                 "srcdatavar": "organization_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "organization01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -1336,13 +1435,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1352,19 +1451,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "titan_ref01",
                 "srcdatavar": "titan_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "titan01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

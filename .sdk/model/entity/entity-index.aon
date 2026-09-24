@@ -1,7 +1,0 @@
-# Entity Models
-
-@"./character.aon"
-@"./episode.aon"
-@"./location.aon"
-@"./organization.aon"
-@"./titan.aon"

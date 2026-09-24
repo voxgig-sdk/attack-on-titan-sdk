@@ -1,7 +1,7 @@
 // Typed models for the AttackOnTitan SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,15 +14,6 @@ import (
 
 // Character is the typed data model for the character entity.
 type Character struct {
-	Affiliation *string `json:"affiliation,omitempty"`
-	Age *int `json:"age,omitempty"`
-	Gender *string `json:"gender,omitempty"`
-	Height *string `json:"height,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Occupation *string `json:"occupation,omitempty"`
-	Species *string `json:"species,omitempty"`
-	Status *string `json:"status,omitempty"`
 }
 
 // CharacterLoadMatch is the typed request payload for Character.LoadTyped.
@@ -45,12 +36,6 @@ type CharacterListMatch struct {
 
 // Episode is the typed data model for the episode entity.
 type Episode struct {
-	AirDate *string `json:"airDate,omitempty"`
-	Description *string `json:"description,omitempty"`
-	EpisodeNumber *int `json:"episodeNumber,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Season *int `json:"season,omitempty"`
-	Title *string `json:"title,omitempty"`
 }
 
 // EpisodeLoadMatch is the typed request payload for Episode.LoadTyped.
@@ -70,11 +55,6 @@ type EpisodeListMatch struct {
 
 // Location is the typed data model for the location entity.
 type Location struct {
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Region *string `json:"region,omitempty"`
-	Significance *string `json:"significance,omitempty"`
 }
 
 // LocationLoadMatch is the typed request payload for Location.LoadTyped.
@@ -93,12 +73,6 @@ type LocationListMatch struct {
 
 // Organization is the typed data model for the organization entity.
 type Organization struct {
-	Allegiance *string `json:"allegiance,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Leader *string `json:"leader,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
 }
 
 // OrganizationLoadMatch is the typed request payload for Organization.LoadTyped.
@@ -118,13 +92,6 @@ type OrganizationListMatch struct {
 
 // Titan is the typed data model for the titan entity.
 type Titan struct {
-	Abilities *[]any `json:"abilities,omitempty"`
-	Allegiance *string `json:"allegiance,omitempty"`
-	CurrentInheritor *string `json:"currentInheritor,omitempty"`
-	FormerInheritors *[]any `json:"formerInheritors,omitempty"`
-	Height *string `json:"height,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
 }
 
 // TitanLoadMatch is the typed request payload for Titan.LoadTyped.
