@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 AttackOnTitanUtility::setRegistrar(function (AttackOnTitanUtility $u): void {
     $u->clean = [AttackOnTitanClean::class, 'call'];
+    $u->clean_add = [AttackOnTitanClean::class, 'add'];
+    $u->clean_explain = [AttackOnTitanDone::class, 'clean_explain'];
     $u->done = [AttackOnTitanDone::class, 'call'];
     $u->make_error = [AttackOnTitanMakeError::class, 'call'];
     $u->feature_add = [AttackOnTitanFeatureAdd::class, 'call'];

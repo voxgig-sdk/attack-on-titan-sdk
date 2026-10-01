@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 AttackOnTitanUtility.registrar = ->(u) {
   u.clean = AttackOnTitanUtilities::Clean
+  u.clean_add = AttackOnTitanUtilities::CleanAdd
+  u.clean_explain = AttackOnTitanUtilities::CleanExplain
   u.done = AttackOnTitanUtilities::Done
   u.make_error = AttackOnTitanUtilities::MakeError
   u.feature_add = AttackOnTitanUtilities::FeatureAdd

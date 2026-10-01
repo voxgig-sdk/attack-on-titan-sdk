@@ -15,9 +15,13 @@ predictable and low-friction for both humans and AI agents.
 
 ## Install
 This package is not yet published to npm. Install it from the GitHub
-release tag (`ts/vX.Y.Z`):
+release tag (`ts/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases)), or from a
+clone, which carries the compiled `dist/`:
 
-- Releases: [https://github.com/voxgig-sdk/attack-on-titan-sdk/releases](https://github.com/voxgig-sdk/attack-on-titan-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/attack-on-titan-sdk
+npm install ./attack-on-titan-sdk/ts
+```
 
 
 ## Tutorial: your first API call
