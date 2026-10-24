@@ -3,5 +3,46 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "A RESTful API that provides access to a wide range of data related to the popular anime and manga series &#39;Attack on Titan&#39;. Users can retrieve information about characters, episodes, locations, organizations, and titans, making it a valuable resource for fans and developers alike.",
+      "A list of characters",
+      "A list of episodes",
+      "A list of locations",
+      "A list of organizations",
+      "A list of titans",
+      "Age of the character",
+      "Air date of the episode",
+      "Allegiance of the organization",
+      "Allegiance of the titan or its inheritor",
+      "Character details",
+      "Character&#39;s affiliation or allegiance",
+      "Current inheritor of the titan",
+      "Description of the location",
+      "Description of the organization",
+      "Episode details",
+      "Episode number within the season",
+      "Gender of the character",
+      "Height of the character",
+      "Height of the titan",
+      "Leader of the organization",
+      "List of abilities possessed by the titan",
+      "List of former inheritors",
+      "Location details",
+      "Name of the location",
+      "Name of the organization",
+      "Organization details",
+      "Production server",
+      "Region where the location is situated",
+      "Season number",
+      "Significance of the location in the series",
+      "Synopsis or description of the episode",
+      "Titan details",
+      "Unique identifier for the character",
+      "Unique identifier for the episode",
+      "Unique identifier for the location",
+      "Unique identifier for the organization"
+    ]
+  }
 }

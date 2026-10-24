@@ -54,6 +54,53 @@ const utility_1 = require("../../utility");
         const ent = testsdk.Organization();
         (0, node_assert_1.default)(null != ent);
     });
+    class FailHook extends __1.BaseFeature {
+        name = 'failhook';
+        version = '0.0.1';
+        active = true;
+        unexpected = 0;
+        init() { }
+        PreSpec() { throw new Error('organization hook failed'); }
+        PreUnexpected() { this.unexpected++; }
+    }
+    (0, node_test_1.test)('stream-error', async () => {
+        const offline = { net: { offline: true } };
+        await node_assert_1.default.rejects(async () => {
+            for await (const _item of __1.AttackOnTitanSDK.test(offline).Organization().stream('list')) { }
+        }, /offline/);
+        for await (const _item of __1.AttackOnTitanSDK.test(offline).Organization()
+            .stream('list', undefined, { ctrl: { throw: false } })) { }
+        if (null != __1.config.feature?.rbac) {
+            const denied = __1.AttackOnTitanSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } });
+            await node_assert_1.default.rejects(async () => {
+                for await (const _item of denied.Organization().stream('list')) { }
+            }, (err) => 'rbac_denied' === err.code);
+        }
+    });
+    (0, node_test_1.test)('stream-ctrl', async () => {
+        const explain = {};
+        const ctrl = { explain };
+        for await (const _item of __1.AttackOnTitanSDK.test().Organization().stream('list', undefined, { ctrl })) { }
+        node_assert_1.default.deepStrictEqual(Object.keys(ctrl), ['explain']);
+        (0, node_assert_1.default)(explain === ctrl.explain && 0 < Object.keys(explain).length);
+    });
+    (0, node_test_1.test)('unexpected', async () => {
+        const hook = new FailHook();
+        const client = new __1.AttackOnTitanSDK({ feature: { test: { active: true } }, extend: [hook] });
+        await node_assert_1.default.rejects(client.Organization().list(), /hook failed/);
+        (0, node_assert_1.default)(0 < hook.unexpected);
+        const fired = hook.unexpected;
+        node_assert_1.default.strictEqual(await client.Organization().list(undefined, { throw: false }), undefined);
+        (0, node_assert_1.default)(fired < hook.unexpected);
+    });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.AttackOnTitanSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.Organization().list({ "allegiance": 1 }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.ATTACK_ON_TITAN_TEST_LIVE;
         for (const op of ['list', 'load']) {
@@ -62,7 +109,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "allegiance": { "a": true, "h": "Allegiance", "n": "allegiance", "r": false, "sh": "Allegiance of the organization", "t": "`$STRING`", "key$": "allegiance", "index$": 0 }, "description": { "a": true, "h": "Description", "n": "description", "r": false, "sh": "Description of the organization", "t": "`$STRING`", "key$": "description", "index$": 1 }, "id": { "a": true, "h": "Id", "n": "id", "r": false, "sh": "Unique identifier for the organization", "t": "`$STRING`", "key$": "id", "index$": 2 }, "leader": { "a": true, "h": "Leader", "n": "leader", "r": false, "sh": "Leader of the organization", "t": "`$STRING`", "key$": "leader", "index$": 3 }, "name": { "a": true, "h": "Name", "n": "name", "r": false, "sh": "Name of the organization", "t": "`$STRING`", "key$": "name", "index$": 4 }, "type": { "a": true, "h": "Type", "n": "type", "r": false, "sh": "Type or classification of the organization", "t": "`$STRING`", "key$": "type", "index$": 5 } }, "id": { "field": "id", "name": "id" }, "name": "organization", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /organizations", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/organizations", "q": {}, "r": {}, "s": [{ "lit": "organizations" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "list" }, "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /organizations/{id}", "source": "openapi3", "version": 2 }, "g": { "params": [{ "a": true, "k": "param", "n": "id", "or": "id", "r": true, "t": "`$STRING`", "index$": 0 }] }, "k": "http", "m": "GET", "o": "/organizations/{id}", "q": { "exist": ["id"] }, "r": {}, "s": [{ "lit": "organizations" }, { "var": "id" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "organization", "name__orig": "organization", "Name": "Organization", "name_": "organization", "name-": "organization", "NAME": "ORGANIZATION", "index$": 3 }, { "active": true, "entity": "organization", "key$": "BasicOrganizationFlow", "kind": "basic", "name": "BasicOrganizationFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "organization_ref01" } }], "index$": 0 }, { "a": true, "d": {}, "i": { "ref": "organization_ref01", "srcdatavar": "organization_ref01_data", "suffix": "_dt0" }, "m": { "id": "organization01" }, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-organization_ref01" } }], "index$": 1 }] }, 'Organization', { "GET /organizations": { "protocol": "http", "parameters": [] }, "GET /organizations/{id}": { "protocol": "http", "parameters": [{ "name": "id", "in": "path", "required": true, "description": "The ID of the organization to retrieve", "schema": { "type": "string" }, "index$": 0 }] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "allegiance": { "a": true, "h": "Allegiance", "n": "allegiance", "r": false, "sh": "Allegiance of the organization", "t": "`$STRING`", "key$": "allegiance", "index$": 0 }, "description": { "a": true, "h": "Description", "n": "description", "r": false, "sh": "Description of the organization", "t": "`$STRING`", "key$": "description", "index$": 1 }, "id": { "a": true, "h": "Id", "n": "id", "r": false, "sh": "Unique identifier for the organization", "t": "`$STRING`", "key$": "id", "index$": 2 }, "leader": { "a": true, "h": "Leader", "n": "leader", "r": false, "sh": "Leader of the organization", "t": "`$STRING`", "key$": "leader", "index$": 3 }, "name": { "a": true, "h": "Name", "n": "name", "r": false, "sh": "Name of the organization", "t": "`$STRING`", "key$": "name", "index$": 4 }, "type": { "a": true, "h": "Type", "n": "type", "r": false, "sh": "Type or classification of the organization", "t": "`$STRING`", "key$": "type", "index$": 5 } }, "id": { "field": "id", "name": "id" }, "name": "organization", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /organizations", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/organizations", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "organizations" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "list" }, "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /organizations/{id}", "source": "openapi3", "version": 2 }, "g": { "params": [{ "a": true, "k": "param", "n": "id", "or": "id", "r": true, "t": "`$STRING`", "index$": 0 }] }, "k": "http", "m": "GET", "o": "/organizations/{id}", "q": { "exist": ["id"] }, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "organizations" }, { "var": "id" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "organization", "name__orig": "organization", "Name": "Organization", "name_": "organization", "name-": "organization", "NAME": "ORGANIZATION", "index$": 3 }, { "active": true, "entity": "organization", "key$": "BasicOrganizationFlow", "kind": "basic", "name": "BasicOrganizationFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "organization_ref01" } }], "index$": 0 }, { "a": true, "d": {}, "i": { "ref": "organization_ref01", "srcdatavar": "organization_ref01_data", "suffix": "_dt0" }, "m": { "id": "organization01" }, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-organization_ref01" } }], "index$": 1 }] }, 'Organization', { "GET /organizations": { "protocol": "http", "parameters": [] }, "GET /organizations/{id}": { "protocol": "http", "parameters": [{ "name": "id", "in": "path", "required": true, "description": "The ID of the organization to retrieve", "schema": { "type": "string" }, "index$": 0 }] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -80,6 +127,11 @@ const utility_1 = require("../../utility");
         (0, node_assert_1.default)(organization_ref01_data_dt0.id === organization_ref01_data.id);
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

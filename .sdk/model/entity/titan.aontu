@@ -74,6 +74,10 @@ main: kit: entity: titan: {
           }
           m: "GET"
           o: "/titans"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "titans"
@@ -112,6 +116,10 @@ main: kit: entity: titan: {
             exist: [
               "id"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
